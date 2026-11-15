@@ -123,25 +123,25 @@ export default function AdminGalleryPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-[#E3EAE4] shadow-xs">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-brand-emerald uppercase tracking-wider mb-1">
-            <ImageIcon className="w-4 h-4 text-brand-gold" />
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#176B45] uppercase tracking-wider mb-1">
+            <ImageIcon className="w-4 h-4 text-[#F2C94C]" />
             <span>Media Library</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-surface font-display">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#104D35] font-display">
             Photo Gallery Management ({images.length})
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+          <p className="text-xs sm:text-sm text-[#66736A] mt-1">
             Upload botanical photography, categorize into albums, and organize public lightbox view.
           </p>
         </div>
 
         <button
           onClick={openNewModal}
-          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-semibold bg-brand-gold text-brand-surface hover:bg-brand-gold/90 transition-all shadow-md"
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent"
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="w-4 h-4 text-[#173B2B]" />
           <span>Upload Image</span>
         </button>
       </div>
@@ -150,12 +150,12 @@ export default function AdminGalleryPage() {
         <div
           className={`p-4 rounded-xl flex items-center justify-between text-xs font-semibold ${
             statusMessage.type === "success"
-              ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+              ? "bg-[#E8F3EC] text-[#104D35] border border-[#C5DEC8]"
               : "bg-red-50 text-red-800 border border-red-200"
           }`}
         >
           <div className="flex items-center gap-2">
-            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
+            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-[#176B45]" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
             <span>{statusMessage.text}</span>
           </div>
           <button onClick={() => setStatusMessage(null)}>
@@ -165,31 +165,31 @@ export default function AdminGalleryPage() {
       )}
 
       {/* Grid of gallery cards */}
-      <div className="bg-white p-6 rounded-3xl border border-gray-200 shadow-sm">
+      <div className="bg-white p-6 rounded-3xl border border-[#E3EAE4] shadow-xs">
         {loading ? (
-          <div className="p-12 text-center text-gray-500">
-            <Loader2 className="w-8 h-8 animate-spin mx-auto text-brand-emerald mb-2" />
+          <div className="p-12 text-center text-[#66736A]">
+            <Loader2 className="w-8 h-8 animate-spin mx-auto text-[#176B45] mb-2" />
             <p className="text-xs">Loading photographs...</p>
           </div>
         ) : images.length === 0 ? (
-          <div className="p-12 text-center text-gray-400">
+          <div className="p-12 text-center text-[#66736A]">
             <p className="text-sm">No photographs uploaded yet.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {images.map((img) => (
-              <div key={img.id} className="rounded-2xl border border-gray-200 overflow-hidden bg-gray-50 flex flex-col justify-between">
-                <div className="relative aspect-[4/3] w-full bg-black/10">
+              <div key={img.id} className="rounded-2xl border border-[#E3EAE4] overflow-hidden bg-[#F7FAF7] flex flex-col justify-between">
+                <div className="relative aspect-[4/3] w-full bg-black/5">
                   <img src={img.image_url} alt={img.title} className="w-full h-full object-cover" />
-                  <span className="absolute top-2 left-2 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-brand-dark/80 text-brand-gold backdrop-blur-sm">
+                  <span className="absolute top-2 left-2 px-2.5 py-1 rounded-full text-[10px] font-semibold bg-[#104D35]/90 text-white backdrop-blur-sm border border-[#176B45]/30">
                     {img.album?.title || "Album"}
                   </span>
                 </div>
-                <div className="p-4 space-y-2">
-                  <h4 className="font-bold text-sm text-brand-surface">{img.title}</h4>
-                  {img.description && <p className="text-xs text-gray-500 line-clamp-2">{img.description}</p>}
-                  <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
-                    <span className={`text-[10px] font-bold uppercase ${img.is_published ? "text-emerald-600" : "text-gray-400"}`}>
+                <div className="p-4 space-y-2 bg-white">
+                  <h4 className="font-bold text-sm text-[#104D35]">{img.title}</h4>
+                  {img.description && <p className="text-xs text-[#66736A] line-clamp-2">{img.description}</p>}
+                  <div className="pt-2 border-t border-[#E3EAE4] flex items-center justify-between">
+                    <span className={`text-[10px] font-bold uppercase ${img.is_published ? "text-[#176B45]" : "text-[#66736A]"}`}>
                       {img.is_published ? "Published" : "Draft"}
                     </span>
                     <div className="flex items-center gap-1">
@@ -198,13 +198,13 @@ export default function AdminGalleryPage() {
                           setEditingImage({ ...img });
                           setModalOpen(true);
                         }}
-                        className="p-1.5 text-brand-emerald hover:text-brand-dark"
+                        className="p-1.5 text-[#176B45] hover:text-[#104D35] hover:bg-[#E8F3EC] rounded-lg transition-colors"
                       >
                         <Edit2 className="w-4 h-4" />
                       </button>
                       <button
                         onClick={() => handleDelete(img.id)}
-                        className="p-1.5 text-red-400 hover:text-red-600"
+                        className="p-1.5 text-red-500 hover:text-red-700 hover:bg-red-50 rounded-lg transition-colors"
                       >
                         <Trash2 className="w-4 h-4" />
                       </button>
@@ -219,35 +219,35 @@ export default function AdminGalleryPage() {
 
       {/* Modal */}
       {modalOpen && editingImage && (
-        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-4">
-            <div className="flex items-center justify-between border-b pb-3">
-              <h3 className="font-bold text-lg text-brand-surface font-display">
+        <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl space-y-4 border border-[#E3EAE4]">
+            <div className="flex items-center justify-between border-b border-[#E3EAE4] pb-3">
+              <h3 className="font-bold text-lg text-[#104D35] font-display">
                 {editingImage.id ? "Edit Photograph" : "Upload New Photograph"}
               </h3>
               <button onClick={() => setModalOpen(false)}>
-                <X className="w-5 h-5 text-gray-400" />
+                <X className="w-5 h-5 text-[#66736A]" />
               </button>
             </div>
 
             <form onSubmit={handleSave} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Title</label>
+                <label className="block text-xs font-bold text-[#202820] uppercase mb-1">Title</label>
                 <input
                   type="text"
                   required
                   value={editingImage.title || ""}
                   onChange={(e) => setEditingImage({ ...editingImage, title: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs text-[#202820]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Album</label>
+                <label className="block text-xs font-bold text-[#202820] uppercase mb-1">Album</label>
                 <select
                   value={editingImage.album_id || ""}
                   onChange={(e) => setEditingImage({ ...editingImage, album_id: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border text-xs bg-white"
+                  className="w-full px-3 py-2 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs bg-white text-[#202820]"
                 >
                   {albums.map((a) => (
                     <option key={a.id} value={a.id}>{a.title}</option>
@@ -256,27 +256,27 @@ export default function AdminGalleryPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Photo URL / Upload</label>
+                <label className="block text-xs font-bold text-[#202820] uppercase mb-1">Photo URL / Upload</label>
                 <input
                   type="url"
                   value={editingImage.image_url || ""}
                   onChange={(e) => setEditingImage({ ...editingImage, image_url: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border text-xs mb-2"
+                  className="w-full px-3 py-2 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs mb-2"
                 />
-                <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-dark text-white cursor-pointer hover:bg-brand-secondary">
-                  <UploadCloud className="w-3.5 h-3.5 text-brand-gold" />
+                <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#176B45] text-white cursor-pointer hover:bg-[#104D35] transition-colors">
+                  <UploadCloud className="w-3.5 h-3.5 text-[#F2C94C]" />
                   <span>{uploading ? "Uploading..." : "Upload from Computer"}</span>
                   <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
                 </label>
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Caption / Description</label>
+                <label className="block text-xs font-bold text-[#202820] uppercase mb-1">Caption / Description</label>
                 <textarea
                   rows={2}
                   value={editingImage.description || ""}
                   onChange={(e) => setEditingImage({ ...editingImage, description: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border text-xs"
+                  className="w-full px-3 py-2 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs text-[#202820]"
                 />
               </div>
 
@@ -286,24 +286,24 @@ export default function AdminGalleryPage() {
                     type="checkbox"
                     checked={editingImage.is_published ?? true}
                     onChange={(e) => setEditingImage({ ...editingImage, is_published: e.target.checked })}
-                    className="w-4 h-4 text-brand-emerald"
+                    className="w-4 h-4 text-[#176B45] focus:ring-[#176B45]"
                   />
-                  <span className="text-xs font-semibold text-gray-700">Publish in Public Gallery</span>
+                  <span className="text-xs font-semibold text-[#202820]">Publish in Public Gallery</span>
                 </label>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#E3EAE4]">
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-4 py-2 rounded-xl border text-xs"
+                  className="px-4 py-2 rounded-xl border border-[#E3EAE4] text-xs text-[#66736A] hover:bg-[#F7FAF7]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-5 py-2 rounded-xl bg-brand-emerald text-white text-xs font-semibold"
+                  className="px-5 py-2 rounded-xl bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] text-xs font-bold shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-60 border border-transparent"
                 >
                   {submitting ? "Saving..." : "Save Image"}
                 </button>

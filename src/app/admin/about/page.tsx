@@ -52,8 +52,8 @@ export default function AdminAboutContentPage() {
 
   if (loading || !settings) {
     return (
-      <div className="p-12 text-center text-gray-500">
-        <Loader2 className="w-8 h-8 animate-spin mx-auto text-brand-emerald mb-2" />
+      <div className="p-12 text-center text-[#66736A]">
+        <Loader2 className="w-8 h-8 animate-spin mx-auto text-[#176B45] mb-2" />
         <p className="text-xs">Loading About page content controls...</p>
       </div>
     );
@@ -61,16 +61,16 @@ export default function AdminAboutContentPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-[#E3EAE4] shadow-xs">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-brand-emerald uppercase tracking-wider mb-1">
-            <Info className="w-4 h-4 text-brand-gold" />
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#176B45] uppercase tracking-wider mb-1">
+            <Info className="w-4 h-4 text-[#F2C94C]" />
             <span>Corporate Narrative</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-brand-surface font-display">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#104D35] font-display">
             About Page Content Management
           </h1>
-          <p className="text-xs sm:text-sm text-gray-500 mt-1">
+          <p className="text-xs sm:text-sm text-[#66736A] mt-1">
             Maintain the formal company vision, mission statement, and sustainable propagation story.
           </p>
         </div>
@@ -80,12 +80,12 @@ export default function AdminAboutContentPage() {
         <div
           className={`p-4 rounded-xl flex items-center justify-between text-xs font-semibold ${
             statusMessage.type === "success"
-              ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+              ? "bg-[#E8F3EC] text-[#104D35] border border-[#C5DEC8]"
               : "bg-red-50 text-red-800 border border-red-200"
           }`}
         >
           <div className="flex items-center gap-2">
-            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-emerald-600" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
+            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-[#176B45]" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
             <span>{statusMessage.text}</span>
           </div>
         </div>
@@ -94,10 +94,10 @@ export default function AdminAboutContentPage() {
       <form onSubmit={handleSave} className="space-y-6">
         {/* Vision & Mission Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-            <div className="flex items-center gap-2 pb-2 border-b border-gray-100 text-brand-gold">
-              <Compass className="w-5 h-5" />
-              <h3 className="font-bold text-base text-brand-surface font-display">
+          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E3EAE4] shadow-xs space-y-3">
+            <div className="flex items-center gap-2 pb-2 border-b border-[#E3EAE4] text-[#176B45]">
+              <Compass className="w-5 h-5 text-[#F2C94C]" />
+              <h3 className="font-bold text-base text-[#104D35] font-display">
                 Corporate Vision
               </h3>
             </div>
@@ -106,14 +106,14 @@ export default function AdminAboutContentPage() {
               required
               value={settings.vision}
               onChange={(e) => setSettings({ ...settings, vision: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-xs text-gray-800 leading-relaxed"
+              className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] focus:ring-1 focus:ring-[#176B45] text-xs text-[#202820] leading-relaxed"
             />
           </div>
 
-          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-gray-200 shadow-sm space-y-3">
-            <div className="flex items-center gap-2 pb-2 border-b border-gray-100 text-brand-emerald">
+          <div className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E3EAE4] shadow-xs space-y-3">
+            <div className="flex items-center gap-2 pb-2 border-b border-[#E3EAE4] text-[#176B45]">
               <Target className="w-5 h-5" />
-              <h3 className="font-bold text-base text-brand-surface font-display">
+              <h3 className="font-bold text-base text-[#104D35] font-display">
                 Corporate Mission
               </h3>
             </div>
@@ -122,7 +122,7 @@ export default function AdminAboutContentPage() {
               required
               value={settings.mission}
               onChange={(e) => setSettings({ ...settings, mission: e.target.value })}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 text-xs text-gray-800 leading-relaxed"
+              className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] focus:ring-1 focus:ring-[#176B45] text-xs text-[#202820] leading-relaxed"
             />
           </div>
         </div>
@@ -131,9 +131,9 @@ export default function AdminAboutContentPage() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-xs bg-brand-emerald text-white hover:bg-brand-emerald/90 shadow-md active:scale-95 disabled:opacity-60"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-60 border border-transparent"
           >
-            {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4 text-brand-gold" />}
+            {saving ? <Loader2 className="w-4 h-4 animate-spin text-[#173B2B]" /> : <Save className="w-4 h-4 text-[#173B2B]" />}
             <span>Save About Page Updates</span>
           </button>
         </div>

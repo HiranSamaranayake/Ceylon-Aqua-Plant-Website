@@ -55,33 +55,33 @@ export default function AdminSidebar() {
   return (
     <>
       {/* Mobile Top Header */}
-      <div className="lg:hidden bg-brand-surface text-white px-4 py-3 flex items-center justify-between border-b border-brand-border sticky top-0 z-40">
+      <div className="lg:hidden bg-[#104D35] text-white px-4 py-3 flex items-center justify-between border-b border-[#176B45] sticky top-0 z-40">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full border border-brand-gold/40 bg-brand-dark flex items-center justify-center overflow-hidden">
+          <div className="w-8 h-8 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden">
             <Image src="/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
           </div>
           <span className="text-sm font-bold text-white font-display">CAP Admin Portal</span>
         </div>
         <button
           onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="p-2 rounded-lg text-brand-muted hover:text-white hover:bg-brand-secondary/40"
+          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-[#176B45]"
           aria-label="Toggle admin sidebar"
         >
           {mobileSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Sidebar Navigation */}
+      {/* Sidebar Navigation - Deep Green with Yellow and White Accents */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-brand-surface border-r border-brand-border flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#104D35] border-r border-[#176B45] flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
           mobileSidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
         }`}
       >
         <div>
           {/* Brand Header */}
-          <div className="p-6 border-b border-brand-border/60">
+          <div className="p-6 border-b border-[#176B45]">
             <div className="flex items-center gap-3">
-              <div className="w-11 h-11 rounded-full border border-brand-gold/50 bg-brand-dark flex items-center justify-center overflow-hidden shadow-sm">
+              <div className="w-11 h-11 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="Ceylon Aquatic Plants"
@@ -94,7 +94,7 @@ export default function AdminSidebar() {
                 <span className="text-base font-bold text-white font-display block leading-tight">
                   Admin Console
                 </span>
-                <span className="text-[10px] text-brand-gold uppercase tracking-wider font-semibold">
+                <span className="text-[10px] text-[#F2C94C] uppercase tracking-wider font-bold">
                   Ceylon Aquatic Plants
                 </span>
               </div>
@@ -111,40 +111,40 @@ export default function AdminSidebar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileSidebarOpen(false)}
-                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all group ${
+                  className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all group ${
                     isActive
-                      ? "bg-brand-emerald text-white shadow-md shadow-brand-emerald/20"
-                      : "text-brand-muted hover:text-white hover:bg-brand-secondary/40"
+                      ? "bg-[#176B45] text-white shadow-xs"
+                      : "text-[#E8F3EC] hover:text-white hover:bg-[#176B45]/60"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 ${isActive ? "text-brand-gold" : "text-brand-muted group-hover:text-white"}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? "text-[#F2C94C]" : "text-[#CBD5CE] group-hover:text-white"}`} />
                     <span>{item.name}</span>
                   </div>
-                  {isActive && <ChevronRight className="w-3.5 h-3.5 text-brand-gold" />}
+                  {isActive && <ChevronRight className="w-3.5 h-3.5 text-[#F2C94C]" />}
                 </Link>
               );
             })}
           </nav>
         </div>
 
-        {/* Bottom Actions & View Site */}
-        <div className="p-4 border-t border-brand-border/60 space-y-2">
+        {/* Bottom Actions */}
+        <div className="p-4 border-t border-[#176B45] space-y-2">
           <Link
             href="/"
             target="_blank"
-            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-white hover:bg-brand-secondary/40 transition-colors"
+            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-[#E8F3EC] hover:text-white hover:bg-[#176B45]/60 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <ExternalLink className="w-3.5 h-3.5 text-brand-gold" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#F2C94C]" />
               <span>View Public Website</span>
             </span>
-            <span className="text-[10px] bg-brand-dark px-2 py-0.5 rounded text-brand-gold">Live</span>
+            <span className="text-[10px] bg-[#176B45] px-2 py-0.5 rounded text-[#F2C94C] font-bold">Live</span>
           </Link>
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-red-400 hover:text-red-300 hover:bg-red-950/30 transition-colors"
+            className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs font-bold text-red-300 hover:text-red-200 hover:bg-red-950/40 transition-colors"
           >
             <LogOut className="w-4 h-4" />
             <span>Secure Admin Logout</span>
@@ -156,7 +156,7 @@ export default function AdminSidebar() {
       {mobileSidebarOpen && (
         <div
           onClick={() => setMobileSidebarOpen(false)}
-          className="fixed inset-0 bg-black/60 z-40 lg:hidden backdrop-blur-sm"
+          className="fixed inset-0 bg-black/60 z-40 lg:hidden backdrop-blur-xs"
         />
       )}
     </>

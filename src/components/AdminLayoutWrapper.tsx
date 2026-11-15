@@ -13,11 +13,11 @@ export default function AdminLayoutWrapper({
   const isLoginPage = pathname === "/admin/login";
 
   if (isLoginPage) {
-    return <div className="min-h-screen bg-brand-surface w-full">{children}</div>;
+    return <div className="min-h-screen bg-[#F7FAF7] text-[#202820] w-full">{children}</div>;
   }
 
   return (
-    <div className="min-h-screen bg-brand-cream text-brand-surface flex flex-col lg:flex-row w-full">
+    <div className="min-h-screen bg-[#F7FAF7] text-[#202820] flex flex-col lg:flex-row w-full">
       <AdminSidebar />
       <div className="flex-1 lg:pl-72 flex flex-col min-w-0">
         <main className="p-4 sm:p-8 lg:p-10 flex-1">

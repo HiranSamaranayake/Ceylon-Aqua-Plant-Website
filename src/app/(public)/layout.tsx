@@ -22,7 +22,8 @@ export default function PublicLayout({
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+94-11-234-5678",
+      telephone: "+94-77-704-2100",
+      email: "Ceylonaquaplants@yahoo.com",
       contactType: "Customer Support & Export Inquiries",
       availableLanguage: ["English", "Sinhala"],
     },
@@ -57,7 +58,7 @@ export default function PublicLayout({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
       <Navbar />
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow w-full max-w-full overflow-x-hidden">{children}</main>
       <Footer />
     </>
   );

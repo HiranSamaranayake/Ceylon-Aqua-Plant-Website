@@ -4,16 +4,15 @@
 
 @layer base {
   :root {
-    --primary-bg: #102D24;
-    --secondary-bg: #174C3B;
-    --primary-brand: #247A63;
-    --dark-surface: #0B211B;
-    --accent-gold: #E3B341;
-    --main-light-bg: #F5F4ED;
-    --white: #FFFFFF;
-    --text-dark: #FFFFFF;
-    --text-muted: #CBD5CE;
-    --border-color: #29483C;
+    --main-bg: #FFFFFF;
+    --secondary-bg: #F7FAF7;
+    --primary-green: #176B45;
+    --dark-green: #104D35;
+    --light-green: #E8F3EC;
+    --accent-yellow: #F2C94C;
+    --dark-text: #202820;
+    --secondary-text: #66736A;
+    --border: #E3EAE4;
   }
 
   html {
@@ -22,31 +21,128 @@
   }
 
   body {
-    background-color: var(--main-light-bg);
-    color: #1a2e26;
+    background-color: #FFFFFF;
+    color: #202820;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Custom Scrollbar for rich botanical aesthetic */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B211B;
+  background: #F7FAF7;
 }
 ::-webkit-scrollbar-thumb {
-  background: #247A63;
-  border-radius: 5px;
+  background: #176B45;
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #E3B341;
+  background: #104D35;
 }
 
 /* Selection highlight */
 ::selection {
-  background-color: #247A63;
+  background-color: #176B45;
   color: #FFFFFF;
+}
+
+/* Floating Animations & Left-to-Right Continuous Marquee */
+@keyframes marquee-ltr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0%, 0, 0);
+  }
+}
+
+@keyframes float-gentle-1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(0.4deg);
+  }
+}
+
+@keyframes float-gentle-2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-0.5deg);
+  }
+}
+
+@keyframes float-gentle-3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(0.3deg);
+  }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-ltr:hover,
+.animate-marquee-ltr:active {
+  animation-play-state: paused;
+}
+
+.animate-float-1 {
+  animation: float-gentle-1 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-gentle-2 6.5s ease-in-out 1.2s infinite;
+}
+
+.animate-float-3 {
+  animation: float-gentle-3 5.5s ease-in-out 2.4s infinite;
+}
+
+/* Touch & Mobile Viewport Polish */
+@media (max-width: 640px) {
+  .animate-marquee-ltr {
+    animation-duration: 35s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-ltr {
+    animation: none;
+    overflow-x: auto;
+  }
+  .animate-float-1,
+  .animate-float-2,
+  .animate-float-3 {
+    animation: none;
+  }
+}
+
+/* Mobile Touch Tap Highlight Clean */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  /* Yellow Primary Action Button Theme */
+  .btn-yellow-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-[#173B2B] bg-[#F2C94C] hover:bg-[#E5B735] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F2C94C] focus:ring-offset-2;
+  }
+
+  /* Green Secondary Action Button Theme */
+  .btn-green-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-[#176B45] hover:bg-[#104D35] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:ring-offset-2;
+  }
 }

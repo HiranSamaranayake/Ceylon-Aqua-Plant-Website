@@ -12,40 +12,43 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/aquarium-plants/${category.slug}`}
-      className="group relative rounded-2xl overflow-hidden bg-brand-surface border border-brand-border flex flex-col justify-end p-6 h-80 sm:h-96 shadow-card hover:shadow-card-hover hover:border-brand-gold/60 transition-all duration-500"
+      className="group bg-white rounded-2xl overflow-hidden border border-[#E3EAE4] flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#176B45]/40 hover:-translate-y-1 transition-all duration-300"
     >
-      {/* Background Image */}
-      <Image
-        src={category.image_url}
-        alt={`${category.name} - Ceylon Aquatic Plants`}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-      />
+      {/* Category Image */}
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F7FAF7]">
+        <Image
+          src={category.image_url}
+          alt={`${category.name} - Ceylon Aquatic Plants`}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+        />
 
-      {/* Subtle overlay gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-brand-surface via-brand-surface/70 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-300" />
-
-      {/* Decorative top badge */}
-      <div className="absolute top-4 left-4 z-10">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-dark/80 text-brand-gold backdrop-blur-md border border-brand-gold/30">
-          <Leaf className="w-3 h-3" />
-          <span>Category</span>
-        </span>
+        {/* Top badge */}
+        <div className="absolute top-3 left-3 z-10">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-white text-[#176B45] border border-[#E3EAE4] shadow-xs">
+            <Leaf className="w-3 h-3 text-[#176B45]" />
+            <span>Category</span>
+          </span>
+        </div>
       </div>
 
       {/* Card Body */}
-      <div className="relative z-10 space-y-2.5">
-        <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-brand-gold transition-colors font-display tracking-tight">
-          {category.name}
-        </h3>
-        <p className="text-xs sm:text-sm text-brand-muted line-clamp-2 leading-relaxed">
-          {category.short_description}
-        </p>
+      <div className="p-5 sm:p-6 space-y-2 flex-grow flex flex-col justify-between bg-white">
+        <div>
+          <h3 className="text-lg sm:text-xl font-bold text-[#104D35] group-hover:text-[#176B45] transition-colors font-display tracking-tight">
+            {category.name}
+          </h3>
+          <p className="text-xs sm:text-sm text-[#66736A] line-clamp-2 mt-1 leading-relaxed">
+            {category.short_description}
+          </p>
+        </div>
 
-        <div className="pt-2 flex items-center gap-2 text-xs font-semibold text-brand-gold group-hover:translate-x-1 transition-transform">
-          <span>Explore Variety Range</span>
-          <ArrowRight className="w-4 h-4" />
+        <div className="pt-3 border-t border-[#E3EAE4]">
+          <span className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] group-hover:bg-[#E5B735] text-[#173B2B] shadow-xs group-hover:shadow-md transition-all duration-300">
+            <span>Explore Category</span>
+            <ArrowRight className="w-3.5 h-3.5 text-[#173B2B] group-hover:translate-x-1 transition-transform" />
+          </span>
         </div>
       </div>
     </Link>

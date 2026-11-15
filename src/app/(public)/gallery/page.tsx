@@ -1,6 +1,7 @@
 import React from "react";
 import { getGalleryImages, getGalleryAlbums } from "@/lib/data-service";
 import GalleryView from "@/components/GalleryView";
+import FadeIn from "@/components/animations/FadeIn";
 import { Camera } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -21,20 +22,22 @@ export default async function GalleryPage() {
   ]);
 
   return (
-    <div className="bg-brand-cream min-h-screen">
-      {/* Header Banner */}
-      <section className="bg-brand-dark text-white py-16 sm:py-20 border-b border-brand-border">
+    <div className="bg-white min-h-screen">
+      {/* Header Banner - Clean Light Theme */}
+      <section className="bg-[#F7FAF7] py-14 sm:py-20 border-b border-[#E3EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-brand-gold text-xs font-semibold uppercase tracking-wider mb-4">
-            <Camera className="w-3.5 h-3.5" />
-            <span>High-Resolution Photography</span>
-          </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-display">
-            Aquascaping & Nursery Gallery
-          </h1>
-          <p className="mt-4 text-sm sm:text-base text-brand-muted leading-relaxed">
-            Immerse yourself in our botanical photography collection featuring competition aquascapes, pristine tissue culture laboratories, and submersed plant foliage.
-          </p>
+          <FadeIn direction="up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E3EAE4] text-[#176B45] text-xs font-bold uppercase tracking-wider mb-3">
+              <Camera className="w-3.5 h-3.5" />
+              <span>High-Resolution Photography</span>
+            </div>
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#104D35] font-display">
+              Aquascaping & Nursery Gallery
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-[#66736A] leading-relaxed">
+              Immerse yourself in our botanical photography collection featuring competition aquascapes, pristine tissue culture laboratories, and submersed plant foliage.
+            </p>
+          </FadeIn>
         </div>
       </section>
 

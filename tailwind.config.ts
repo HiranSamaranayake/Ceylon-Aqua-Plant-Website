@@ -10,26 +10,34 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          dark: "#102D24",          // Primary background
-          secondary: "#174C3B",     // Secondary background
-          emerald: "#247A63",       // Primary brand green
-          surface: "#0B211B",       // Dark surface (sidebar, footer)
-          gold: "#E3B341",          // Accent gold/yellow
-          cream: "#F5F4ED",         // Main light background
-          light: "#FFFFFF",         // Pure white
-          muted: "#CBD5CE",         // Secondary text
-          border: "#29483C",        // Borders
+          white: "#FFFFFF",         // Main background
+          secondaryBg: "#F7FAF7",   // Secondary background
+          primary: "#176B45",       // Primary green
+          darkGreen: "#104D35",     // Dark green
+          lightGreen: "#E8F3EC",    // Light green
+          yellow: "#F2C94C",        // Accent yellow
+          darkText: "#202820",      // Dark text
+          muted: "#66736A",         // Secondary text
+          border: "#E3EAE4",        // Border
+          // Aliases for seamless component compatibility
+          dark: "#104D35",
+          secondary: "#176B45",
+          emerald: "#176B45",
+          surface: "#104D35",
+          gold: "#F2C94C",
+          cream: "#F7FAF7",
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        display: ["var(--font-outfit)", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
       },
       boxShadow: {
-        'card': '0 4px 20px -2px rgba(11, 33, 27, 0.08), 0 2px 6px -1px rgba(11, 33, 27, 0.04)',
-        'card-hover': '0 12px 30px -4px rgba(16, 45, 36, 0.15), 0 4px 12px -2px rgba(16, 45, 36, 0.08)',
-        'gold-glow': '0 0 25px -5px rgba(227, 179, 65, 0.35)',
-        'emerald-glow': '0 0 30px -5px rgba(36, 122, 99, 0.4)',
+        'subtle': '0 2px 10px rgba(0, 0, 0, 0.04)',
+        'card': '0 4px 20px -2px rgba(23, 107, 69, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
+        'card-hover': '0 12px 30px -4px rgba(23, 107, 69, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
+        'yellow-glow': '0 0 20px -3px rgba(242, 201, 76, 0.4)',
+        'green-glow': '0 0 25px -4px rgba(23, 107, 69, 0.3)',
       },
     },
   },

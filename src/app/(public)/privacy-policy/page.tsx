@@ -13,33 +13,33 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-brand-cream min-h-screen py-16">
+    <div className="bg-[#F7FAF7] min-h-screen py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-sm space-y-8">
-          
-          <div className="border-b border-gray-100 pb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-emerald/10 text-brand-emerald text-xs font-semibold uppercase tracking-wider mb-2">
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E3EAE4] shadow-xs space-y-8">
+
+          <div className="border-b border-[#E3EAE4] pb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F3EC] text-[#176B45] text-xs font-bold uppercase tracking-wider mb-2">
               <ShieldCheck className="w-4 h-4" />
               <span>Legal Notice</span>
             </div>
-            <h1 className="text-3xl font-bold text-brand-surface font-display">
+            <h1 className="text-3xl font-bold text-[#104D35] font-display">
               Privacy Policy
             </h1>
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-[#66736A] mt-1">
               Effective Date: November 2026 &bull; Ceylon Aquatic Plants (Pvt) Ltd
             </p>
           </div>
 
-          <div className="prose prose-emerald text-sm text-gray-700 space-y-6 leading-relaxed">
+          <div className="prose prose-emerald text-sm text-[#66736A] space-y-6 leading-relaxed">
             <section>
-              <h2 className="text-lg font-bold text-brand-surface mb-2">1. Overview</h2>
+              <h2 className="text-lg font-bold text-[#104D35] mb-2">1. Overview</h2>
               <p>
                 Ceylon Aquatic Plants (Pvt) Ltd (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates this informational showcase website. We are committed to protecting the privacy of our visitors and business partners. This policy outlines how information submitted through our contact forms is handled.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-brand-surface mb-2">2. Information We Collect</h2>
+              <h2 className="text-lg font-bold text-[#104D35] mb-2">2. Information We Collect</h2>
               <p>
                 Because this is an informational showroom and not an online e-commerce platform, we do not require account creation, password registration, or payment card information from general website visitors.
               </p>
@@ -55,34 +55,35 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-brand-surface mb-2">3. How Information is Used</h2>
+              <h2 className="text-lg font-bold text-[#104D35] mb-2">3. How Information is Used</h2>
               <p>
                 Information provided is utilized strictly for responding to your inquiries, preparing botanical export quotations, and providing nursery documentation. We do not sell, rent, or distribute contact details to third-party advertisers.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-brand-surface mb-2">4. Data Security</h2>
+              <h2 className="text-lg font-bold text-[#104D35] mb-2">4. Data Security</h2>
               <p>
                 We implement practical technical and operational controls to protect submitted inquiries against unauthorized access, disclosure, or misuse.
               </p>
             </section>
 
             <section>
-              <h2 className="text-lg font-bold text-brand-surface mb-2">5. Contact & Data Requests</h2>
+              <h2 className="text-lg font-bold text-[#104D35] mb-2">5. Contact & Data Requests</h2>
               <p>
                 If you have questions about your information or wish to request data updates, please reach out to us directly at:
               </p>
-              <p className="mt-2 font-semibold text-brand-surface">
+              <p className="mt-2 font-bold text-[#104D35]">
                 Ceylon Aquatic Plants (Pvt) Ltd<br />
-                Email: <a href="mailto:info@ceylonaquaticplants.com" className="text-brand-emerald underline">info@ceylonaquaticplants.com</a><br />
+                Phone: <a href="tel:+94777042100" className="text-[#176B45] underline">077 704 2100</a><br />
+                Email: <a href="mailto:Ceylonaquaplants@yahoo.com" className="text-[#176B45] underline">Ceylonaquaplants@yahoo.com</a><br />
                 Address: No. 45, Greenhouse Valley Road, Western Province, Sri Lanka
               </p>
             </section>
           </div>
 
-          <div className="pt-6 border-t border-gray-100 flex items-center justify-between text-xs text-gray-500">
-            <Link href="/" className="text-brand-emerald font-semibold hover:underline">
+          <div className="pt-6 border-t border-[#E3EAE4] flex items-center justify-between text-xs text-[#66736A]">
+            <Link href="/" className="text-[#176B45] font-bold hover:underline">
               &larr; Return to Homepage
             </Link>
             <Link href="/terms-and-conditions" className="hover:underline">

@@ -10,9 +10,9 @@ import {
   X, 
   Phone, 
   Mail, 
-  Sparkles,
   ArrowRight,
-  Leaf
+  Leaf,
+  MessageCircle
 } from "lucide-react";
 
 const CATEGORIES = [
@@ -33,7 +33,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -50,78 +50,77 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top micro announcement bar */}
-      <div className="bg-brand-surface text-brand-muted text-xs py-2 px-4 border-b border-brand-border/40 hidden md:block">
+      {/* Top Announcement Bar - Clean Light Green */}
+      <div className="bg-[#E8F3EC] text-[#202820] text-xs py-2 px-4 border-b border-[#E3EAE4] hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-white/90">
-              <Sparkles className="w-3.5 h-3.5 text-brand-gold" />
-              <span>Direct Exporter of Premium Tropical Aquatic Flora from Sri Lanka</span>
-            </span>
+          <div className="flex items-center gap-2 text-[#104D35] font-medium">
+            <span className="w-2 h-2 rounded-full bg-[#F2C94C] inline-block"></span>
+            <span>Direct Exporter of Premium Tropical Aquatic Flora &bull; Sri Lanka</span>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 text-[#66736A]">
             <a 
-              href="tel:+94112345678" 
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              href="tel:+94777042100" 
+              className="flex items-center gap-1.5 hover:text-[#176B45] transition-colors font-medium"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-gold" />
-              <span>+94 11 234 5678</span>
+              <Phone className="w-3.5 h-3.5 text-[#176B45]" />
+              <span>077 704 2100</span>
             </a>
             <a 
-              href="mailto:info@ceylonaquaticplants.com" 
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              href="mailto:Ceylonaquaplants@yahoo.com" 
+              className="flex items-center gap-1.5 hover:text-[#176B45] transition-colors font-medium"
             >
-              <Mail className="w-3.5 h-3.5 text-brand-gold" />
-              <span>info@ceylonaquaticplants.com</span>
+              <Mail className="w-3.5 h-3.5 text-[#176B45]" />
+              <span>Ceylonaquaplants@yahoo.com</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Header */}
+      {/* Main Sticky Header - Clean White Background */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md ${
           isScrolled 
-            ? "bg-brand-dark/95 backdrop-blur-md shadow-xl py-3 border-b border-brand-border" 
-            : "bg-brand-dark py-4 border-b border-brand-border/60"
+            ? "shadow-sm py-2.5 border-b border-[#E3EAE4]" 
+            : "py-3.5 border-b border-[#E3EAE4]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
+            
             {/* Logo */}
             <Link 
               href="/" 
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-lg p-1"
+              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-[#176B45] rounded-lg p-1"
             >
-              <div className="relative w-12 h-12 md:w-14 md:h-14 overflow-hidden rounded-full border border-brand-gold/40 bg-brand-surface flex items-center justify-center shadow-md">
+              <div className="relative w-11 h-11 sm:w-12 sm:h-12 overflow-hidden rounded-full border border-[#E3EAE4] bg-white flex items-center justify-center shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="Ceylon Aquatic Plants (Pvt) Ltd Official Logo"
-                  width={56}
-                  height={56}
+                  width={48}
+                  height={48}
                   priority
                   className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-bold tracking-tight text-white leading-tight font-display">
+                <span className="text-base sm:text-lg font-bold tracking-tight text-[#104D35] leading-tight font-display">
                   Ceylon Aquatic Plants
                 </span>
-                <span className="text-[11px] md:text-xs text-brand-gold tracking-widest uppercase font-semibold">
+                <span className="text-[10px] sm:text-[11px] text-[#66736A] tracking-wider uppercase font-semibold">
                   (Pvt) Ltd
                 </span>
               </div>
             </Link>
 
-            {/* Desktop Navigation Links */}
+            {/* Desktop Navigation Links - Green Text on White */}
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               {/* 1. Home */}
               <Link
                 href="/"
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/"
-                    ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                    : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                    ? "text-[#176B45] bg-[#E8F3EC]"
+                    : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                 }`}
               >
                 Home
@@ -135,54 +134,55 @@ export default function Navbar() {
               >
                 <Link
                   href="/aquarium-plants"
-                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     isAquariumPlantsActive
-                      ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                      : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                      ? "text-[#176B45] bg-[#E8F3EC]"
+                      : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                   }`}
                   aria-expanded={plantsDropdownOpen}
                 >
                   <span>Aquarium Plants</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${plantsDropdownOpen ? "rotate-180 text-brand-gold" : ""}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${plantsDropdownOpen ? "rotate-180 text-[#176B45]" : "text-[#66736A]"}`} />
                 </Link>
 
-                {/* Dropdown Menu */}
+                {/* Dropdown Menu - Clean White Card with Yellow Highlights */}
                 {plantsDropdownOpen && (
-                  <div className="absolute top-full left-0 w-80 pt-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                    <div className="bg-brand-surface rounded-xl shadow-2xl border border-brand-border p-2 backdrop-blur-md">
-                      <div className="px-3 py-2 border-b border-brand-border/60 mb-1">
-                        <p className="text-xs font-semibold text-brand-gold uppercase tracking-wider">
+                  <div className="absolute top-full left-0 w-80 pt-2 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
+                    <div className="bg-white rounded-2xl shadow-xl border border-[#E3EAE4] p-2.5">
+                      <div className="px-3 py-2 border-b border-[#E3EAE4] mb-1 flex items-center justify-between">
+                        <p className="text-xs font-bold text-[#104D35] uppercase tracking-wider">
                           Plant Categories
                         </p>
+                        <span className="w-2 h-2 rounded-full bg-[#F2C94C]"></span>
                       </div>
                       <div className="space-y-1">
                         {CATEGORIES.map((cat) => (
                           <Link
                             key={cat.href}
                             href={cat.href}
-                            className={`flex flex-col px-3 py-2 rounded-lg transition-colors group ${
+                            className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${
                               pathname === cat.href
-                                ? "bg-brand-secondary text-brand-gold"
-                                : "hover:bg-brand-secondary/40 text-white"
+                                ? "bg-[#FFF9E6] border-l-[#F2C94C] text-[#104D35]"
+                                : "hover:bg-[#FFF9E6] hover:border-l-[#F2C94C] text-[#202820]"
                             }`}
                           >
-                            <span className="text-sm font-medium flex items-center justify-between">
+                            <span className="text-sm font-bold flex items-center justify-between text-[#104D35] group-hover:text-[#173B2B]">
                               {cat.name}
-                              <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-brand-gold" />
+                              <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#176B45]" />
                             </span>
-                            <span className="text-xs text-brand-muted line-clamp-1">
+                            <span className="text-xs text-[#66736A] line-clamp-1 mt-0.5 group-hover:text-[#202820]">
                               {cat.desc}
                             </span>
                           </Link>
                         ))}
                       </div>
-                      <div className="mt-2 pt-2 border-t border-brand-border/60 px-2 pb-1">
+                      <div className="mt-2 pt-2 border-t border-[#E3EAE4] px-2 pb-1">
                         <Link
                           href="/aquarium-plants"
-                          className="flex items-center justify-center gap-1.5 text-xs text-brand-gold hover:underline font-medium py-1"
+                          className="flex items-center justify-center gap-1.5 text-xs text-[#176B45] hover:text-[#104D35] hover:underline font-bold py-1.5"
                         >
-                          <Leaf className="w-3.5 h-3.5" />
-                          View Complete Botanical Catalogue
+                          <Leaf className="w-3.5 h-3.5 text-[#176B45]" />
+                          <span>View Complete Plant Catalogue</span>
                         </Link>
                       </div>
                     </div>
@@ -193,10 +193,10 @@ export default function Navbar() {
               {/* 3. Gallery */}
               <Link
                 href="/gallery"
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/gallery"
-                    ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                    : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                    ? "text-[#176B45] bg-[#E8F3EC]"
+                    : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                 }`}
               >
                 Gallery
@@ -205,10 +205,10 @@ export default function Navbar() {
               {/* 4. Video */}
               <Link
                 href="/video"
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/video"
-                    ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                    : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                    ? "text-[#176B45] bg-[#E8F3EC]"
+                    : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                 }`}
               >
                 Video
@@ -217,10 +217,10 @@ export default function Navbar() {
               {/* 5. About */}
               <Link
                 href="/about"
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/about"
-                    ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                    : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                    ? "text-[#176B45] bg-[#E8F3EC]"
+                    : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                 }`}
               >
                 About
@@ -229,24 +229,24 @@ export default function Navbar() {
               {/* 6. Contact */}
               <Link
                 href="/contact"
-                className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/contact"
-                    ? "text-brand-gold bg-brand-secondary/50 font-semibold"
-                    : "text-white/90 hover:text-white hover:bg-brand-secondary/30"
+                    ? "text-[#176B45] bg-[#E8F3EC]"
+                    : "text-[#202820] hover:text-[#176B45] hover:bg-[#F7FAF7]"
                 }`}
               >
                 Contact
               </Link>
             </nav>
 
-            {/* Right Action CTA Button */}
+            {/* Right Action CTA Button - Yellow Primary Action Button */}
             <div className="hidden lg:flex items-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-brand-gold text-brand-surface hover:bg-brand-gold/90 transition-all duration-200 shadow-md hover:shadow-gold-glow active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group"
               >
-                <span>Get in Touch</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Contact Us</span>
+                <ArrowRight className="w-4 h-4 text-[#173B2B] group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
 
@@ -254,29 +254,29 @@ export default function Navbar() {
             <div className="flex lg:hidden items-center gap-2">
               <Link
                 href="/contact"
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-gold text-brand-surface"
+                className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs"
               >
-                Contact
+                Contact Us
               </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-white hover:bg-brand-secondary/50 focus:outline-none focus:ring-2 focus:ring-brand-gold"
+                className="p-2 rounded-lg text-[#202820] hover:bg-[#F7FAF7] focus:outline-none focus:ring-2 focus:ring-[#176B45]"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-[#176B45]" /> : <Menu className="w-6 h-6 text-[#104D35]" />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer */}
+        {/* Mobile Navigation Drawer - Clean White */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-brand-surface border-b border-brand-border px-4 pt-3 pb-6 space-y-2 animate-in fade-in duration-200">
+          <div className="lg:hidden bg-white border-b border-[#E3EAE4] px-4 pt-3 pb-6 space-y-1.5 shadow-lg animate-in fade-in duration-200">
             <Link
               href="/"
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium ${
-                pathname === "/" ? "bg-brand-secondary text-brand-gold font-semibold" : "text-white hover:bg-brand-secondary/30"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/" ? "bg-[#E8F3EC] text-[#176B45]" : "text-[#202820] hover:bg-[#F7FAF7]"
               }`}
             >
               Home
@@ -287,19 +287,19 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobilePlantsOpen(!mobilePlantsOpen)}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-base font-medium ${
-                  isAquariumPlantsActive ? "text-brand-gold bg-brand-secondary/40 font-semibold" : "text-white hover:bg-brand-secondary/30"
+                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                  isAquariumPlantsActive ? "text-[#176B45] bg-[#E8F3EC]" : "text-[#202820] hover:bg-[#F7FAF7]"
                 }`}
               >
                 <span>Aquarium Plants</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-brand-gold" : ""}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#176B45]" : "text-[#66736A]"}`} />
               </button>
 
               {mobilePlantsOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1 bg-brand-dark/40 rounded-lg mt-1 border-l-2 border-brand-gold/60">
+                <div className="pl-4 pr-2 py-1 space-y-1 bg-[#F7FAF7] rounded-xl mt-1 border-l-2 border-[#176B45]">
                   <Link
                     href="/aquarium-plants"
-                    className="block px-3 py-2 text-sm text-brand-gold font-medium"
+                    className="block px-3 py-2 text-xs font-bold text-[#176B45]"
                   >
                     All Aquarium Plants
                   </Link>
@@ -307,8 +307,8 @@ export default function Navbar() {
                     <Link
                       key={cat.href}
                       href={cat.href}
-                      className={`block px-3 py-1.5 rounded-md text-sm ${
-                        pathname === cat.href ? "text-brand-gold font-semibold" : "text-brand-muted hover:text-white"
+                      className={`block px-3 py-1.5 rounded-lg text-xs font-medium ${
+                        pathname === cat.href ? "text-[#176B45] font-bold bg-[#E8F3EC]" : "text-[#66736A] hover:text-[#202820]"
                       }`}
                     >
                       {cat.name}
@@ -320,8 +320,8 @@ export default function Navbar() {
 
             <Link
               href="/gallery"
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium ${
-                pathname === "/gallery" ? "bg-brand-secondary text-brand-gold font-semibold" : "text-white hover:bg-brand-secondary/30"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/gallery" ? "bg-[#E8F3EC] text-[#176B45]" : "text-[#202820] hover:bg-[#F7FAF7]"
               }`}
             >
               Gallery
@@ -329,8 +329,8 @@ export default function Navbar() {
 
             <Link
               href="/video"
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium ${
-                pathname === "/video" ? "bg-brand-secondary text-brand-gold font-semibold" : "text-white hover:bg-brand-secondary/30"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/video" ? "bg-[#E8F3EC] text-[#176B45]" : "text-[#202820] hover:bg-[#F7FAF7]"
               }`}
             >
               Video
@@ -338,8 +338,8 @@ export default function Navbar() {
 
             <Link
               href="/about"
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium ${
-                pathname === "/about" ? "bg-brand-secondary text-brand-gold font-semibold" : "text-white hover:bg-brand-secondary/30"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/about" ? "bg-[#E8F3EC] text-[#176B45]" : "text-[#202820] hover:bg-[#F7FAF7]"
               }`}
             >
               About
@@ -347,20 +347,39 @@ export default function Navbar() {
 
             <Link
               href="/contact"
-              className={`block px-3 py-2.5 rounded-lg text-base font-medium ${
-                pathname === "/contact" ? "bg-brand-secondary text-brand-gold font-semibold" : "text-white hover:bg-brand-secondary/30"
+              className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold ${
+                pathname === "/contact" ? "bg-[#E8F3EC] text-[#176B45]" : "text-[#202820] hover:bg-[#F7FAF7]"
               }`}
             >
               Contact
             </Link>
 
-            <div className="pt-4 border-t border-brand-border/60">
+            <div className="pt-3 border-t border-[#E3EAE4] space-y-2.5">
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <a
+                  href="tel:+94777042100"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#E8F3EC] text-[#176B45] font-bold hover:bg-[#d5e9dc] transition-colors"
+                >
+                  <Phone className="w-3.5 h-3.5 text-[#176B45]" />
+                  <span>077 704 2100</span>
+                </a>
+                <a
+                  href="https://wa.me/94777042100"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-emerald-50 text-[#25D366] font-bold hover:bg-emerald-100 transition-colors"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-lg font-semibold bg-brand-gold text-brand-surface shadow-md"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs active:translate-y-0 hover:-translate-y-0.5 transition-all duration-300"
               >
-                <span>Contact Business Inquiries</span>
-                <ArrowRight className="w-4 h-4" />
+                <span>Contact Us Today</span>
+                <ArrowRight className="w-4 h-4 text-[#173B2B]" />
               </Link>
             </div>
           </div>

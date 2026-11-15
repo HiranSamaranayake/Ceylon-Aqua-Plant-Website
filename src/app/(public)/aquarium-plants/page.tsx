@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import { getCategories, getPlants } from "@/lib/data-service";
 import PlantCard from "@/components/PlantCard";
+import FadeIn from "@/components/animations/FadeIn";
+import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 import { Leaf, Filter } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -42,31 +44,33 @@ export default async function AquariumPlantsPage({
   });
 
   return (
-    <div className="bg-brand-cream min-h-screen">
-      {/* Header Banner */}
-      <section className="bg-brand-dark text-white py-16 sm:py-20 border-b border-brand-border">
+    <div className="bg-white min-h-screen">
+      {/* Header Banner - Clean Light Green */}
+      <section className="bg-[#F7FAF7] py-14 sm:py-18 border-b border-[#E3EAE4]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border text-brand-gold text-xs font-semibold uppercase tracking-wider">
-              <Leaf className="w-3.5 h-3.5" />
-              <span>Cultivated Plant Showcase</span>
+          <FadeIn direction="up">
+            <div className="max-w-3xl space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E3EAE4] text-[#176B45] text-xs font-bold uppercase tracking-wider">
+                <Leaf className="w-3.5 h-3.5" />
+                <span>Cultivated Plant Showcase</span>
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-[#104D35] font-display">
+                Aquarium Plants Catalogue
+              </h1>
+              <p className="text-sm sm:text-base text-[#66736A] leading-relaxed">
+                Explore our diverse collection of live aquatic plants, carefully categorized across bunched stems, established potted specimens, pond botanicals, terrarium varieties, and sterile tissue cultures.
+              </p>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-display">
-              Aquarium Plants Catalogue
-            </h1>
-            <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
-              Explore our diverse collection of live aquatic plants, carefully categorized across bunched stems, established potted specimens, pond botanicals, terrarium varieties, and sterile tissue cultures.
-            </p>
-          </div>
+          </FadeIn>
 
           {/* Quick Category Tabs Bar */}
-          <div className="mt-8 pt-6 border-t border-brand-border/60 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="mt-8 pt-5 border-t border-[#E3EAE4] flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
             <Link
               href="/aquarium-plants"
-              className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
+              className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                 !selectedCat
-                  ? "bg-brand-gold text-brand-surface shadow-sm"
-                  : "bg-brand-surface text-brand-muted hover:text-white border border-brand-border"
+                  ? "bg-[#176B45] text-white shadow-xs"
+                  : "bg-white text-[#202820] hover:bg-[#E8F3EC] border border-[#E3EAE4]"
               }`}
             >
               All Plants ({allPlants.length})
@@ -75,7 +79,7 @@ export default async function AquariumPlantsPage({
               <Link
                 key={cat.id}
                 href={`/aquarium-plants/${cat.slug}`}
-                className="px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-brand-surface text-brand-muted hover:text-white border border-brand-border hover:border-brand-gold/60 transition-all"
+                className="px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-white text-[#202820] hover:bg-[#E8F3EC] hover:text-[#176B45] border border-[#E3EAE4] transition-all"
               >
                 {cat.name}
               </Link>
@@ -87,36 +91,38 @@ export default async function AquariumPlantsPage({
       {/* Main Grid Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-          <p className="text-sm text-gray-600 font-medium">
-            Showing <span className="font-bold text-brand-surface">{filteredPlants.length}</span> botanical specimens
+          <p className="text-sm text-[#66736A] font-medium">
+            Showing <span className="font-bold text-[#104D35]">{filteredPlants.length}</span> botanical specimens
           </p>
 
-          <div className="flex items-center gap-2 text-xs text-gray-500">
-            <Filter className="w-4 h-4 text-brand-emerald" />
-            <span>Select a category above or view dedicated category pages for in-depth botanical notes.</span>
+          <div className="flex items-center gap-2 text-xs text-[#66736A]">
+            <Filter className="w-4 h-4 text-[#176B45]" />
+            <span>Select a category above or browse individual varieties below.</span>
           </div>
         </div>
 
         {filteredPlants.length === 0 ? (
-          <div className="text-center py-20 bg-white rounded-2xl border border-gray-200 p-8">
-            <Leaf className="w-12 h-12 text-brand-emerald/40 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-brand-surface">No plants found</h3>
-            <p className="text-sm text-gray-500 mt-1 max-w-sm mx-auto">
+          <div className="text-center py-20 bg-[#F7FAF7] rounded-2xl border border-[#E3EAE4] p-8">
+            <Leaf className="w-10 h-10 text-[#176B45]/40 mx-auto mb-3" />
+            <h3 className="text-lg font-bold text-[#202820]">No plants found</h3>
+            <p className="text-sm text-[#66736A] mt-1 max-w-sm mx-auto">
               No aquatic plants match your search criteria. Try browsing all categories.
             </p>
             <Link
               href="/aquarium-plants"
-              className="mt-4 inline-block px-5 py-2 rounded-xl text-xs font-semibold bg-brand-emerald text-white"
+              className="mt-4 inline-block px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
             >
               View All Plants
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredPlants.map((plant) => (
-              <PlantCard key={plant.id} plant={plant} />
+              <StaggerItem key={plant.id}>
+                <PlantCard plant={plant} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         )}
       </section>
     </div>

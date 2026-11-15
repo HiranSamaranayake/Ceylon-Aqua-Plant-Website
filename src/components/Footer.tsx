@@ -11,8 +11,7 @@ import {
   Youtube, 
   Linkedin,
   ArrowUpRight,
-  ShieldCheck,
-  Sparkles
+  ShieldCheck
 } from "lucide-react";
 
 const PLANT_CATEGORIES = [
@@ -28,48 +27,46 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-brand-surface text-brand-muted border-t border-brand-border">
+    <footer className="bg-[#104D35] text-[#E8F3EC] border-t border-[#176B45]">
       {/* Top Banner Accent */}
-      <div className="bg-brand-secondary/40 border-b border-brand-border/60 py-6 px-4">
+      <div className="bg-[#0D3E2B] border-b border-[#176B45]/60 py-5 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-full bg-brand-emerald/20 text-brand-gold border border-brand-gold/30">
-              <Sparkles className="w-5 h-5" />
-            </div>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F2C94C] shrink-0"></span>
             <div>
-              <p className="text-white font-semibold text-sm">International Plant Inquiries & Export Showcase</p>
-              <p className="text-xs text-brand-muted">Direct from our nursery basins in Western Province, Sri Lanka to global partners.</p>
+              <p className="text-white font-bold text-sm">International Plant Inquiries & Export Showcase</p>
+              <p className="text-xs text-[#CBD5CE]">Direct from our nursery basins in Western Province, Sri Lanka to global partners.</p>
             </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94777042100"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xs"
             >
               <MessageCircle className="w-4 h-4" />
-              <span>Chat on WhatsApp</span>
+              <span>WhatsApp Inquiry</span>
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold bg-brand-gold text-brand-surface hover:bg-brand-gold/90 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300"
             >
               <span>Submit Inquiry</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#173B2B]" />
             </Link>
           </div>
         </div>
       </div>
 
       {/* Main Footer Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           
           {/* Col 1 & 2: Brand Information */}
-          <div className="lg:col-span-2 space-y-5">
+          <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3 group inline-block">
-              <div className="w-12 h-12 rounded-full border border-brand-gold/50 bg-brand-dark flex items-center justify-center overflow-hidden">
+              <div className="w-12 h-12 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden shadow-xs">
                 <Image
                   src="/logo.png"
                   alt="Ceylon Aquatic Plants (Pvt) Ltd"
@@ -79,23 +76,23 @@ export default function Footer() {
                 />
               </div>
               <div>
-                <span className="text-xl font-bold text-white tracking-tight font-display block">
+                <span className="text-lg font-bold text-white tracking-tight font-display block">
                   Ceylon Aquatic Plants
                 </span>
-                <span className="text-xs text-brand-gold tracking-widest uppercase font-semibold">
+                <span className="text-xs text-[#F2C94C] tracking-widest uppercase font-semibold">
                   (Pvt) Ltd
                 </span>
               </div>
             </Link>
-            <p className="text-sm text-brand-muted leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[#CBD5CE] leading-relaxed max-w-sm">
               Dedicated grower and showcase provider of premium tropical aquatic plants, tissue-culture varieties, and natural pond flora organically cultivated under Sri Lanka&apos;s natural year-round sunshine.
             </p>
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-2.5 pt-2">
               <a
                 href="https://facebook.com/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand-dark border border-brand-border flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -104,7 +101,7 @@ export default function Footer() {
                 href="https://instagram.com/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand-dark border border-brand-border flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -113,7 +110,7 @@ export default function Footer() {
                 href="https://youtube.com/@ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand-dark border border-brand-border flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -122,7 +119,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-brand-dark border border-brand-border flex items-center justify-center text-brand-muted hover:text-white hover:border-brand-gold transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -132,10 +129,10 @@ export default function Footer() {
 
           {/* Col 3: Navigation Menu */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
               Explore Website
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#CBD5CE]">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -171,10 +168,10 @@ export default function Footer() {
 
           {/* Col 4: Plant Categories */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-gold mb-4">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2C94C] mb-3">
               Plant Categories
             </h3>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#CBD5CE]">
               {PLANT_CATEGORIES.map((cat) => (
                 <li key={cat.href}>
                   <Link href={cat.href} className="hover:text-white transition-colors">
@@ -187,35 +184,35 @@ export default function Footer() {
 
           {/* Col 5: Contact Coordinates */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-white mb-4">
-              Get in Touch
+            <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
+              Contact Details
             </h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-brand-gold shrink-0 mt-0.5" />
+            <ul className="space-y-2.5 text-xs text-[#CBD5CE]">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-4 h-4 text-[#F2C94C] shrink-0 mt-0.5" />
                 <span>No. 45, Greenhouse Valley Road, Western Province, Sri Lanka</span>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-brand-gold shrink-0" />
-                <a href="tel:+94112345678" className="hover:text-white transition-colors">
-                  +94 11 234 5678
+              <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-[#F2C94C] shrink-0" />
+                <a href="tel:+94777042100" className="hover:text-white transition-colors">
+                  077 704 2100
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
+              <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
                 <a 
-                  href="https://wa.me/94771234567" 
+                  href="https://wa.me/94777042100" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  +94 77 123 4567
+                  077 704 2100
                 </a>
               </li>
-              <li className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-brand-gold shrink-0" />
-                <a href="mailto:info@ceylonaquaticplants.com" className="hover:text-white transition-colors">
-                  info@ceylonaquaticplants.com
+              <li className="flex items-center gap-2">
+                <Mail className="w-4 h-4 text-[#F2C94C] shrink-0" />
+                <a href="mailto:Ceylonaquaplants@yahoo.com" className="hover:text-white transition-colors break-all">
+                  Ceylonaquaplants@yahoo.com
                 </a>
               </li>
             </ul>
@@ -224,11 +221,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="mt-14 pt-8 border-t border-brand-border/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p className="text-brand-muted">
+        <div className="mt-12 pt-6 border-t border-[#176B45]/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#CBD5CE] text-center md:text-left">
+          <p>
             &copy; {currentYear} Ceylon Aquatic Plants (Pvt) Ltd. All rights reserved. Registered in Sri Lanka.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-5">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
@@ -237,7 +234,7 @@ export default function Footer() {
             </Link>
             <Link 
               href="/admin/login" 
-              className="text-brand-muted/60 hover:text-brand-gold transition-colors flex items-center gap-1"
+              className="text-[#CBD5CE]/70 hover:text-[#F2C94C] transition-colors flex items-center gap-1"
             >
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Admin Portal</span>

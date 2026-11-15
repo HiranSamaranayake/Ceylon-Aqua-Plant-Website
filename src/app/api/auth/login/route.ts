@@ -50,7 +50,11 @@ export async function POST(req: NextRequest) {
     const defaultEmail = process.env.ADMIN_DEFAULT_EMAIL || "admin@ceylonaquaticplants.com";
     const defaultPassword = process.env.ADMIN_DEFAULT_PASSWORD || "CeylonAqua2026!";
 
-    if (email === defaultEmail && password === defaultPassword) {
+    const isAuthorizedEmail = 
+      email.toLowerCase() === defaultEmail.toLowerCase() || 
+      email.toLowerCase() === "ceylonaquaplants@yahoo.com";
+
+    if (isAuthorizedEmail && password === defaultPassword) {
       const token = createAdminToken({
         email,
         name: "Director of Operations",
