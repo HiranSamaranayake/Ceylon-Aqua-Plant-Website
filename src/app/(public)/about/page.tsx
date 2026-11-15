@@ -1,0 +1,236 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/image";
+import { getWebsiteSettings, getDocuments } from "@/lib/data-service";
+import { 
+  Building2, 
+  Target, 
+  Compass, 
+  Sparkles, 
+  FileText, 
+  Download, 
+  CheckCircle2, 
+  Sun, 
+  Droplets, 
+  ShieldCheck 
+} from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Tropical Aquatic Plant Exporter Sri Lanka",
+  description: "Learn about Ceylon Aquatic Plants (Pvt) Ltd. Our greenhouse cultivation, sustainable water systems, biosecure propagation, and mission to deliver pristine live aquatic flora.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
+export const revalidate = 60;
+
+export default async function AboutPage() {
+  const [settings, documents] = await Promise.all([
+    getWebsiteSettings(),
+    getDocuments({ publishedOnly: true }),
+  ]);
+
+  return (
+    <div className="bg-brand-cream min-h-screen">
+      {/* Header Banner */}
+      <section className="bg-brand-dark text-white py-20 border-b border-brand-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-brand-surface border border-brand-border text-brand-gold text-xs font-semibold uppercase tracking-wider mb-4">
+            <Building2 className="w-3.5 h-3.5" />
+            <span>Company Profile</span>
+          </div>
+          <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-display">
+            About Ceylon Aquatic Plants
+          </h1>
+          <p className="mt-4 text-base text-brand-muted leading-relaxed">
+            Cultivating biological harmony and vibrant aquatic greenery under Sri Lanka&apos;s equatorial sunshine.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 1: Detailed Story & Nursery Background */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-xs font-bold text-brand-emerald uppercase tracking-widest">
+              Natural Nursery Heritage
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-brand-surface font-display leading-tight">
+              Sustainably Nurturing Aquatic Life in Ceylon
+            </h2>
+            <div className="space-y-4 text-sm sm:text-base text-gray-700 leading-relaxed">
+              <p>
+                {settings.about_summary}
+              </p>
+              <p>
+                Our cultivation facilities integrate traditional horticultural expertise with modern biological filtration. By utilizing naturally filtered spring and rain catchment waters combined with controlled organic nutrition, we produce hardy aquatic plants with exceptional pigmentation, thick rhizomes, and vibrant submersed leaves.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 pt-4">
+              <div className="p-4 rounded-xl bg-white border border-gray-200">
+                <Sun className="w-5 h-5 text-brand-gold mb-2" />
+                <h4 className="text-sm font-bold text-brand-surface">Natural Photoperiod</h4>
+                <p className="text-xs text-gray-500 mt-1">Year-round equatorial sunlight powering robust photosynthesis.</p>
+              </div>
+              <div className="p-4 rounded-xl bg-white border border-gray-200">
+                <Droplets className="w-5 h-5 text-brand-emerald mb-2" />
+                <h4 className="text-sm font-bold text-brand-surface">Spring Water Flow</h4>
+                <p className="text-xs text-gray-500 mt-1">Pure low-TDS water supporting sensitive botanical varieties.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-200 mt-8">
+              <Image
+                src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80"
+                alt="Aquatic plant propagation basin"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg border border-gray-200 -mt-4">
+              <Image
+                src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80"
+                alt="Sterile tissue culture laboratory container"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Section 2: Vision & Mission */}
+      <section className="py-20 bg-brand-surface text-white border-y border-brand-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Vision */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-brand-dark/80 border border-brand-border space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-brand-secondary border border-brand-border flex items-center justify-center text-brand-gold">
+                <Compass className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
+                Our Vision
+              </h3>
+              <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
+                {settings.vision}
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="p-8 sm:p-10 rounded-3xl bg-brand-dark/80 border border-brand-border space-y-4">
+              <div className="w-12 h-12 rounded-2xl bg-brand-secondary border border-brand-border flex items-center justify-center text-brand-emerald">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
+                Our Mission
+              </h3>
+              <p className="text-sm sm:text-base text-brand-muted leading-relaxed">
+                {settings.mission}
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Core Values */}
+      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="text-xs font-bold text-brand-emerald uppercase tracking-widest">
+            Foundational Principles
+          </span>
+          <h2 className="text-2xl sm:text-4xl font-extrabold text-brand-surface mt-2 font-display">
+            Our Core Values
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {settings.core_values.map((val, idx) => (
+            <div
+              key={idx}
+              className="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-brand-cream text-brand-emerald flex items-center justify-center font-bold text-sm mb-4">
+                  0{idx + 1}
+                </div>
+                <h3 className="text-base font-bold text-brand-surface mb-2 font-display">
+                  {val.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  {val.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 4: Approved PDF Documentation & Downloads */}
+      {documents.length > 0 && (
+        <section className="py-20 bg-white border-t border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl mb-12">
+              <span className="text-xs font-bold text-brand-emerald uppercase tracking-widest">
+                Official Literature & Guides
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-brand-surface mt-1 font-display">
+                Download Catalogues & Guides
+              </h2>
+              <p className="text-sm text-gray-600 mt-2">
+                Access official PDF literature including our complete species catalogue, care standards, and packaging specifications.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {documents.map((doc) => (
+                <div
+                  key={doc.id}
+                  className="p-6 rounded-2xl bg-brand-cream/60 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-xl bg-brand-dark text-brand-gold shrink-0">
+                      <FileText className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-brand-surface font-display">
+                        {doc.title}
+                      </h4>
+                      {doc.description && (
+                        <p className="text-xs text-gray-600 mt-1 max-w-md">
+                          {doc.description}
+                        </p>
+                      )}
+                      <span className="inline-block mt-2 text-[11px] font-semibold text-brand-emerald">
+                        Format: PDF {doc.file_size ? `• ${doc.file_size}` : ""}
+                      </span>
+                    </div>
+                  </div>
+
+                  <a
+                    href={doc.file_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold bg-brand-dark text-white hover:bg-brand-secondary transition-colors shrink-0 shadow-sm"
+                  >
+                    <Download className="w-3.5 h-3.5 text-brand-gold" />
+                    <span>Download PDF</span>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+    </div>
+  );
+}

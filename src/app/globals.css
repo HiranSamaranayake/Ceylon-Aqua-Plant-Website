@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-bg: #102D24;
+    --secondary-bg: #174C3B;
+    --primary-brand: #247A63;
+    --dark-surface: #0B211B;
+    --accent-gold: #E3B341;
+    --main-light-bg: #F5F4ED;
+    --white: #FFFFFF;
+    --text-dark: #FFFFFF;
+    --text-muted: #CBD5CE;
+    --border-color: #29483C;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    background-color: var(--main-light-bg);
+    color: #1a2e26;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar for rich botanical aesthetic */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0B211B;
+}
+::-webkit-scrollbar-thumb {
+  background: #247A63;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E3B341;
+}
+
+/* Selection highlight */
+::selection {
+  background-color: #247A63;
+  color: #FFFFFF;
+}
