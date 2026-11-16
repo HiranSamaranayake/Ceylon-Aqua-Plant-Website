@@ -62,51 +62,50 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Sticky Header - Beautiful Blue Gradient Background */}
+      {/* Main Sticky Header - Clean White Background */}
       <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-gradient-to-r from-[#0E7CDB] to-[#4FC3F7] ${
+        className={`sticky top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md ${
           isScrolled 
-            ? "shadow-lg py-2.5 border-b border-[#0E7CDB]/30" 
-            : "shadow-md py-3.5 border-b border-[#0E7CDB]/20"
+            ? "shadow-sm py-1.5 border-b border-[#E5E7EB]" 
+            : "shadow-xs py-2 sm:py-3 border-b border-[#E5E7EB]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             
-            {/* Logo */}
+            {/* Logo - Horizontal Brand Logo (Emblem + Typography) */}
             <Link 
               href="/" 
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-white/80 rounded-lg p-1"
+              className="flex items-center group focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] rounded-xl p-1 shrink-0"
+              aria-label="Ceylon Aquatic Plants (Pvt) Ltd"
             >
-              <div className="relative w-11 h-11 sm:w-12 sm:h-12 overflow-hidden rounded-full border border-white/50 bg-white flex items-center justify-center shadow-xs">
+              <div 
+                className={`relative transition-all duration-300 ${
+                  isScrolled 
+                    ? "h-11 w-32 sm:h-13 sm:w-36 md:h-14 md:w-40" 
+                    : "h-13 w-36 sm:h-16 sm:w-44 md:h-18 md:w-48 lg:h-20 lg:w-56"
+                }`}
+              >
                 <Image
-                  src="/logo.png"
+                  src="/navbar-logo.jpg"
                   alt="Ceylon Aquatic Plants (Pvt) Ltd Official Logo"
-                  width={48}
-                  height={48}
+                  fill
+                  sizes="(max-width: 640px) 144px, (max-width: 768px) 180px, 224px"
                   priority
-                  className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
+                  className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-base sm:text-lg font-bold tracking-tight text-white leading-tight font-display drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)]">
-                  Ceylon Aquatic Plants
-                </span>
-                <span className="text-[10px] sm:text-[11px] text-white/90 tracking-wider uppercase font-semibold">
-                  (Pvt) Ltd
-                </span>
               </div>
             </Link>
 
-            {/* Desktop Navigation Links - White Text with Yellow Underline & Highlights */}
+            {/* Desktop Navigation Links - Navy Blue Text with Dark Green Hover & Yellow Underline Active */}
             <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
               {/* 1. Home */}
               <Link
                 href="/"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/"
-                    ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                    : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                    ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                 }`}
               >
                 Home
@@ -122,13 +121,13 @@ export default function Navbar() {
                   href="/aquarium-plants"
                   className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                     isAquariumPlantsActive
-                      ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                      : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                      ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                      : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                   }`}
                   aria-expanded={plantsDropdownOpen}
                 >
                   <span>Aquarium Plants</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${plantsDropdownOpen ? "rotate-180 text-[#F7C600]" : "text-white/80"}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${plantsDropdownOpen ? "rotate-180 text-[#0B7A0B]" : isAquariumPlantsActive ? "text-[#0B7A0B]" : "text-[#6B7280]"}`} />
                 </Link>
 
                 {/* Dropdown Menu - Clean White Card with Yellow Highlights */}
@@ -148,13 +147,13 @@ export default function Navbar() {
                             href={cat.href}
                             className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${
                               pathname === cat.href
-                                ? "bg-[#EFF6FF] border-l-[#0E7CDB] text-[#0A2D5B]"
-                                : "hover:bg-[#EFF6FF] hover:border-l-[#0E7CDB] text-[#0A2D5B]"
+                                ? "bg-[#EFF6FF] border-l-[#0B7A0B] text-[#0B7A0B] font-bold"
+                                : "hover:bg-[#EFF6FF] hover:border-l-[#0B7A0B] text-[#0A2D5B]"
                             }`}
                           >
-                            <span className="text-sm font-bold flex items-center justify-between text-[#0A2D5B] group-hover:text-[#0E7CDB]">
+                            <span className="text-sm font-bold flex items-center justify-between group-hover:text-[#0B7A0B]">
                               {cat.name}
-                              <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#0E7CDB]" />
+                              <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#0B7A0B]" />
                             </span>
                             <span className="text-xs text-[#6B7280] line-clamp-1 mt-0.5">
                               {cat.desc}
@@ -181,8 +180,8 @@ export default function Navbar() {
                 href="/gallery"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/gallery"
-                    ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                    : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                    ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                 }`}
               >
                 Gallery
@@ -193,8 +192,8 @@ export default function Navbar() {
                 href="/video"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/video"
-                    ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                    : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                    ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                 }`}
               >
                 Video
@@ -205,8 +204,8 @@ export default function Navbar() {
                 href="/about"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/about"
-                    ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                    : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                    ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                 }`}
               >
                 About
@@ -217,8 +216,8 @@ export default function Navbar() {
                 href="/contact"
                 className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
                   pathname === "/contact"
-                    ? "text-white font-bold bg-white/15 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
-                    : "text-white/95 hover:text-[#F7C600] hover:bg-white/10"
+                    ? "text-[#0B7A0B] font-bold after:absolute after:bottom-0 after:left-3.5 after:right-3.5 after:h-0.5 after:bg-[#F7C600] after:rounded-full"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-[#F8FAFC]"
                 }`}
               >
                 Contact
@@ -237,7 +236,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Toggle Button */}
-            <div className="flex lg:hidden items-center gap-2">
+            <div className="flex lg:hidden items-center gap-3">
               <Link
                 href="/contact"
                 className="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs"
@@ -247,22 +246,22 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-white hover:bg-white/15 focus:outline-none focus:ring-2 focus:ring-white"
+                className="p-2 rounded-lg text-[#0A2D5B] hover:bg-[#F8FAFC] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B]"
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6 text-[#F7C600]" /> : <Menu className="w-6 h-6 text-white" />}
+                {mobileMenuOpen ? <X className="w-6 h-6 text-[#0B7A0B]" /> : <Menu className="w-6 h-6 text-[#0A2D5B]" />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer - Beautiful Blue Gradient */}
+        {/* Mobile Navigation Drawer - Clean White */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-gradient-to-b from-[#0E7CDB] to-[#0A2D5B] border-b border-white/20 px-4 pt-3 pb-6 space-y-1.5 shadow-xl animate-in fade-in duration-200">
+          <div className="lg:hidden bg-white border-b border-[#E5E7EB] px-4 pt-3 pb-6 space-y-1.5 shadow-lg animate-in fade-in duration-200">
             <Link
               href="/"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                pathname === "/" ? "bg-white/20 text-[#F7C600] border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                pathname === "/" ? "bg-[#F0FDF4] text-[#0B7A0B] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
               }`}
             >
               Home
@@ -274,18 +273,18 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setMobilePlantsOpen(!mobilePlantsOpen)}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                  isAquariumPlantsActive ? "text-[#F7C600] bg-white/20 border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                  isAquariumPlantsActive ? "text-[#0B7A0B] bg-[#F0FDF4] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
                 }`}
               >
                 <span>Aquarium Plants</span>
-                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#F7C600]" : "text-white/80"}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#0B7A0B]" : "text-[#6B7280]"}`} />
               </button>
 
               {mobilePlantsOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1 bg-black/15 rounded-xl mt-1 border-l-2 border-[#F7C600]">
+                <div className="pl-4 pr-2 py-1 space-y-1 bg-[#F8FAFC] rounded-xl mt-1 border-l-2 border-[#0B7A0B]">
                   <Link
                     href="/aquarium-plants"
-                    className="block px-3 py-2 text-xs font-bold text-[#F7C600]"
+                    className="block px-3 py-2 text-xs font-bold text-[#0B7A0B]"
                   >
                     All Aquarium Plants
                   </Link>
@@ -294,7 +293,7 @@ export default function Navbar() {
                       key={cat.href}
                       href={cat.href}
                       className={`block px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                        pathname === cat.href ? "text-[#F7C600] font-bold bg-white/15" : "text-white/80 hover:text-white"
+                        pathname === cat.href ? "text-[#0B7A0B] font-bold bg-white" : "text-[#6B7280] hover:text-[#0A2D5B]"
                       }`}
                     >
                       {cat.name}
@@ -307,7 +306,7 @@ export default function Navbar() {
             <Link
               href="/gallery"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                pathname === "/gallery" ? "bg-white/20 text-[#F7C600] border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                pathname === "/gallery" ? "bg-[#F0FDF4] text-[#0B7A0B] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
               }`}
             >
               Gallery
@@ -316,7 +315,7 @@ export default function Navbar() {
             <Link
               href="/video"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                pathname === "/video" ? "bg-white/20 text-[#F7C600] border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                pathname === "/video" ? "bg-[#F0FDF4] text-[#0B7A0B] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
               }`}
             >
               Video
@@ -325,7 +324,7 @@ export default function Navbar() {
             <Link
               href="/about"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                pathname === "/about" ? "bg-white/20 text-[#F7C600] border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                pathname === "/about" ? "bg-[#F0FDF4] text-[#0B7A0B] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
               }`}
             >
               About
@@ -334,13 +333,13 @@ export default function Navbar() {
             <Link
               href="/contact"
               className={`block px-3.5 py-2.5 rounded-xl text-sm font-bold transition-all ${
-                pathname === "/contact" ? "bg-white/20 text-[#F7C600] border-l-4 border-[#F7C600]" : "text-white hover:bg-white/10 hover:text-[#F7C600]"
+                pathname === "/contact" ? "bg-[#F0FDF4] text-[#0B7A0B] border-l-4 border-[#F7C600]" : "text-[#0A2D5B] hover:bg-[#F8FAFC] hover:text-[#0B7A0B]"
               }`}
             >
               Contact
             </Link>
 
-            <div className="pt-3 border-t border-white/20">
+            <div className="pt-3 border-t border-[#E5E7EB]">
               <Link
                 href="/contact"
                 className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs active:translate-y-0 hover:-translate-y-0.5 transition-all duration-300"
