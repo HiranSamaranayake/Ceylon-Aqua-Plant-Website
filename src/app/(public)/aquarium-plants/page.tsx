@@ -46,31 +46,31 @@ export default async function AquariumPlantsPage({
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner - Clean Light Green */}
-      <section className="bg-[#F7FAF7] py-14 sm:py-18 border-b border-[#E3EAE4]">
+      <section className="bg-[#F8FAFC] py-14 sm:py-18 border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="max-w-3xl space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E3EAE4] text-[#176B45] text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
                 <Leaf className="w-3.5 h-3.5" />
                 <span>Cultivated Plant Showcase</span>
               </div>
-              <h1 className="text-3xl sm:text-5xl font-extrabold text-[#104D35] font-display">
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0A2D5B] font-display">
                 Aquarium Plants Catalogue
               </h1>
-              <p className="text-sm sm:text-base text-[#66736A] leading-relaxed">
+              <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed">
                 Explore our diverse collection of live aquatic plants, carefully categorized across bunched stems, established potted specimens, pond botanicals, terrarium varieties, and sterile tissue cultures.
               </p>
             </div>
           </FadeIn>
 
           {/* Quick Category Tabs Bar */}
-          <div className="mt-8 pt-5 border-t border-[#E3EAE4] flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+          <div className="mt-8 pt-5 border-t border-[#E5E7EB] flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
             <Link
               href="/aquarium-plants"
               className={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                 !selectedCat
-                  ? "bg-[#176B45] text-white shadow-xs"
-                  : "bg-white text-[#202820] hover:bg-[#E8F3EC] border border-[#E3EAE4]"
+                  ? "bg-[#0B7A0B] text-white shadow-xs"
+                  : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] border border-[#E5E7EB]"
               }`}
             >
               All Plants ({allPlants.length})
@@ -79,7 +79,7 @@ export default async function AquariumPlantsPage({
               <Link
                 key={cat.id}
                 href={`/aquarium-plants/${cat.slug}`}
-                className="px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-white text-[#202820] hover:bg-[#E8F3EC] hover:text-[#176B45] border border-[#E3EAE4] transition-all"
+                className="px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#E5E7EB] transition-all"
               >
                 {cat.name}
               </Link>
@@ -91,26 +91,26 @@ export default async function AquariumPlantsPage({
       {/* Main Grid Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-          <p className="text-sm text-[#66736A] font-medium">
-            Showing <span className="font-bold text-[#104D35]">{filteredPlants.length}</span> botanical specimens
+          <p className="text-sm text-[#6B7280] font-medium">
+            Showing <span className="font-bold text-[#0A2D5B]">{filteredPlants.length}</span> botanical specimens
           </p>
 
-          <div className="flex items-center gap-2 text-xs text-[#66736A]">
-            <Filter className="w-4 h-4 text-[#176B45]" />
+          <div className="flex items-center gap-2 text-xs text-[#6B7280]">
+            <Filter className="w-4 h-4 text-[#0B7A0B]" />
             <span>Select a category above or browse individual varieties below.</span>
           </div>
         </div>
 
         {filteredPlants.length === 0 ? (
-          <div className="text-center py-20 bg-[#F7FAF7] rounded-2xl border border-[#E3EAE4] p-8">
-            <Leaf className="w-10 h-10 text-[#176B45]/40 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-[#202820]">No plants found</h3>
-            <p className="text-sm text-[#66736A] mt-1 max-w-sm mx-auto">
+          <div className="text-center py-20 bg-[#F8FAFC] rounded-2xl border border-[#E5E7EB] p-8">
+            <Leaf className="w-10 h-10 text-[#0B7A0B]/40 mx-auto mb-3" />
+            <h3 className="text-lg font-bold text-[#0A2D5B]">No plants found</h3>
+            <p className="text-sm text-[#6B7280] mt-1 max-w-sm mx-auto">
               No aquatic plants match your search criteria. Try browsing all categories.
             </p>
             <Link
               href="/aquarium-plants"
-              className="mt-4 inline-block px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="mt-4 inline-block px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
             >
               View All Plants
             </Link>

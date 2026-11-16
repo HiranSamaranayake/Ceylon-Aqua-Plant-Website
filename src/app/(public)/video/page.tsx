@@ -40,17 +40,17 @@ export default async function VideoPage() {
       ))}
 
       {/* Header Banner - Clean Light Theme */}
-      <section className="bg-[#F7FAF7] py-14 sm:py-20 border-b border-[#E3EAE4]">
+      <section className="bg-[#F8FAFC] py-14 sm:py-20 border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <FadeIn direction="up">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E3EAE4] text-[#176B45] text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-3">
               <Play className="w-3.5 h-3.5" />
               <span>Video Documentary & Demos</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#104D35] font-display">
+            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0A2D5B] font-display">
               Video Showcase
             </h1>
-            <p className="mt-3 text-sm sm:text-base text-[#66736A] leading-relaxed">
+            <p className="mt-3 text-sm sm:text-base text-[#6B7280] leading-relaxed">
               Experience our nursery facilities, propagation procedures, and artistic aquascapes in motion.
             </p>
           </FadeIn>

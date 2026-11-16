@@ -27,15 +27,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#104D35] text-[#E8F3EC] border-t border-[#176B45]">
+    <footer className="bg-[#0B7A0B] text-[#F0FDF4] border-t border-[#34C759]/40">
       {/* Top Banner Accent */}
-      <div className="bg-[#0D3E2B] border-b border-[#176B45]/60 py-5 px-4">
+      <div className="bg-[#085808] border-b border-[#34C759]/40 py-5 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <div className="flex items-center gap-3">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#F2C94C] shrink-0"></span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#F7C600] shrink-0"></span>
             <div>
               <p className="text-white font-bold text-sm">International Plant Inquiries & Export Showcase</p>
-              <p className="text-xs text-[#CBD5CE]">Direct from our nursery basins in Western Province, Sri Lanka to global partners.</p>
+              <p className="text-xs text-[#E5E7EB]">Direct from our nursery basins in Godagama, Homagama, Colombo to global partners.</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
@@ -50,10 +50,10 @@ export default function Footer() {
             </a>
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300"
             >
               <span>Submit Inquiry</span>
-              <ArrowUpRight className="w-4 h-4 text-[#173B2B]" />
+              <ArrowUpRight className="w-4 h-4 text-[#0A2D5B]" />
             </Link>
           </div>
         </div>
@@ -79,12 +79,12 @@ export default function Footer() {
                 <span className="text-lg font-bold text-white tracking-tight font-display block">
                   Ceylon Aquatic Plants
                 </span>
-                <span className="text-xs text-[#F2C94C] tracking-widest uppercase font-semibold">
+                <span className="text-xs text-[#F7C600] tracking-widest uppercase font-semibold">
                   (Pvt) Ltd
                 </span>
               </div>
             </Link>
-            <p className="text-xs sm:text-sm text-[#CBD5CE] leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[#E5E7EB] leading-relaxed max-w-sm">
               Dedicated grower and showcase provider of premium tropical aquatic plants, tissue-culture varieties, and natural pond flora organically cultivated under Sri Lanka&apos;s natural year-round sunshine.
             </p>
             <div className="flex items-center gap-2.5 pt-2">
@@ -92,7 +92,7 @@ export default function Footer() {
                 href="https://facebook.com/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#0B7A0B] text-white hover:bg-[#F7C600] hover:text-[#0A2D5B] flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -101,7 +101,7 @@ export default function Footer() {
                 href="https://instagram.com/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#0B7A0B] text-white hover:bg-[#F7C600] hover:text-[#0A2D5B] flex items-center justify-center transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -110,7 +110,7 @@ export default function Footer() {
                 href="https://youtube.com/@ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#0B7A0B] text-white hover:bg-[#F7C600] hover:text-[#0A2D5B] flex items-center justify-center transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="w-4 h-4" />
@@ -119,7 +119,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/ceylonaquaticplants"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-lg bg-[#176B45] text-white hover:bg-[#F2C94C] hover:text-[#104D35] flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-[#0B7A0B] text-white hover:bg-[#F7C600] hover:text-[#0A2D5B] flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -132,7 +132,7 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
               Explore Website
             </h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-[#CBD5CE]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#E5E7EB]">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -168,10 +168,10 @@ export default function Footer() {
 
           {/* Col 4: Plant Categories */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F2C94C] mb-3">
+            <h3 className="text-xs font-bold uppercase tracking-wider text-[#F7C600] mb-3">
               Plant Categories
             </h3>
-            <ul className="space-y-2 text-xs sm:text-sm text-[#CBD5CE]">
+            <ul className="space-y-2 text-xs sm:text-sm text-[#E5E7EB]">
               {PLANT_CATEGORIES.map((cat) => (
                 <li key={cat.href}>
                   <Link href={cat.href} className="hover:text-white transition-colors">
@@ -187,13 +187,13 @@ export default function Footer() {
             <h3 className="text-xs font-bold uppercase tracking-wider text-white mb-3">
               Contact Details
             </h3>
-            <ul className="space-y-2.5 text-xs text-[#CBD5CE]">
+            <ul className="space-y-2.5 text-xs text-[#E5E7EB]">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-[#F2C94C] shrink-0 mt-0.5" />
-                <span>No. 45, Greenhouse Valley Road, Western Province, Sri Lanka</span>
+                <MapPin className="w-4 h-4 text-[#F7C600] shrink-0 mt-0.5" />
+                <span>No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo</span>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-[#F2C94C] shrink-0" />
+                <Phone className="w-4 h-4 text-[#F7C600] shrink-0" />
                 <a href="tel:+94777042100" className="hover:text-white transition-colors">
                   077 704 2100
                 </a>
@@ -210,7 +210,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-[#F2C94C] shrink-0" />
+                <Mail className="w-4 h-4 text-[#F7C600] shrink-0" />
                 <a href="mailto:Ceylonaquaplants@yahoo.com" className="hover:text-white transition-colors break-all">
                   Ceylonaquaplants@yahoo.com
                 </a>
@@ -221,7 +221,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Legal & Copyright Bar */}
-        <div className="mt-12 pt-6 border-t border-[#176B45]/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#CBD5CE] text-center md:text-left">
+        <div className="mt-12 pt-6 border-t border-[#34C759]/40 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#E5E7EB] text-center md:text-left">
           <p>
             &copy; {currentYear} Ceylon Aquatic Plants (Pvt) Ltd. All rights reserved. Registered in Sri Lanka.
           </p>
@@ -234,7 +234,7 @@ export default function Footer() {
             </Link>
             <Link 
               href="/admin/login" 
-              className="text-[#CBD5CE]/70 hover:text-[#F2C94C] transition-colors flex items-center gap-1"
+              className="text-[#E5E7EB]/70 hover:text-[#F7C600] transition-colors flex items-center gap-1"
             >
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Admin Portal</span>

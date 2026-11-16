@@ -65,22 +65,22 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-[#E3EAE4] shadow-xs">
+    <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-[#E5E7EB] shadow-xs">
       <div className="mb-6">
-        <h3 className="text-xl sm:text-2xl font-bold text-[#104D35] font-display">
+        <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
           Send Us an Inquiry
         </h3>
-        <p className="text-xs sm:text-sm text-[#66736A] mt-1">
+        <p className="text-xs sm:text-sm text-[#6B7280] mt-1">
           Whether you are an international importer, aquascaper, or botanical retailer, our nursery team is at your service.
         </p>
       </div>
 
       {success && (
-        <div className="mb-6 p-4 rounded-xl bg-[#E8F3EC] border border-[#176B45]/30 text-[#104D35] flex items-start gap-3 animate-in fade-in">
-          <CheckCircle2 className="w-5 h-5 text-[#176B45] shrink-0 mt-0.5" />
+        <div className="mb-6 p-4 rounded-xl bg-[#F0FDF4] border border-[#0B7A0B]/30 text-[#0A2D5B] flex items-start gap-3 animate-in fade-in">
+          <CheckCircle2 className="w-5 h-5 text-[#0B7A0B] shrink-0 mt-0.5" />
           <div className="text-sm">
             <p className="font-bold">Inquiry Dispatched Successfully</p>
-            <p className="text-xs text-[#176B45] mt-0.5">{success}</p>
+            <p className="text-xs text-[#0B7A0B] mt-0.5">{success}</p>
           </div>
         </div>
       )}
@@ -112,7 +112,7 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="full_name" className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+            <label htmlFor="full_name" className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
               Full Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -122,12 +122,12 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
               placeholder="e.g. Alex Woelfel"
               value={formData.full_name}
               onChange={(e) => setFormData({ ...formData, full_name: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E3EAE4] text-base sm:text-sm text-[#202820] focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+            <label htmlFor="email" className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
               Email Address <span className="text-red-500">*</span>
             </label>
             <input
@@ -137,14 +137,14 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
               placeholder="e.g. alex@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E3EAE4] text-base sm:text-sm text-[#202820] focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all"
             />
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label htmlFor="phone" className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+            <label htmlFor="phone" className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
               Phone / WhatsApp Number
             </label>
             <input
@@ -153,12 +153,12 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
               placeholder="e.g. 077 704 2100 / +94 77 704 2100"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E3EAE4] text-base sm:text-sm text-[#202820] focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all"
             />
           </div>
 
           <div>
-            <label htmlFor="subject" className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+            <label htmlFor="subject" className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
               Subject <span className="text-red-500">*</span>
             </label>
             <input
@@ -168,27 +168,27 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
               placeholder="e.g. Plant Catalogue & Export Inquiry"
               value={formData.subject}
               onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="w-full px-4 py-3 rounded-xl border border-[#E3EAE4] text-base sm:text-sm text-[#202820] focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:border-transparent transition-all"
+              className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all"
             />
           </div>
         </div>
 
         {initialPlantReference && (
           <div>
-            <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
               Referenced Plant Specimen
             </label>
             <input
               type="text"
               readOnly
               value={initialPlantReference}
-              className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] bg-[#F7FAF7] text-xs font-bold text-[#176B45] cursor-not-allowed"
+              className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] bg-[#F8FAFC] text-xs font-bold text-[#0B7A0B] cursor-not-allowed"
             />
           </div>
         )}
 
         <div>
-          <label htmlFor="message" className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1.5">
+          <label htmlFor="message" className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1.5">
             Your Message / Inquiries <span className="text-red-500">*</span>
           </label>
           <textarea
@@ -198,23 +198,23 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
             placeholder="Please detail your species interest, requirements, or business questions..."
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border border-[#E3EAE4] text-base sm:text-sm text-[#202820] focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:border-transparent transition-all resize-y"
+            className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all resize-y"
           />
         </div>
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed border border-transparent"
+          className="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed border border-transparent"
         >
           {loading ? (
             <>
-              <Loader2 className="w-4 h-4 animate-spin text-[#173B2B]" />
+              <Loader2 className="w-4 h-4 animate-spin text-[#0A2D5B]" />
               <span>Verifying & Sending...</span>
             </>
           ) : (
             <>
-              <Send className="w-4 h-4 text-[#173B2B]" />
+              <Send className="w-4 h-4 text-[#0A2D5B]" />
               <span>Submit Official Inquiry</span>
             </>
           )}

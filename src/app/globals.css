@@ -5,14 +5,20 @@
 @layer base {
   :root {
     --main-bg: #FFFFFF;
-    --secondary-bg: #F7FAF7;
-    --primary-green: #176B45;
-    --dark-green: #104D35;
-    --light-green: #E8F3EC;
-    --accent-yellow: #F2C94C;
-    --dark-text: #202820;
-    --secondary-text: #66736A;
-    --border: #E3EAE4;
+    --secondary-bg: #F8FAFC;
+    --primary-green: #0B7A0B;
+    --dark-green: #0B7A0B;
+    --green: #34C759;
+    --light-green: #A6E22E;
+    --ocean-blue: #0E7CDB;
+    --sky-blue: #4FC3F7;
+    --accent-yellow: #F7C600;
+    --navy-blue: #0A2D5B;
+    --dark-text: #0A2D5B;
+    --secondary-text: #6B7280;
+    --border: #E5E7EB;
+    --section-bg: #EFF6FF;
+    --light-green-bg: #F0FDF4;
   }
 
   html {
@@ -22,7 +28,7 @@
 
   body {
     background-color: #FFFFFF;
-    color: #202820;
+    color: #0A2D5B;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -34,19 +40,19 @@
   width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #F7FAF7;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #176B45;
+  background: #0B7A0B;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #104D35;
+  background: #085808;
 }
 
 /* Selection highlight */
 ::selection {
-  background-color: #176B45;
+  background-color: #0B7A0B;
   color: #FFFFFF;
 }
 
@@ -138,11 +144,16 @@
 @layer components {
   /* Yellow Primary Action Button Theme */
   .btn-yellow-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-[#173B2B] bg-[#F2C94C] hover:bg-[#E5B735] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F2C94C] focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-[#0A2D5B] bg-[#F7C600] hover:bg-[#E5B700] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#F7C600] focus:ring-offset-2;
   }
 
   /* Green Secondary Action Button Theme */
   .btn-green-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-[#176B45] hover:bg-[#104D35] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#176B45] focus:ring-offset-2;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white bg-[#0B7A0B] hover:bg-[#085808] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:ring-offset-2;
+  }
+
+  /* Outline Action Button Theme */
+  .btn-outline-green {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-[#0B7A0B] border border-[#34C759] hover:bg-[#F0FDF4] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#34C759] focus:ring-offset-2;
   }
 }

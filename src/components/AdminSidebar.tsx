@@ -55,7 +55,7 @@ export default function AdminSidebar() {
   return (
     <>
       {/* Mobile Top Header */}
-      <div className="lg:hidden bg-[#104D35] text-white px-4 py-3 flex items-center justify-between border-b border-[#176B45] sticky top-0 z-40">
+      <div className="lg:hidden bg-[#0B7A0B] text-white px-4 py-3 flex items-center justify-between border-b border-[#0B7A0B] sticky top-0 z-40">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden">
             <Image src="/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
@@ -64,7 +64,7 @@ export default function AdminSidebar() {
         </div>
         <button
           onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-[#176B45]"
+          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-[#0B7A0B]"
           aria-label="Toggle admin sidebar"
         >
           {mobileSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -73,13 +73,13 @@ export default function AdminSidebar() {
 
       {/* Sidebar Navigation - Deep Green with Yellow and White Accents */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#104D35] border-r border-[#176B45] flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#0B7A0B] border-r border-[#0B7A0B] flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
           mobileSidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
         }`}
       >
         <div>
           {/* Brand Header */}
-          <div className="p-6 border-b border-[#176B45]">
+          <div className="p-6 border-b border-[#0B7A0B]">
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden shadow-xs">
                 <Image
@@ -94,7 +94,7 @@ export default function AdminSidebar() {
                 <span className="text-base font-bold text-white font-display block leading-tight">
                   Admin Console
                 </span>
-                <span className="text-[10px] text-[#F2C94C] uppercase tracking-wider font-bold">
+                <span className="text-[10px] text-[#F7C600] uppercase tracking-wider font-bold">
                   Ceylon Aquatic Plants
                 </span>
               </div>
@@ -113,15 +113,15 @@ export default function AdminSidebar() {
                   onClick={() => setMobileSidebarOpen(false)}
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all group ${
                     isActive
-                      ? "bg-[#176B45] text-white shadow-xs"
-                      : "text-[#E8F3EC] hover:text-white hover:bg-[#176B45]/60"
+                      ? "bg-[#0B7A0B] text-white shadow-xs"
+                      : "text-[#F0FDF4] hover:text-white hover:bg-[#0B7A0B]/60"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 ${isActive ? "text-[#F2C94C]" : "text-[#CBD5CE] group-hover:text-white"}`} />
+                    <Icon className={`w-4 h-4 ${isActive ? "text-[#F7C600]" : "text-[#E5E7EB] group-hover:text-white"}`} />
                     <span>{item.name}</span>
                   </div>
-                  {isActive && <ChevronRight className="w-3.5 h-3.5 text-[#F2C94C]" />}
+                  {isActive && <ChevronRight className="w-3.5 h-3.5 text-[#F7C600]" />}
                 </Link>
               );
             })}
@@ -129,17 +129,17 @@ export default function AdminSidebar() {
         </div>
 
         {/* Bottom Actions */}
-        <div className="p-4 border-t border-[#176B45] space-y-2">
+        <div className="p-4 border-t border-[#0B7A0B] space-y-2">
           <Link
             href="/"
             target="_blank"
-            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-[#E8F3EC] hover:text-white hover:bg-[#176B45]/60 transition-colors"
+            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-[#F0FDF4] hover:text-white hover:bg-[#0B7A0B]/60 transition-colors"
           >
             <span className="flex items-center gap-2">
-              <ExternalLink className="w-3.5 h-3.5 text-[#F2C94C]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#F7C600]" />
               <span>View Public Website</span>
             </span>
-            <span className="text-[10px] bg-[#176B45] px-2 py-0.5 rounded text-[#F2C94C] font-bold">Live</span>
+            <span className="text-[10px] bg-[#0B7A0B] px-2 py-0.5 rounded text-[#F7C600] font-bold">Live</span>
           </Link>
 
           <button

@@ -153,25 +153,25 @@ export default function AdminCategoriesPage() {
   return (
     <div className="space-y-6">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-[#E3EAE4] shadow-xs">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 sm:p-8 rounded-3xl border border-[#E5E7EB] shadow-xs">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-[#176B45] uppercase tracking-wider mb-1">
-            <FolderTree className="w-4 h-4 text-[#F2C94C]" />
+          <div className="flex items-center gap-2 text-xs font-semibold text-[#0B7A0B] uppercase tracking-wider mb-1">
+            <FolderTree className="w-4 h-4 text-[#F7C600]" />
             <span>Classification System</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#104D35] font-display">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0A2D5B] font-display">
             Plant Categories ({categories.length})
           </h1>
-          <p className="text-xs sm:text-sm text-[#66736A] mt-1">
+          <p className="text-xs sm:text-sm text-[#6B7280] mt-1">
             Manage the core botanical categories, hero banners, ordering, and associated descriptions.
           </p>
         </div>
 
         <button
           onClick={openNewModal}
-          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent"
+          className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent"
         >
-          <Plus className="w-4 h-4 text-[#173B2B]" />
+          <Plus className="w-4 h-4 text-[#0A2D5B]" />
           <span>Add Category</span>
         </button>
       </div>
@@ -180,12 +180,12 @@ export default function AdminCategoriesPage() {
         <div
           className={`p-4 rounded-xl flex items-center justify-between text-xs font-semibold ${
             statusMessage.type === "success"
-              ? "bg-[#E8F3EC] text-[#104D35] border border-[#C5DEC8]"
+              ? "bg-[#F0FDF4] text-[#0A2D5B] border border-[#C5DEC8]"
               : "bg-red-50 text-red-800 border border-red-200"
           }`}
         >
           <div className="flex items-center gap-2">
-            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-[#176B45]" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
+            {statusMessage.type === "success" ? <CheckCircle2 className="w-4 h-4 text-[#0B7A0B]" /> : <AlertCircle className="w-4 h-4 text-red-600" />}
             <span>{statusMessage.text}</span>
           </div>
           <button onClick={() => setStatusMessage(null)}>
@@ -195,21 +195,21 @@ export default function AdminCategoriesPage() {
       )}
 
       {/* Category Table */}
-      <div className="bg-white rounded-3xl border border-[#E3EAE4] shadow-xs overflow-hidden">
+      <div className="bg-white rounded-3xl border border-[#E5E7EB] shadow-xs overflow-hidden">
         {loading ? (
-          <div className="p-12 text-center text-[#66736A]">
-            <Loader2 className="w-8 h-8 animate-spin mx-auto text-[#176B45] mb-2" />
+          <div className="p-12 text-center text-[#6B7280]">
+            <Loader2 className="w-8 h-8 animate-spin mx-auto text-[#0B7A0B] mb-2" />
             <p className="text-xs">Loading database records...</p>
           </div>
         ) : categories.length === 0 ? (
-          <div className="p-12 text-center text-[#66736A]">
-            <FolderTree className="w-10 h-10 text-[#CBD5CE] mx-auto mb-2" />
-            <p className="text-sm font-semibold text-[#202820]">No categories found</p>
+          <div className="p-12 text-center text-[#6B7280]">
+            <FolderTree className="w-10 h-10 text-[#E5E7EB] mx-auto mb-2" />
+            <p className="text-sm font-semibold text-[#0A2D5B]">No categories found</p>
           </div>
         ) : (
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs text-[#202820]">
-              <thead className="bg-[#F7FAF7] border-b border-[#E3EAE4] text-[#66736A] uppercase tracking-wider text-[10px] font-bold">
+            <table className="w-full text-left text-xs text-[#0A2D5B]">
+              <thead className="bg-[#F8FAFC] border-b border-[#E5E7EB] text-[#6B7280] uppercase tracking-wider text-[10px] font-bold">
                 <tr>
                   <th className="py-4 px-6">Order</th>
                   <th className="py-4 px-6">Category Details</th>
@@ -218,16 +218,16 @@ export default function AdminCategoriesPage() {
                   <th className="py-4 px-6 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#E3EAE4]">
+              <tbody className="divide-y divide-[#E5E7EB]">
                 {categories.map((cat) => (
-                  <tr key={cat.id} className="hover:bg-[#F7FAF7]/80 transition-colors">
-                    <td className="py-4 px-6 font-bold text-[#66736A]">
+                  <tr key={cat.id} className="hover:bg-[#F8FAFC]/80 transition-colors">
+                    <td className="py-4 px-6 font-bold text-[#6B7280]">
                       #{cat.display_order}
                     </td>
 
                     <td className="py-4 px-6">
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl bg-[#F7FAF7] overflow-hidden relative shrink-0 border border-[#E3EAE4]">
+                        <div className="w-12 h-12 rounded-xl bg-[#F8FAFC] overflow-hidden relative shrink-0 border border-[#E5E7EB]">
                           <img
                             src={cat.image_url}
                             alt={cat.name}
@@ -235,15 +235,15 @@ export default function AdminCategoriesPage() {
                           />
                         </div>
                         <div>
-                          <p className="font-bold text-[#104D35] text-sm">{cat.name}</p>
-                          <p className="text-xs text-[#66736A] line-clamp-1 max-w-sm">
+                          <p className="font-bold text-[#0A2D5B] text-sm">{cat.name}</p>
+                          <p className="text-xs text-[#6B7280] line-clamp-1 max-w-sm">
                             {cat.short_description}
                           </p>
                         </div>
                       </div>
                     </td>
 
-                    <td className="py-4 px-6 font-mono text-[11px] text-[#176B45]">
+                    <td className="py-4 px-6 font-mono text-[11px] text-[#0B7A0B]">
                       /aquarium-plants/{cat.slug}
                     </td>
 
@@ -251,8 +251,8 @@ export default function AdminCategoriesPage() {
                       <span
                         className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                           cat.is_active
-                            ? "bg-[#E8F3EC] text-[#176B45]"
-                            : "bg-[#F7FAF7] text-[#66736A] border border-[#E3EAE4]"
+                            ? "bg-[#F0FDF4] text-[#0B7A0B]"
+                            : "bg-[#F8FAFC] text-[#6B7280] border border-[#E5E7EB]"
                         }`}
                       >
                         {cat.is_active ? (
@@ -271,14 +271,14 @@ export default function AdminCategoriesPage() {
                           href={`/aquarium-plants/${cat.slug}`}
                           target="_blank"
                           rel="noreferrer"
-                          className="p-2 rounded-lg text-[#66736A] hover:text-[#104D35] hover:bg-[#E8F3EC] transition-colors"
+                          className="p-2 rounded-lg text-[#6B7280] hover:text-[#0A2D5B] hover:bg-[#F0FDF4] transition-colors"
                           title="View public page"
                         >
                           <Eye className="w-4 h-4" />
                         </a>
                         <button
                           onClick={() => openEditModal(cat)}
-                          className="p-2 rounded-lg text-[#176B45] hover:text-[#104D35] hover:bg-[#E8F3EC] transition-colors"
+                          className="p-2 rounded-lg text-[#0B7A0B] hover:text-[#0A2D5B] hover:bg-[#F0FDF4] transition-colors"
                           title="Edit category"
                         >
                           <Edit2 className="w-4 h-4" />
@@ -303,13 +303,13 @@ export default function AdminCategoriesPage() {
       {/* Confirmation Dialog for Category Deletion */}
       {deleteConfirmId && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl space-y-4 border border-[#E3EAE4]">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full shadow-2xl space-y-4 border border-[#E5E7EB]">
             <div className="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center mx-auto">
               <Trash2 className="w-6 h-6" />
             </div>
             <div className="text-center">
-              <h3 className="text-lg font-bold text-[#104D35] font-display">Delete Category?</h3>
-              <p className="text-xs text-[#66736A] mt-1">
+              <h3 className="text-lg font-bold text-[#0A2D5B] font-display">Delete Category?</h3>
+              <p className="text-xs text-[#6B7280] mt-1">
                 Categories containing plants cannot be deleted until all assigned plants are reassigned or removed.
               </p>
             </div>
@@ -317,7 +317,7 @@ export default function AdminCategoriesPage() {
               <button
                 type="button"
                 onClick={() => setDeleteConfirmId(null)}
-                className="flex-1 py-2.5 rounded-xl border border-[#E3EAE4] text-xs font-semibold text-[#66736A] hover:bg-[#F7FAF7]"
+                className="flex-1 py-2.5 rounded-xl border border-[#E5E7EB] text-xs font-semibold text-[#6B7280] hover:bg-[#F8FAFC]"
               >
                 Cancel
               </button>
@@ -336,18 +336,18 @@ export default function AdminCategoriesPage() {
       {/* Category Modal */}
       {modalOpen && editingCategory && (
         <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 overflow-y-auto backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full my-8 shadow-2xl space-y-6 border border-[#E3EAE4]">
-            <div className="flex items-center justify-between border-b border-[#E3EAE4] pb-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-2xl w-full my-8 shadow-2xl space-y-6 border border-[#E5E7EB]">
+            <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-4">
               <div>
-                <h3 className="text-xl font-bold text-[#104D35] font-display">
+                <h3 className="text-xl font-bold text-[#0A2D5B] font-display">
                   {editingCategory.id ? "Edit Category" : "Add Plant Category"}
                 </h3>
-                <p className="text-xs text-[#66736A]">Configure public category attributes and banner.</p>
+                <p className="text-xs text-[#6B7280]">Configure public category attributes and banner.</p>
               </div>
               <button
                 type="button"
                 onClick={() => setModalOpen(false)}
-                className="p-2 rounded-xl text-[#66736A] hover:text-[#202820] hover:bg-[#F7FAF7]"
+                className="p-2 rounded-xl text-[#6B7280] hover:text-[#0A2D5B] hover:bg-[#F8FAFC]"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -356,7 +356,7 @@ export default function AdminCategoriesPage() {
             <form onSubmit={handleSave} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1">
                     Category Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -372,12 +372,12 @@ export default function AdminCategoriesPage() {
                       });
                     }}
                     placeholder="e.g. Tissue Culture"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] focus:ring-1 focus:ring-[#176B45] text-xs text-[#202820]"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] focus:ring-1 focus:ring-[#0B7A0B] text-xs text-[#0A2D5B]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1">
                     URL Slug <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -386,18 +386,18 @@ export default function AdminCategoriesPage() {
                     value={editingCategory.slug || ""}
                     onChange={(e) => setEditingCategory({ ...editingCategory, slug: slugify(e.target.value) })}
                     placeholder="e.g. tissue-culture"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] focus:ring-1 focus:ring-[#176B45] text-xs text-[#202820] font-mono"
+                    className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] focus:ring-1 focus:ring-[#0B7A0B] text-xs text-[#0A2D5B] font-mono"
                   />
                 </div>
               </div>
 
               {/* Banner Image */}
-              <div className="p-4 rounded-2xl bg-[#F7FAF7] border border-[#E3EAE4] space-y-3">
-                <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider">
+              <div className="p-4 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] space-y-3">
+                <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider">
                   Category Banner Image
                 </label>
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-xl overflow-hidden bg-white border border-[#E3EAE4] relative shrink-0">
+                  <div className="w-16 h-16 rounded-xl overflow-hidden bg-white border border-[#E5E7EB] relative shrink-0">
                     <img
                       src={editingCategory.image_url || "/logo.png"}
                       alt="Category Preview"
@@ -410,10 +410,10 @@ export default function AdminCategoriesPage() {
                       value={editingCategory.image_url || ""}
                       onChange={(e) => setEditingCategory({ ...editingCategory, image_url: e.target.value })}
                       placeholder="https://... (or upload from computer below)"
-                      className="w-full px-3 py-1.5 rounded-xl border border-[#E3EAE4] text-xs"
+                      className="w-full px-3 py-1.5 rounded-xl border border-[#E5E7EB] text-xs"
                     />
-                    <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#176B45] text-white cursor-pointer hover:bg-[#104D35] transition-colors">
-                      <UploadCloud className="w-3.5 h-3.5 text-[#F2C94C]" />
+                    <label className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#0B7A0B] text-white cursor-pointer hover:bg-[#0B7A0B] transition-colors">
+                      <UploadCloud className="w-3.5 h-3.5 text-[#F7C600]" />
                       <span>{uploadingImage ? "Uploading..." : "Upload Banner"}</span>
                       <input
                         type="file"
@@ -428,7 +428,7 @@ export default function AdminCategoriesPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1">
                   Short Description <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -437,12 +437,12 @@ export default function AdminCategoriesPage() {
                   value={editingCategory.short_description || ""}
                   onChange={(e) => setEditingCategory({ ...editingCategory, short_description: e.target.value })}
                   placeholder="Appears on homepage and category cards"
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs text-[#202820]"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] text-xs text-[#0A2D5B]"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1">
+                <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1">
                   Full Detailed Description
                 </label>
                 <textarea
@@ -450,20 +450,20 @@ export default function AdminCategoriesPage() {
                   value={editingCategory.full_description || ""}
                   onChange={(e) => setEditingCategory({ ...editingCategory, full_description: e.target.value })}
                   placeholder="Appears on top of the dedicated category page"
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs text-[#202820]"
+                  className="w-full px-4 py-2.5 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] text-xs text-[#0A2D5B]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold text-[#202820] uppercase tracking-wider mb-1">
+                  <label className="block text-xs font-bold text-[#0A2D5B] uppercase tracking-wider mb-1">
                     Display Order
                   </label>
                   <input
                     type="number"
                     value={editingCategory.display_order || 1}
                     onChange={(e) => setEditingCategory({ ...editingCategory, display_order: parseInt(e.target.value) || 1 })}
-                    className="w-full px-4 py-2 rounded-xl border border-[#E3EAE4] focus:border-[#176B45] text-xs text-[#202820]"
+                    className="w-full px-4 py-2 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] text-xs text-[#0A2D5B]"
                   />
                 </div>
                 <div className="flex items-center pt-6">
@@ -472,27 +472,27 @@ export default function AdminCategoriesPage() {
                       type="checkbox"
                       checked={editingCategory.is_active ?? true}
                       onChange={(e) => setEditingCategory({ ...editingCategory, is_active: e.target.checked })}
-                      className="w-4 h-4 rounded text-[#176B45] focus:ring-[#176B45]"
+                      className="w-4 h-4 rounded text-[#0B7A0B] focus:ring-[#0B7A0B]"
                     />
-                    <span className="text-xs font-semibold text-[#202820]">Active on Navigation & Catalogue</span>
+                    <span className="text-xs font-semibold text-[#0A2D5B]">Active on Navigation & Catalogue</span>
                   </label>
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#E3EAE4]">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-[#E5E7EB]">
                 <button
                   type="button"
                   onClick={() => setModalOpen(false)}
-                  className="px-5 py-2.5 rounded-xl border border-[#E3EAE4] text-xs font-semibold text-[#66736A] hover:bg-[#F7FAF7]"
+                  className="px-5 py-2.5 rounded-xl border border-[#E5E7EB] text-xs font-semibold text-[#6B7280] hover:bg-[#F8FAFC]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="px-6 py-2.5 rounded-xl bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] text-xs font-bold shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-60 flex items-center gap-2 border border-transparent"
+                  className="px-6 py-2.5 rounded-xl bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] text-xs font-bold shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 disabled:opacity-60 flex items-center gap-2 border border-transparent"
                 >
-                  {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#173B2B]" />}
+                  {submitting && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#0A2D5B]" />}
                   <span>{editingCategory.id ? "Update Category" : "Save Category"}</span>
                 </button>
               </div>

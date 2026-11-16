@@ -84,33 +84,33 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       />
 
       {/* Hero Category Banner - Clean Light Theme */}
-      <section className="relative bg-[#F7FAF7] py-14 sm:py-20 border-b border-[#E3EAE4] overflow-hidden">
+      <section className="relative bg-[#F8FAFC] py-14 sm:py-20 border-b border-[#E5E7EB] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn direction="up">
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[#66736A] mb-5">
-              <Link href="/" className="hover:text-[#176B45] flex items-center gap-1 font-medium">
+            <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[#6B7280] mb-5">
+              <Link href="/" className="hover:text-[#0B7A0B] flex items-center gap-1 font-medium">
                 <Home className="w-3.5 h-3.5" />
                 <span>Home</span>
               </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-[#66736A]/60" />
-              <Link href="/aquarium-plants" className="hover:text-[#176B45] font-medium">
+              <ChevronRight className="w-3.5 h-3.5 text-[#6B7280]/60" />
+              <Link href="/aquarium-plants" className="hover:text-[#0B7A0B] font-medium">
                 Aquarium Plants
               </Link>
-              <ChevronRight className="w-3.5 h-3.5 text-[#66736A]/60" />
-              <span className="text-[#176B45] font-bold">{category.name}</span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#6B7280]/60" />
+              <span className="text-[#0B7A0B] font-bold">{category.name}</span>
             </nav>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-8 space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E3EAE4] text-[#176B45] text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
                   <Leaf className="w-3.5 h-3.5" />
                   <span>Plant Category Showcase</span>
                 </div>
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-[#104D35] font-display">
+                <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0A2D5B] font-display">
                   {category.name}
                 </h1>
-                <p className="text-sm sm:text-base text-[#66736A] leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed max-w-2xl">
                   {category.full_description || category.short_description}
                 </p>
               </div>
@@ -128,15 +128,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Sibling Category Quick Links */}
-            <div className="mt-8 pt-5 border-t border-[#E3EAE4] flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+            <div className="mt-8 pt-5 border-t border-[#E5E7EB] flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
               {allCategories.map((cat) => (
                 <Link
                   key={cat.id}
                   href={`/aquarium-plants/${cat.slug}`}
                   className={`px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
                     cat.slug === category.slug
-                      ? "bg-[#176B45] text-white font-bold shadow-xs"
-                      : "bg-white text-[#202820] hover:bg-[#E8F3EC] hover:text-[#176B45] border border-[#E3EAE4]"
+                      ? "bg-[#0B7A0B] text-white font-bold shadow-xs"
+                      : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#E5E7EB]"
                   }`}
                 >
                   {cat.name}
@@ -152,17 +152,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         <FadeIn direction="up">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold text-[#104D35] font-display">
+              <h2 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
                 Available Specimens in {category.name}
               </h2>
-              <p className="text-xs sm:text-sm text-[#66736A] mt-1">
+              <p className="text-xs sm:text-sm text-[#6B7280] mt-1">
                 Currently exhibiting {plants.length} botanical selections cultivated under Ceylon quality standards.
               </p>
             </div>
 
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 text-xs font-bold text-[#176B45] hover:underline"
+              className="inline-flex items-center gap-2 text-xs font-bold text-[#0B7A0B] hover:underline"
             >
               <span>Need species availability or quotation? Inquire here &rarr;</span>
             </Link>
@@ -170,15 +170,15 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
         </FadeIn>
 
         {plants.length === 0 ? (
-          <div className="text-center py-20 bg-[#F7FAF7] rounded-2xl border border-[#E3EAE4] p-8">
-            <Leaf className="w-10 h-10 text-[#176B45]/40 mx-auto mb-3" />
-            <h3 className="text-lg font-bold text-[#202820]">Catalog Updating</h3>
-            <p className="text-sm text-[#66736A] mt-1 max-w-sm mx-auto">
+          <div className="text-center py-20 bg-[#F8FAFC] rounded-2xl border border-[#E5E7EB] p-8">
+            <Leaf className="w-10 h-10 text-[#0B7A0B]/40 mx-auto mb-3" />
+            <h3 className="text-lg font-bold text-[#0A2D5B]">Catalog Updating</h3>
+            <p className="text-sm text-[#6B7280] mt-1 max-w-sm mx-auto">
               New specimens in {category.name} are currently being photographed in our nursery. Please check back shortly or contact our team.
             </p>
             <Link
               href="/contact"
-              className="mt-4 inline-block px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
+              className="mt-4 inline-block px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
             >
               Contact Nursery Team
             </Link>

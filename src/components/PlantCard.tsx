@@ -10,9 +10,9 @@ interface PlantCardProps {
 
 export default function PlantCard({ plant }: PlantCardProps) {
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-[#E3EAE4] shadow-xs hover:shadow-md hover:border-[#176B45]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
       {/* Plant Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F7FAF7]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC]">
         <Image
           src={plant.main_image_url}
           alt={`${plant.name} - Ceylon Aquatic Plants`}
@@ -24,7 +24,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
         {/* Category Badge */}
         {plant.category && (
           <div className="absolute top-3 left-3">
-            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#E8F3EC] text-[#176B45] border border-[#E3EAE4] shadow-xs">
+            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#F0FDF4] text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
               {plant.category.name}
             </span>
           </div>
@@ -33,7 +33,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
         {/* Featured Tag */}
         {plant.is_featured && (
           <div className="absolute top-3 right-3">
-            <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#F2C94C] text-[#104D35] shadow-xs">
+            <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#F7C600] text-[#0A2D5B] shadow-xs">
               Featured
             </span>
           </div>
@@ -45,40 +45,40 @@ export default function PlantCard({ plant }: PlantCardProps) {
         <div>
           {/* Scientific Name */}
           {plant.scientific_name && (
-            <p className="text-xs font-serif italic text-[#176B45] mb-1">
+            <p className="text-xs font-serif italic text-[#0B7A0B] mb-1">
               {plant.scientific_name}
             </p>
           )}
 
           {/* Plant Name */}
-          <h3 className="text-base sm:text-lg font-bold text-[#202820] group-hover:text-[#176B45] transition-colors leading-snug font-display">
+          <h3 className="text-base sm:text-lg font-bold text-[#0A2D5B] group-hover:text-[#0B7A0B] transition-colors leading-snug font-display">
             <Link href={`/plants/${plant.slug}`}>
               {plant.name}
             </Link>
           </h3>
 
           {/* Short Description */}
-          <p className="text-xs sm:text-sm text-[#66736A] mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#6B7280] mt-2 line-clamp-2 leading-relaxed">
             {plant.short_description}
           </p>
 
           {/* Key Plant Specifications */}
-          <div className="mt-4 pt-3 border-t border-[#E3EAE4] grid grid-cols-3 gap-2 text-[11px] text-[#66736A]">
+          <div className="mt-4 pt-3 border-t border-[#E5E7EB] grid grid-cols-3 gap-2 text-[11px] text-[#6B7280]">
             {plant.placement && (
               <div className="flex items-center gap-1" title={`Placement: ${plant.placement}`}>
-                <Layers className="w-3.5 h-3.5 text-[#176B45] shrink-0" />
+                <Layers className="w-3.5 h-3.5 text-[#0B7A0B] shrink-0" />
                 <span className="truncate">{plant.placement}</span>
               </div>
             )}
             {plant.light_demand && (
               <div className="flex items-center gap-1" title={`Light: ${plant.light_demand}`}>
-                <Sun className="w-3.5 h-3.5 text-[#F2C94C] shrink-0" />
+                <Sun className="w-3.5 h-3.5 text-[#F7C600] shrink-0" />
                 <span className="truncate">{plant.light_demand}</span>
               </div>
             )}
             {plant.growth_rate && (
               <div className="flex items-center gap-1" title={`Growth: ${plant.growth_rate}`}>
-                <Activity className="w-3.5 h-3.5 text-[#104D35] shrink-0" />
+                <Activity className="w-3.5 h-3.5 text-[#0A2D5B] shrink-0" />
                 <span className="truncate">{plant.growth_rate}</span>
               </div>
             )}
@@ -86,13 +86,13 @@ export default function PlantCard({ plant }: PlantCardProps) {
         </div>
 
         {/* View Details Action - Yellow Action Button */}
-        <div className="mt-5 pt-3 border-t border-[#E3EAE4]">
+        <div className="mt-5 pt-3 border-t border-[#E5E7EB]">
           <Link
             href={`/plants/${plant.slug}`}
-            className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F2C94C] hover:bg-[#E5B735] text-[#173B2B] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
+            className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
           >
             <span>View Details</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#173B2B] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#0A2D5B] group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>

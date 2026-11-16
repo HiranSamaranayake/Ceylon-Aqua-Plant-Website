@@ -16,7 +16,8 @@ export default function PublicLayout({
     description: "Export grower and showcase provider of premium tropical aquatic plants, tissue-culture varieties, and pond flora in Sri Lanka.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "No. 45, Greenhouse Valley Road",
+      streetAddress: "No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama",
+      addressLocality: "Colombo",
       addressRegion: "Western Province",
       addressCountry: "LK",
     },

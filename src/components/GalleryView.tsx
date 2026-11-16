@@ -29,8 +29,8 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
           onClick={() => setSelectedAlbumId("all")}
           className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
             selectedAlbumId === "all"
-              ? "bg-[#176B45] text-white shadow-xs"
-              : "bg-white text-[#202820] hover:bg-[#F7FAF7] border border-[#E3EAE4]"
+              ? "bg-[#0B7A0B] text-white shadow-xs"
+              : "bg-white text-[#0A2D5B] hover:bg-[#F8FAFC] border border-[#E5E7EB]"
           }`}
         >
           All Albums ({initialImages.length})
@@ -42,8 +42,8 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
             onClick={() => setSelectedAlbumId(album.id)}
             className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
               selectedAlbumId === album.id
-                ? "bg-[#176B45] text-white shadow-xs"
-                : "bg-white text-[#202820] hover:bg-[#F7FAF7] border border-[#E3EAE4]"
+                ? "bg-[#0B7A0B] text-white shadow-xs"
+                : "bg-white text-[#0A2D5B] hover:bg-[#F8FAFC] border border-[#E5E7EB]"
             }`}
           >
             {album.title}
@@ -53,10 +53,10 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
 
       {/* Grid of Images */}
       {filteredImages.length === 0 ? (
-        <div className="text-center py-16 bg-[#F7FAF7] rounded-2xl border border-[#E3EAE4] p-8 max-w-md mx-auto">
-          <Leaf className="w-8 h-8 text-[#176B45] mx-auto mb-2 opacity-60" />
-          <h3 className="text-base font-bold text-[#202820]">No photographs in this album</h3>
-          <p className="text-xs text-[#66736A] mt-1">
+        <div className="text-center py-16 bg-[#F8FAFC] rounded-2xl border border-[#E5E7EB] p-8 max-w-md mx-auto">
+          <Leaf className="w-8 h-8 text-[#0B7A0B] mx-auto mb-2 opacity-60" />
+          <h3 className="text-base font-bold text-[#0A2D5B]">No photographs in this album</h3>
+          <p className="text-xs text-[#6B7280] mt-1">
             New photos will appear here once published from the nursery studio.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
             <StaggerItem key={image.id}>
               <div
                 onClick={() => setLightboxIndex(index)}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-[#E3EAE4] shadow-xs hover:shadow-md hover:-translate-y-1 cursor-pointer transition-all duration-300"
+                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-[#E5E7EB] shadow-xs hover:shadow-md hover:-translate-y-1 cursor-pointer transition-all duration-300"
               >
                 <Image
                   src={image.image_url}
@@ -77,8 +77,8 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
                 />
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-[#104D35]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
-                  <div className="flex items-center gap-1.5 text-[#F2C94C] text-[11px] font-bold uppercase tracking-wider mb-1">
+                <div className="absolute inset-0 bg-[#0B7A0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                  <div className="flex items-center gap-1.5 text-[#F7C600] text-[11px] font-bold uppercase tracking-wider mb-1">
                     <Eye className="w-3.5 h-3.5" />
                     <span>{image.album?.title || "Aquatic Showcase"}</span>
                   </div>
@@ -86,11 +86,11 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
                     {image.title}
                   </h3>
                   {image.description && (
-                    <p className="text-xs text-[#E8F3EC] mt-1 line-clamp-2">
+                    <p className="text-xs text-[#F0FDF4] mt-1 line-clamp-2">
                       {image.description}
                     </p>
                   )}
-                  <span className="mt-3 text-[11px] text-[#F2C94C] font-bold flex items-center gap-1">
+                  <span className="mt-3 text-[11px] text-[#F7C600] font-bold flex items-center gap-1">
                     Click to view full photo &rarr;
                   </span>
                 </div>

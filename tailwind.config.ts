@@ -10,23 +10,36 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          white: "#FFFFFF",         // Main background
-          secondaryBg: "#F7FAF7",   // Secondary background
-          primary: "#176B45",       // Primary green
-          darkGreen: "#104D35",     // Dark green
-          lightGreen: "#E8F3EC",    // Light green
-          yellow: "#F2C94C",        // Accent yellow
-          darkText: "#202820",      // Dark text
-          muted: "#66736A",         // Secondary text
-          border: "#E3EAE4",        // Border
+          white: "#FFFFFF",             // Main background
+          lightGray: "#F8FAFC",         // Light gray background
+          secondaryBg: "#F8FAFC",       // Secondary background
+          sectionBg: "#EFF6FF",         // Light section background
+          lightGreenBg: "#F0FDF4",      // Alternative section background
+          darkGreen: "#0B7A0B",         // Primary brand colour
+          green: "#34C759",             // Secondary brand colour
+          lightGreen: "#A6E22E",        // Accent colour
+          oceanBlue: "#0E7CDB",         // Primary blue
+          skyBlue: "#4FC3F7",           // Blue accent
+          yellow: "#F7C600",            // Buttons and highlights
+          yellowHover: "#E5B700",       // Primary button hover
+          navy: "#0A2D5B",              // Main text (Navy Blue)
+          darkText: "#0A2D5B",          // Main text
+          secondaryText: "#6B7280",     // Secondary text
+          muted: "#6B7280",             // Secondary text
+          border: "#E5E7EB",            // Borders and dividers
           // Aliases for seamless component compatibility
-          dark: "#104D35",
-          secondary: "#176B45",
-          emerald: "#176B45",
-          surface: "#104D35",
-          gold: "#F2C94C",
-          cream: "#F7FAF7",
+          primary: "#0B7A0B",
+          dark: "#0B7A0B",
+          secondary: "#34C759",
+          emerald: "#0B7A0B",
+          surface: "#0B7A0B",
+          gold: "#F7C600",
+          cream: "#F8FAFC",
         },
+      },
+      backgroundImage: {
+        'gradient-green': 'linear-gradient(to right, #0B7A0B, #A6E22E)',
+        'gradient-blue': 'linear-gradient(to right, #0E7CDB, #4FC3F7)',
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
@@ -34,10 +47,10 @@ const config: Config = {
       },
       boxShadow: {
         'subtle': '0 2px 10px rgba(0, 0, 0, 0.04)',
-        'card': '0 4px 20px -2px rgba(23, 107, 69, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
-        'card-hover': '0 12px 30px -4px rgba(23, 107, 69, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
-        'yellow-glow': '0 0 20px -3px rgba(242, 201, 76, 0.4)',
-        'green-glow': '0 0 25px -4px rgba(23, 107, 69, 0.3)',
+        'card': '0 4px 20px -2px rgba(11, 122, 11, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
+        'card-hover': '0 12px 30px -4px rgba(11, 122, 11, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04)',
+        'yellow-glow': '0 0 20px -3px rgba(247, 198, 0, 0.4)',
+        'green-glow': '0 0 25px -4px rgba(11, 122, 11, 0.3)',
       },
     },
   },
