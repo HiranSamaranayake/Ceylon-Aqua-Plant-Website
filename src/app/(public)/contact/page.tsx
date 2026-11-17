@@ -37,17 +37,17 @@ export default async function ContactPage({
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner - Clean Light Theme */}
-      <section className="bg-[#F8FAFC] py-16 sm:py-20 border-b border-[#E5E7EB]">
+      <section className="bg-[#F8FAFC] py-10 sm:py-16 md:py-20 border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <FadeIn direction="up">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
               <MessageCircle className="w-3.5 h-3.5" />
               <span>Customer & Wholesale Communications</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0A2D5B] font-display">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#0A2D5B] font-display">
               Contact Ceylon Aquatic Plants
             </h1>
-            <p className="mt-3 text-base text-[#6B7280] leading-relaxed">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed">
               Have questions regarding botanical availability, packing specifications, or export quarantine? Our nursery specialists are ready to assist.
             </p>
           </FadeIn>
@@ -55,12 +55,12 @@ export default async function ContactPage({
       </section>
 
       {/* Main Form & Contact Information Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
           
           {/* Left Column: Direct Contact Details & Working Hours */}
-          <div className="lg:col-span-5 space-y-8">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E5E7EB] shadow-xs space-y-6">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
+            <div className="bg-white rounded-2xl p-4 xs:p-6 sm:p-8 border border-[#E5E7EB] shadow-xs space-y-5 sm:space-y-6">
               <h2 className="text-xl font-bold text-[#0A2D5B] font-display border-b border-[#E5E7EB] pb-4">
                 Official Business Channels
               </h2>

@@ -82,8 +82,8 @@ export default function Navbar() {
               <div 
                 className={`relative transition-all duration-300 ${
                   isScrolled 
-                    ? "h-11 w-32 sm:h-13 sm:w-36 md:h-14 md:w-40" 
-                    : "h-13 w-36 sm:h-16 sm:w-44 md:h-18 md:w-48 lg:h-20 lg:w-56"
+                    ? "h-10 w-28 xs:h-11 xs:w-32 sm:h-13 sm:w-38 md:h-14 md:w-42 lg:h-16 lg:w-48" 
+                    : "h-11 w-32 xs:h-13 xs:w-38 sm:h-15 sm:w-44 md:h-18 md:w-48 lg:h-20 lg:w-56"
                 }`}
               >
                 <Image
@@ -236,18 +236,19 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Toggle Button */}
-            <div className="flex lg:hidden items-center gap-3">
+            <div className="flex lg:hidden items-center gap-2 sm:gap-3">
               <Link
                 href="/contact"
-                className="px-3.5 py-1.5 rounded-xl text-xs font-poppins font-semibold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs"
+                className="hidden xs:inline-flex px-3.5 py-1.5 rounded-xl text-xs font-poppins font-semibold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs shrink-0"
               >
                 Contact Us
               </Link>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 rounded-lg text-[#0A2D5B] hover:bg-white/60 focus:outline-none focus:ring-2 focus:ring-[#0B7A0B]"
+                className="p-2.5 rounded-xl text-[#0A2D5B] hover:bg-white/60 focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0"
                 aria-label="Toggle navigation menu"
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6 text-[#0B7A0B]" /> : <Menu className="w-6 h-6 text-[#0A2D5B]" />}
               </button>
@@ -255,100 +256,115 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Drawer - Light Blue (#EFF6FF) */}
+        {/* Mobile Navigation Drawer - Light Blue (#EFF6FF) with Backdrop */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#EFF6FF] border-b border-[#E5E7EB] px-4 pt-3 pb-6 space-y-1.5 shadow-lg animate-in fade-in duration-200 font-poppins">
-            <Link
-              href="/"
-              className={`block px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                pathname === "/" ? "bg-white/80 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-              }`}
-            >
-              Home
-            </Link>
-
-            {/* Mobile Aquarium Plants Accordion */}
-            <div>
-              <button
-                type="button"
-                onClick={() => setMobilePlantsOpen(!mobilePlantsOpen)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                  isAquariumPlantsActive ? "text-[#0B7A0B] font-semibold bg-white/80 border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+          <>
+            <div 
+              className="fixed inset-0 top-[60px] sm:top-[70px] bg-black/25 backdrop-blur-xs z-40 lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+              aria-hidden="true"
+            />
+            <div className="relative z-50 lg:hidden bg-[#EFF6FF] border-b border-[#E5E7EB] px-4 pt-3 pb-6 space-y-1.5 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200 font-poppins max-h-[calc(100vh-75px)] overflow-y-auto">
+              <Link
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                  pathname === "/" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
                 }`}
               >
-                <span>Aquarium Plants</span>
-                <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#0B7A0B]" : "text-[#6B7280]"}`} />
-              </button>
+                Home
+              </Link>
 
-              {mobilePlantsOpen && (
-                <div className="pl-4 pr-2 py-1 space-y-1 bg-white/50 rounded-xl mt-1 border-l-2 border-[#0B7A0B]">
-                  <Link
-                    href="/aquarium-plants"
-                    className="block px-3 py-2 text-[15px] font-semibold text-[#0B7A0B]"
-                  >
-                    All Aquarium Plants
-                  </Link>
-                  {CATEGORIES.map((cat) => (
+              {/* Mobile Aquarium Plants Accordion */}
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setMobilePlantsOpen(!mobilePlantsOpen)}
+                  className={`w-full flex items-center justify-between min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                    isAquariumPlantsActive ? "text-[#0B7A0B] font-semibold bg-white/90 border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
+                >
+                  <span>Aquarium Plants</span>
+                  <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#0B7A0B]" : "text-[#6B7280]"}`} />
+                </button>
+
+                {mobilePlantsOpen && (
+                  <div className="pl-3 pr-2 py-1.5 space-y-1 bg-white/60 rounded-xl mt-1 border-l-2 border-[#0B7A0B]">
                     <Link
-                      key={cat.href}
-                      href={cat.href}
-                      className={`block px-3 py-1.5 rounded-lg text-[15px] font-medium transition-all ${
-                        pathname === cat.href ? "text-[#0B7A0B] font-semibold bg-white" : "text-[#6B7280] hover:text-[#0A2D5B]"
-                      }`}
+                      href="/aquarium-plants"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center min-h-[44px] px-3.5 py-2 text-[15px] font-semibold text-[#0B7A0B] rounded-lg hover:bg-white"
                     >
-                      {cat.name}
+                      All Aquarium Plants
                     </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+                    {CATEGORIES.map((cat) => (
+                      <Link
+                        key={cat.href}
+                        href={cat.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className={`flex items-center min-h-[44px] px-3.5 py-2 rounded-lg text-[15px] font-medium transition-all ${
+                          pathname === cat.href ? "text-[#0B7A0B] font-semibold bg-white shadow-2xs" : "text-[#6B7280] hover:text-[#0A2D5B] hover:bg-white/50"
+                        }`}
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-            <Link
-              href="/gallery"
-              className={`block px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                pathname === "/gallery" ? "bg-white/80 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-              }`}
-            >
-              Gallery
-            </Link>
+              <Link
+                href="/gallery"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                  pathname === "/gallery" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                }`}
+              >
+                Gallery
+              </Link>
 
-            <Link
-              href="/video"
-              className={`block px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                pathname === "/video" ? "bg-white/80 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-              }`}
-            >
-              Video
-            </Link>
+              <Link
+                href="/video"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                  pathname === "/video" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                }`}
+              >
+                Video
+              </Link>
 
-            <Link
-              href="/about"
-              className={`block px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                pathname === "/about" ? "bg-white/80 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-              }`}
-            >
-              About
-            </Link>
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                  pathname === "/about" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                }`}
+              >
+                About
+              </Link>
 
-            <Link
-              href="/contact"
-              className={`block px-3.5 py-2.5 rounded-xl text-[18px] transition-all ${
-                pathname === "/contact" ? "bg-white/80 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600]" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-              }`}
-            >
-              Contact
-            </Link>
-
-            <div className="pt-3 border-t border-[#E5E7EB]">
               <Link
                 href="/contact"
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-[16px] bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs active:translate-y-0 hover:-translate-y-0.5 transition-all duration-300"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
+                  pathname === "/contact" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                }`}
               >
-                <span>Contact Us Today</span>
-                <ArrowRight className="w-4 h-4 text-[#0A2D5B]" />
+                Contact
               </Link>
+
+              <div className="pt-3 border-t border-[#E5E7EB]">
+                <Link
+                  href="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 min-h-[48px] py-3.5 rounded-xl font-semibold text-[16px] bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs active:translate-y-0 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <span>Contact Us Today</span>
+                  <ArrowRight className="w-4 h-4 text-[#0A2D5B]" />
+                </Link>
+              </div>
             </div>
-          </div>
+          </>
         )}
       </header>
     </>

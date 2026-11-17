@@ -274,10 +274,10 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
             </div>
 
             {/* Direct Inquiry CTA Button */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href={`/contact?plant=${encodeURIComponent(plant.name)}`}
-                className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent"
+                className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent min-h-[48px]"
               >
                 <MessageSquare className="w-4 h-4 text-[#0A2D5B]" />
                 <span>Inquire About This Specimen</span>
@@ -286,7 +286,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
                 href={`https://wa.me/94777042100?text=${encodeURIComponent(`Hello Ceylon Aquatic Plants, I am inquiring regarding your ${plant.name} specimens.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xs"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm bg-[#25D366] text-white hover:bg-[#20ba59] transition-all shadow-xs min-h-[48px]"
               >
                 <span>WhatsApp Inquiry</span>
               </a>
@@ -296,26 +296,26 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
         </div>
 
         {/* Detailed Botanical & Care Notes */}
-        <div className="mt-16 pt-12 border-t border-[#E5E7EB] grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-7 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
+        <div className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-[#E5E7EB] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+          <div className="lg:col-span-7 space-y-3 sm:space-y-4">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
               Comprehensive Botanical Description
             </h2>
-            <div className="prose prose-emerald text-sm sm:text-base text-[#6B7280] leading-relaxed whitespace-pre-line bg-[#F8FAFC] p-6 sm:p-8 rounded-2xl border border-[#E5E7EB]">
+            <div className="prose prose-emerald text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed whitespace-pre-line bg-[#F8FAFC] p-4 sm:p-6 md:p-8 rounded-2xl border border-[#E5E7EB]">
               {plant.full_description}
             </div>
           </div>
 
-          <div className="lg:col-span-5 space-y-4">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
+          <div className="lg:col-span-5 space-y-3 sm:space-y-4">
+            <h2 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
               Aquarium Care & Maintenance
             </h2>
-            <div className="bg-[#F8FAFC] p-6 sm:p-8 rounded-2xl border border-[#E5E7EB] space-y-4">
-              <p className="text-sm text-[#6B7280] leading-relaxed">
+            <div className="bg-[#F8FAFC] p-4 sm:p-6 md:p-8 rounded-2xl border border-[#E5E7EB] space-y-4">
+              <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
                 {plant.care_instructions || "Acclimatize gradually to your aquarium's temperature and lighting. Ensure adequate water circulation and maintain stable macro/micronutrient levels."}
               </p>
               <div className="pt-3 border-t border-[#E5E7EB] flex items-center gap-2 text-xs text-[#0B7A0B] font-bold">
-                <Leaf className="w-4 h-4" />
+                <Leaf className="w-4 h-4 shrink-0" />
                 <span>Cultivated under Ceylon export quarantine standards</span>
               </div>
             </div>
@@ -324,10 +324,10 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
 
         {/* Related Varieties in Category */}
         {relatedPlants.length > 0 && (
-          <div className="mt-20 pt-12 border-t border-[#E5E7EB]">
-            <div className="flex items-center justify-between mb-8">
+          <div className="mt-14 sm:mt-20 pt-8 sm:pt-12 border-t border-[#E5E7EB]">
+            <div className="flex items-center justify-between mb-6 sm:mb-8">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
+                <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
                   More from {plant.category?.name || "This Category"}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#6B7280] mt-1">
@@ -345,7 +345,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
               )}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3.5 xs:gap-4 sm:gap-6 lg:gap-8">
               {relatedPlants.map((rel) => (
                 <PlantCard key={rel.id} plant={rel} />
               ))}

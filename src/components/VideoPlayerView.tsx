@@ -32,8 +32,8 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
     <div className="space-y-12">
       {/* Active Featured Player */}
       {activeVideo && (
-        <div className="bg-white rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-sm p-4 sm:p-6 lg:p-8">
-          <div className="relative aspect-video w-full rounded-2xl overflow-hidden bg-black shadow-inner">
+        <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-sm p-3.5 xs:p-4 sm:p-6 lg:p-8">
+          <div className="relative aspect-video w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black shadow-inner">
             {activeYouTubeId ? (
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${activeYouTubeId}?autoplay=1&rel=0`}
@@ -71,7 +71,7 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
           All Nursery & Aquascaping Videos ({videos.length})
         </h3>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3.5 xs:gap-4 sm:gap-6">
           {videos.map((vid) => {
             const isSelected = activeVideo?.id === vid.id;
             return (

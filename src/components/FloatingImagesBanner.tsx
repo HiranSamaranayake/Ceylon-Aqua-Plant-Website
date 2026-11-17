@@ -161,7 +161,7 @@ export default function FloatingImagesBanner() {
             <Link
               key={`${plant.id}-${index}`}
               href={plant.href}
-              className={`group shrink-0 block w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-card hover:shadow-card-hover hover:border-[#0B7A0B]/50 transition-all duration-300 ${plant.floatClass}`}
+              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-card hover:shadow-card-hover hover:border-[#0B7A0B]/50 transition-all duration-300 ${plant.floatClass}`}
             >
               {/* Plant Image Container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC]">
@@ -215,7 +215,7 @@ export default function FloatingImagesBanner() {
       <div className="mt-6 px-4 text-center sm:hidden">
         <Link
           href="/aquarium-plants"
-          className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-bold bg-[#F7C600] active:bg-[#E5B700] text-[#0A2D5B] shadow-xs transition-colors"
+          className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold bg-[#F7C600] active:bg-[#E5B700] text-[#0A2D5B] shadow-xs transition-colors min-h-[44px]"
         >
           <span>Explore All 30+ Plant Varieties</span>
           <ArrowUpRight className="w-3.5 h-3.5 text-[#0A2D5B]" />

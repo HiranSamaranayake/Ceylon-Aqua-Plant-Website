@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-[#F8FAFC] min-h-screen py-16">
+    <div className="bg-[#F8FAFC] min-h-screen py-8 sm:py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-[#E5E7EB] shadow-xs space-y-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 xs:p-8 sm:p-12 border border-[#E5E7EB] shadow-xs space-y-6 sm:space-y-8">
 
           <div className="border-b border-[#E5E7EB] pb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2">
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
             </section>
           </div>
 
-          <div className="pt-6 border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#6B7280]">
+          <div className="pt-6 border-t border-[#E5E7EB] flex flex-col xs:flex-row items-start xs:items-center justify-between gap-3 text-xs text-[#6B7280]">
             <Link href="/" className="text-[#0B7A0B] font-bold hover:underline">
               &larr; Return to Homepage
             </Link>

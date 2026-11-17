@@ -34,9 +34,9 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       </div>
 
       {/* Card Body */}
-      <div className="p-5 sm:p-6 space-y-2 flex-grow flex flex-col justify-between bg-white">
+      <div className="p-4 sm:p-6 space-y-2 flex-grow flex flex-col justify-between bg-white">
         <div>
-          <h3 className="text-lg sm:text-xl font-bold text-[#0A2D5B] group-hover:text-[#0B7A0B] transition-colors font-display tracking-tight">
+          <h3 className="text-base sm:text-xl font-bold text-[#0A2D5B] group-hover:text-[#0B7A0B] transition-colors font-display tracking-tight">
             {category.name}
           </h3>
           <p className="text-xs sm:text-sm text-[#6B7280] line-clamp-2 mt-1 leading-relaxed">
@@ -45,7 +45,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
         </div>
 
         <div className="pt-3 border-t border-[#E5E7EB]">
-          <span className="w-full inline-flex items-center justify-between px-4 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] group-hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs group-hover:shadow-md transition-all duration-300">
+          <span className="w-full inline-flex items-center justify-between px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] group-hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs group-hover:shadow-md transition-all duration-300 min-h-[40px] xs:min-h-[44px]">
             <span>Explore Category</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#0A2D5B] group-hover:translate-x-1 transition-transform" />
           </span>

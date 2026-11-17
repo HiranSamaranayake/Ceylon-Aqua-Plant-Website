@@ -65,7 +65,7 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
   };
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-[#E5E7EB] shadow-xs">
+    <div className="bg-white rounded-2xl p-4 xs:p-6 sm:p-8 md:p-10 border border-[#E5E7EB] shadow-xs">
       <div className="mb-6">
         <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
           Send Us an Inquiry

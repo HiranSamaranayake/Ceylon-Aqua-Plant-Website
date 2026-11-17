@@ -33,33 +33,33 @@ export default async function AboutPage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Header Banner - Clean Light Theme */}
-      <section className="bg-[#F8FAFC] py-16 sm:py-20 border-b border-[#E5E7EB]">
+      <section className="bg-[#F8FAFC] py-10 sm:py-16 md:py-20 border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
             <Building2 className="w-3.5 h-3.5" />
             <span>Company Profile</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-[#0A2D5B] font-display">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-[#0A2D5B] font-display">
             About Ceylon Aquatic Plants
           </h1>
-          <p className="mt-3 text-base text-[#6B7280] leading-relaxed">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed">
             Cultivating biological harmony and vibrant aquatic greenery under Sri Lanka&apos;s equatorial sunshine.
           </p>
         </div>
       </section>
 
       {/* Section 1: Detailed Story & Nursery Background */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-6">
             <span className="text-xs font-bold text-[#0B7A0B] uppercase tracking-widest">
               Natural Nursery Heritage
             </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0A2D5B] font-display leading-tight">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#0A2D5B] font-display leading-tight">
               Sustainably Nurturing Aquatic Life in Ceylon
             </h2>
-            <div className="space-y-4 text-sm sm:text-base text-[#6B7280] leading-relaxed">
+            <div className="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed">
               <p>
                 {settings.about_summary}
               </p>
@@ -68,22 +68,22 @@ export default async function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-3 sm:pt-4">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
                 <Sun className="w-5 h-5 text-[#F7C600] mb-2" />
-                <h4 className="text-sm font-bold text-[#0A2D5B]">Natural Photoperiod</h4>
+                <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B]">Natural Photoperiod</h4>
                 <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">Year-round equatorial sunlight powering robust photosynthesis.</p>
               </div>
-              <div className="p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
                 <Droplets className="w-5 h-5 text-[#0B7A0B] mb-2" />
-                <h4 className="text-sm font-bold text-[#0A2D5B]">Spring Water Flow</h4>
+                <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B]">Spring Water Flow</h4>
                 <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">Pure low-TDS water supporting sensitive botanical varieties.</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:col-span-6 grid grid-cols-2 gap-4">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white mt-8">
+          <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white mt-4 sm:mt-8">
               <Image
                 src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80"
                 alt="Aquatic plant propagation basin"
@@ -91,7 +91,7 @@ export default async function AboutPage() {
                 className="object-cover"
               />
             </div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white -mt-4">
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white -mt-2 sm:-mt-4">
               <Image
                 src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80"
                 alt="Sterile tissue culture laboratory container"
@@ -105,32 +105,32 @@ export default async function AboutPage() {
       </section>
 
       {/* Section 2: Vision & Mission - Clean Light Green Background */}
-      <section className="py-20 bg-[#F8FAFC] border-y border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-y border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
             {/* Vision Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
-                <Compass className="w-6 h-6" />
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-3 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
+                <Compass className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
+              <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
                 Our Vision
               </h3>
-              <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed">
                 {settings.vision}
               </p>
             </div>
 
             {/* Mission Card */}
-            <div className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
-                <Target className="w-6 h-6" />
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-3 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
+                <Target className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0A2D5B] font-display">
+              <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
                 Our Mission
               </h3>
-              <p className="text-sm sm:text-base text-[#6B7280] leading-relaxed">
+              <p className="text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed">
                 {settings.mission}
               </p>
             </div>
@@ -140,27 +140,27 @@ export default async function AboutPage() {
       </section>
 
       {/* Section 3: Core Values - Clean White Background */}
-      <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+      <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs font-bold text-[#0B7A0B] uppercase tracking-widest">
             Foundational Principles
           </span>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0A2D5B] mt-2 font-display">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0A2D5B] mt-2 font-display">
             Our Core Values
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {settings.core_values.map((val, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-[#0B7A0B] border border-[#E5E7EB] flex items-center justify-center font-bold text-sm mb-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white text-[#0B7A0B] border border-[#E5E7EB] flex items-center justify-center font-bold text-sm mb-3 sm:mb-4">
                   0{idx + 1}
                 </div>
-                <h3 className="text-base font-bold text-[#0A2D5B] mb-2 font-display">
+                <h3 className="text-sm sm:text-base font-bold text-[#0A2D5B] mb-1.5 sm:mb-2 font-display">
                   {val.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">

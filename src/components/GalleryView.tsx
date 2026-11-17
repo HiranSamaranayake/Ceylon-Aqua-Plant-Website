@@ -23,11 +23,11 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
   return (
     <div>
       {/* Album Filter Tabs - Clean White & Green */}
-      <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-10 scrollbar-none px-1">
+      <div className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-3 mb-8 sm:mb-10 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
         <button
           type="button"
           onClick={() => setSelectedAlbumId("all")}
-          className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+          className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shrink-0 min-h-[38px] ${
             selectedAlbumId === "all"
               ? "bg-[#0B7A0B] text-white shadow-xs"
               : "bg-white text-[#0A2D5B] hover:bg-[#F8FAFC] border border-[#E5E7EB]"
@@ -40,7 +40,7 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
             key={album.id}
             type="button"
             onClick={() => setSelectedAlbumId(album.id)}
-            className={`px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all ${
+            className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold whitespace-nowrap transition-all shrink-0 min-h-[38px] ${
               selectedAlbumId === album.id
                 ? "bg-[#0B7A0B] text-white shadow-xs"
                 : "bg-white text-[#0A2D5B] hover:bg-[#F8FAFC] border border-[#E5E7EB]"
@@ -61,7 +61,7 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
           </p>
         </div>
       ) : (
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 xs:gap-4 sm:gap-6">
           {filteredImages.map((image, index) => (
             <StaggerItem key={image.id}>
               <div
@@ -72,17 +72,23 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
                   src={image.image_url}
                   alt={image.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-[#0B7A0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end text-white">
+                {/* Mobile Caption Bar (Always visible on touch screens) */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-2.5 pt-6 sm:hidden text-white">
+                  <p className="text-[11px] font-bold leading-tight line-clamp-1">{image.title}</p>
+                  <span className="text-[9px] text-[#F7C600] font-medium">{image.album?.title || "Aquatic Showcase"}</span>
+                </div>
+
+                {/* Desktop Hover Overlay */}
+                <div className="absolute inset-0 bg-[#0B7A0B]/85 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 sm:p-6 hidden sm:flex flex-col justify-end text-white">
                   <div className="flex items-center gap-1.5 text-[#F7C600] text-[11px] font-bold uppercase tracking-wider mb-1">
                     <Eye className="w-3.5 h-3.5" />
                     <span>{image.album?.title || "Aquatic Showcase"}</span>
                   </div>
-                  <h3 className="text-base font-bold leading-snug font-display">
+                  <h3 className="text-sm sm:text-base font-bold leading-snug font-display">
                     {image.title}
                   </h3>
                   {image.description && (
@@ -90,7 +96,7 @@ export default function GalleryView({ initialImages, albums }: GalleryViewProps)
                       {image.description}
                     </p>
                   )}
-                  <span className="mt-3 text-[11px] text-[#F7C600] font-bold flex items-center gap-1">
+                  <span className="mt-2.5 text-[11px] text-[#F7C600] font-bold flex items-center gap-1">
                     Click to view full photo &rarr;
                   </span>
                 </div>
