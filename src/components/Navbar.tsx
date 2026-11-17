@@ -87,7 +87,7 @@ export default function Navbar() {
                 }`}
               >
                 <Image
-                  src="/navbar-logo.jpg"
+                  src="/navbar-logo.png"
                   alt="Ceylon Aquatic Plants (Pvt) Ltd Official Logo"
                   fill
                   sizes="(max-width: 640px) 144px, (max-width: 768px) 180px, 224px"
