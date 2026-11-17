@@ -301,7 +301,7 @@ VALUES
     'site_config',
     '{
         "company_name": "Ceylon Aquatic Plants (Pvt) Ltd",
-        "tagline": "Premium Tropical Aquatic Flora Cultivated in Sri Lanka",
+        "tagline": "Pure Tropical Aquatic Plants from the Heart of Ceylon",
         "phone": "077 704 2100",
         "whatsapp": "+94 77 704 2100",
         "email": "Ceylonaquaplants@yahoo.com",

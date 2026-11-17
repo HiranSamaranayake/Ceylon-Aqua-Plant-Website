@@ -11,9 +11,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   title: {
     template: "%s | Ceylon Aquatic Plants (Pvt) Ltd",
-    default: "Ceylon Aquatic Plants (Pvt) Ltd | Premium Tropical Aquatic Flora Exporter",
+    default: "Ceylon Aquatic Plants (Pvt) Ltd | Pure Tropical Aquatic Plants from the Heart of Ceylon",
   },
-  description: "Official online showroom for Ceylon Aquatic Plants (Pvt) Ltd. Discover bunched, potted, terrarium, garden pond, and sterile tissue-culture aquatic flora sustainably cultivated in Sri Lanka.",
+  description: "Official online showroom for Ceylon Aquatic Plants (Pvt) Ltd. Pure Tropical Aquatic Plants from the Heart of Ceylon. Discover bunched, potted, terrarium, garden pond, and sterile tissue-culture aquatic flora sustainably cultivated in Sri Lanka.",
   keywords: [
     "Aquarium plants Sri Lanka",
     "Aquatic plants Sri Lanka",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Ceylon Aquatic Plants (Pvt) Ltd",
-    title: "Ceylon Aquatic Plants (Pvt) Ltd | Pure Tropical Aquatic Flora",
+    title: "Ceylon Aquatic Plants (Pvt) Ltd | Pure Tropical Aquatic Plants from the Heart of Ceylon",
     description: "Premium aquarium and terrarium plants sustainably cultivated under natural tropical sunshine in Sri Lanka.",
     images: [
       {

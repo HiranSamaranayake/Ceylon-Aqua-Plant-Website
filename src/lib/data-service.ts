@@ -387,7 +387,7 @@ const initialDocuments: DocumentItem[] = [
 
 const initialSettings: WebsiteSettings = {
   company_name: "Ceylon Aquatic Plants (Pvt) Ltd",
-  tagline: "Premium Tropical Aquatic Flora Cultivated in Sri Lanka",
+  tagline: "Pure Tropical Aquatic Plants from the Heart of Ceylon",
   phone: "077 704 2100",
   whatsapp: "+94 77 704 2100",
   email: "Ceylonaquaplants@yahoo.com",
@@ -820,11 +820,25 @@ export async function deleteDocument(id: string): Promise<boolean> {
 }
 
 export async function getWebsiteSettings(): Promise<WebsiteSettings> {
+  let result = settingsStore;
   if (isSupabaseConfigured && supabase) {
     const { data } = await supabase.from("website_settings").select("value").eq("key", "site_config").single();
-    if (data?.value) return data.value as WebsiteSettings;
+    if (data?.value) result = data.value as WebsiteSettings;
   }
-  return settingsStore;
+  // Ensure tagline and hero_title are clean, properly spaced, and without '#'
+  if (result.hero_title) {
+    result.hero_title = result.hero_title.replace(/#/g, "").trim();
+    if (result.hero_title.toLowerCase().replace(/[^a-z]/g, "") === "puretropicalaquaticplantsfromtheheartofceylon") {
+      result.hero_title = "Pure Tropical Aquatic Plants from the Heart of Ceylon";
+    }
+  }
+  if (result.tagline) {
+    result.tagline = result.tagline.replace(/#/g, "").trim();
+    if (result.tagline.toLowerCase().replace(/[^a-z]/g, "") === "puretropicalaquaticplantsfromtheheartofceylon") {
+      result.tagline = "Pure Tropical Aquatic Plants from the Heart of Ceylon";
+    }
+  }
+  return result;
 }
 
 export async function saveWebsiteSettings(settings: Partial<WebsiteSettings>): Promise<WebsiteSettings> {

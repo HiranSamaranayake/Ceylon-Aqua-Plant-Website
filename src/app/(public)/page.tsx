@@ -9,6 +9,7 @@ import {
 import CategoryCard from "@/components/CategoryCard";
 import FloatingImagesBanner from "@/components/FloatingImagesBanner";
 import FadeIn from "@/components/animations/FadeIn";
+import AnimatedHeroTitle from "@/components/animations/AnimatedHeroTitle";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
 import { 
   ArrowRight, 
@@ -45,12 +46,11 @@ export default async function HomePage() {
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6 text-left">
               
-              {/* Main Headline */}
-              <FadeIn direction="up" delay={0.1} duration={0.7}>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A2D5B] tracking-tight leading-[1.12] font-display">
-                  {settings.hero_title}
-                </h1>
-              </FadeIn>
+              {/* Main Headline - Responsive Tagline + Word Reveal Animation */}
+              <AnimatedHeroTitle
+                title={settings.hero_title}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] xl:text-[46px] font-extrabold text-[#0A2D5B] tracking-tight leading-[1.2] font-poppins"
+              />
 
               {/* Supporting Description */}
               <FadeIn direction="up" delay={0.35} duration={0.7}>

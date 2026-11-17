@@ -32,16 +32,24 @@ export default function AdminHomepageContentPage() {
     e.preventDefault();
     if (!settings) return;
 
+    // Sanitize hero_title to remove '#' and handle any unspaced variations
+    let cleanHeroTitle = (settings.hero_title || "").replace(/#/g, "").trim();
+    if (cleanHeroTitle.toLowerCase().replace(/[^a-z]/g, "") === "puretropicalaquaticplantsfromtheheartofceylon") {
+      cleanHeroTitle = "Pure Tropical Aquatic Plants from the Heart of Ceylon";
+    }
+    const cleanSettings = { ...settings, hero_title: cleanHeroTitle };
+
     try {
       setSaving(true);
       const res = await fetch("/api/admin/settings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(settings),
+        body: JSON.stringify(cleanSettings),
       });
 
       if (!res.ok) throw new Error("Update failed");
 
+      setSettings(cleanSettings);
       setStatusMessage({ type: "success", text: "Homepage content updated and live across website." });
     } catch {
       setStatusMessage({ type: "error", text: "Failed to update settings." });
@@ -111,6 +119,7 @@ export default function AdminHomepageContentPage() {
               value={settings.hero_title}
               onChange={(e) => setSettings({ ...settings, hero_title: e.target.value })}
               className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] focus:border-[#0B7A0B] focus:ring-1 focus:ring-[#0B7A0B] text-sm text-[#0A2D5B] font-bold"
+              placeholder="Pure Tropical Aquatic Plants from the Heart of Ceylon"
             />
           </div>
 
