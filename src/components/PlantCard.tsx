@@ -12,15 +12,19 @@ export default function PlantCard({ plant }: PlantCardProps) {
   return (
     <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
       {/* Plant Image */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC]">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
         <Image
           src={plant.main_image_url}
           alt={`${plant.name} - Ceylon Aquatic Plants`}
           fill
           sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className={`${
+            plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture"
+              ? "object-contain p-2.5"
+              : "object-cover"
+          } group-hover:scale-105 transition-transform duration-500`}
         />
-        
+
         {/* Category Badge */}
         {plant.category && (
           <div className="absolute top-3 left-3">

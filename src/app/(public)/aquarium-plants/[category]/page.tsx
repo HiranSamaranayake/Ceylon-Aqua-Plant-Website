@@ -116,12 +116,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               <div className="lg:col-span-4 hidden lg:block">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card bg-[#F8FAFC] flex items-center justify-center">
                   <Image
                     src={category.image_url}
                     alt={category.name}
                     fill
-                    className="object-cover"
+                    className={
+                      category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture")
+                        ? "object-contain p-3"
+                        : "object-cover"
+                    }
                   />
                 </div>
               </div>

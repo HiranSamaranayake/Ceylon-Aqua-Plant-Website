@@ -15,13 +15,17 @@ export default function CategoryCard({ category }: CategoryCardProps) {
       className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300"
     >
       {/* Category Image */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F8FAFC]">
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
         <Image
           src={category.image_url}
           alt={`${category.name} - Ceylon Aquatic Plants`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className={`${
+            category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture")
+              ? "object-contain p-2.5"
+              : "object-cover"
+          } group-hover:scale-105 transition-transform duration-500 ease-out`}
         />
 
         {/* Top badge */}

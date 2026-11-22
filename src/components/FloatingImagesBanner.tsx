@@ -43,7 +43,7 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
     scientificName: "Micranthemum tweediei",
     category: "Tissue Culture",
     highlight: "100% Sterile In-Vitro",
-    imageUrl: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/tissue-culture/micranthemum-monte-carlo.jpg",
     href: "/aquarium-plants/tissue-culture",
     floatClass: "animate-float-3",
   },
@@ -59,11 +59,11 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
   },
   {
     id: "fp-5",
-    name: "Bucephalandra Kedagang",
-    scientificName: "Bucephalandra sp.",
+    name: "Alternanthera Reineckii Mini",
+    scientificName: "Alternanthera reineckii 'Mini'",
     category: "Tissue Culture",
-    highlight: "Rare Metallic Gloss",
-    imageUrl: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80",
+    highlight: "Compact Ruby Rosette",
+    imageUrl: "/images/tissue-culture/alternanthera-reineckii-mini.jpg",
     href: "/aquarium-plants/tissue-culture",
     floatClass: "animate-float-2",
   },
@@ -113,7 +113,7 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
     scientificName: "Hydrocotyle tripartita",
     category: "Tissue Culture",
     highlight: "Fast Carpet Grower",
-    imageUrl: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/tissue-culture/hydrocotyle-tripartita-japan.jpg",
     href: "/aquarium-plants/tissue-culture",
     floatClass: "animate-float-1",
   },
@@ -125,7 +125,7 @@ export default function FloatingImagesBanner() {
 
   return (
     <section className="relative py-12 sm:py-16 bg-[#F8FAFC] border-b border-[#E5E7EB] overflow-hidden">
-      
+
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center sm:text-left">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -170,7 +170,11 @@ export default function FloatingImagesBanner() {
                   alt={`${plant.name} - Ceylon Aquatic Plants`}
                   fill
                   sizes="(max-width: 640px) 208px, 256px"
-                  className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
+                  className={`${
+                    plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture"
+                      ? "object-contain p-2"
+                      : "object-cover"
+                  } group-hover:scale-110 transition-transform duration-500 ease-out`}
                 />
 
                 {/* Category Pill Tag */}

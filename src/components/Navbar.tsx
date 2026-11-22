@@ -4,10 +4,10 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { 
-  ChevronDown, 
-  Menu, 
-  X, 
+import {
+  ChevronDown,
+  Menu,
+  X,
   ArrowRight,
   Leaf,
   MapPin
@@ -63,28 +63,26 @@ export default function Navbar() {
       </div>
 
       {/* Main Sticky Header - Light Blue Background (#EFF6FF) with Subtle Shadow */}
-      <header 
-        className={`sticky top-0 z-50 transition-all duration-300 bg-[#EFF6FF] border-b border-[#E5E7EB] ${
-          isScrolled 
-            ? "shadow-sm py-2" 
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 bg-[#EFF6FF] border-b border-[#E5E7EB] ${isScrolled
+            ? "shadow-sm py-2"
             : "shadow-xs py-3 sm:py-3.5"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            
+
             {/* Logo - Horizontal Brand Logo (Emblem + Typography) */}
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="flex items-center group focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] rounded-xl p-1 shrink-0"
               aria-label="Ceylon Aquatic Plants (Pvt) Ltd"
             >
-              <div 
-                className={`relative transition-all duration-300 ${
-                  isScrolled 
-                    ? "h-10 w-28 xs:h-11 xs:w-32 sm:h-13 sm:w-38 md:h-14 md:w-42 lg:h-16 lg:w-48" 
+              <div
+                className={`relative transition-all duration-300 ${isScrolled
+                    ? "h-10 w-28 xs:h-11 xs:w-32 sm:h-13 sm:w-38 md:h-14 md:w-42 lg:h-16 lg:w-48"
                     : "h-11 w-32 xs:h-13 xs:w-38 sm:h-15 sm:w-44 md:h-18 md:w-48 lg:h-20 lg:w-56"
-                }`}
+                  }`}
               >
                 <Image
                   src="/navbar-logo.png"
@@ -102,28 +100,26 @@ export default function Navbar() {
               {/* 1. Home */}
               <Link
                 href="/"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                  pathname === "/"
+                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/"
                     ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                }`}
+                  }`}
               >
                 Home
               </Link>
 
               {/* 2. Aquarium Plants Dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setPlantsDropdownOpen(true)}
                 onMouseLeave={() => setPlantsDropdownOpen(false)}
               >
                 <Link
                   href="/aquarium-plants"
-                  className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                    isAquariumPlantsActive
+                  className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${isAquariumPlantsActive
                       ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                       : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                    }`}
                   aria-expanded={plantsDropdownOpen}
                 >
                   <span>Aquarium Plants</span>
@@ -145,11 +141,10 @@ export default function Navbar() {
                           <Link
                             key={cat.href}
                             href={cat.href}
-                            className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${
-                              pathname === cat.href
+                            className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${pathname === cat.href
                                 ? "bg-[#EFF6FF] border-l-[#0B7A0B] text-[#0B7A0B] font-semibold"
                                 : "hover:bg-[#EFF6FF] hover:border-l-[#0B7A0B] text-[#0A2D5B]"
-                            }`}
+                              }`}
                           >
                             <span className="text-[15px] font-poppins font-semibold flex items-center justify-between group-hover:text-[#0B7A0B]">
                               {cat.name}
@@ -178,11 +173,10 @@ export default function Navbar() {
               {/* 3. Gallery */}
               <Link
                 href="/gallery"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                  pathname === "/gallery"
+                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/gallery"
                     ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                }`}
+                  }`}
               >
                 Gallery
               </Link>
@@ -190,11 +184,10 @@ export default function Navbar() {
               {/* 4. Video */}
               <Link
                 href="/video"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                  pathname === "/video"
+                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/video"
                     ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                }`}
+                  }`}
               >
                 Video
               </Link>
@@ -202,11 +195,10 @@ export default function Navbar() {
               {/* 5. About */}
               <Link
                 href="/about"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                  pathname === "/about"
+                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/about"
                     ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                }`}
+                  }`}
               >
                 About
               </Link>
@@ -214,11 +206,10 @@ export default function Navbar() {
               {/* 6. Contact */}
               <Link
                 href="/contact"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${
-                  pathname === "/contact"
+                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/contact"
                     ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                }`}
+                  }`}
               >
                 Contact
               </Link>
@@ -259,7 +250,7 @@ export default function Navbar() {
         {/* Mobile Navigation Drawer - Light Blue (#EFF6FF) with Backdrop */}
         {mobileMenuOpen && (
           <>
-            <div 
+            <div
               className="fixed inset-0 top-[60px] sm:top-[70px] bg-black/25 backdrop-blur-xs z-40 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
               aria-hidden="true"
@@ -268,9 +259,8 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                  pathname === "/" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                }`}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${pathname === "/" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
               >
                 Home
               </Link>
@@ -280,9 +270,8 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setMobilePlantsOpen(!mobilePlantsOpen)}
-                  className={`w-full flex items-center justify-between min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                    isAquariumPlantsActive ? "text-[#0B7A0B] font-semibold bg-white/90 border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                  }`}
+                  className={`w-full flex items-center justify-between min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${isAquariumPlantsActive ? "text-[#0B7A0B] font-semibold bg-white/90 border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                    }`}
                 >
                   <span>Aquarium Plants</span>
                   <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${mobilePlantsOpen ? "rotate-180 text-[#0B7A0B]" : "text-[#6B7280]"}`} />
@@ -302,9 +291,8 @@ export default function Navbar() {
                         key={cat.href}
                         href={cat.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`flex items-center min-h-[44px] px-3.5 py-2 rounded-lg text-[15px] font-medium transition-all ${
-                          pathname === cat.href ? "text-[#0B7A0B] font-semibold bg-white shadow-2xs" : "text-[#6B7280] hover:text-[#0A2D5B] hover:bg-white/50"
-                        }`}
+                        className={`flex items-center min-h-[44px] px-3.5 py-2 rounded-lg text-[15px] font-medium transition-all ${pathname === cat.href ? "text-[#0B7A0B] font-semibold bg-white shadow-2xs" : "text-[#6B7280] hover:text-[#0A2D5B] hover:bg-white/50"
+                          }`}
                       >
                         {cat.name}
                       </Link>
@@ -316,9 +304,8 @@ export default function Navbar() {
               <Link
                 href="/gallery"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                  pathname === "/gallery" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                }`}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${pathname === "/gallery" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
               >
                 Gallery
               </Link>
@@ -326,9 +313,8 @@ export default function Navbar() {
               <Link
                 href="/video"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                  pathname === "/video" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                }`}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${pathname === "/video" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
               >
                 Video
               </Link>
@@ -336,9 +322,8 @@ export default function Navbar() {
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                  pathname === "/about" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                }`}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${pathname === "/about" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
               >
                 About
               </Link>
@@ -346,9 +331,8 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${
-                  pathname === "/contact" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
-                }`}
+                className={`flex items-center min-h-[48px] px-4 py-3 rounded-xl text-[17px] sm:text-[18px] transition-all ${pathname === "/contact" ? "bg-white/90 text-[#0B7A0B] font-semibold border-l-4 border-[#F7C600] shadow-xs" : "text-[#0A2D5B] font-medium hover:bg-white/50 hover:text-[#0B7A0B]"
+                  }`}
               >
                 Contact
               </Link>

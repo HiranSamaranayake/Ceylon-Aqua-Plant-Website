@@ -6,19 +6,19 @@ import { getPlantBySlug, getPlants } from "@/lib/data-service";
 import PlantCard from "@/components/PlantCard";
 import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
-import { 
-  ChevronRight, 
-  Home, 
-  Leaf, 
-  Sun, 
-  Layers, 
-  Activity, 
-  Thermometer, 
-  Wind, 
-  Globe, 
-  Ruler, 
-  MessageSquare, 
-  ShieldCheck, 
+import {
+  ChevronRight,
+  Home,
+  Leaf,
+  Sun,
+  Layers,
+  Activity,
+  Thermometer,
+  Wind,
+  Globe,
+  Ruler,
+  MessageSquare,
+  ShieldCheck,
   ArrowRight
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -97,27 +97,27 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
       },
       ...(plant.category
         ? [
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: plant.category.name,
-              item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/aquarium-plants/${plant.category.slug}`,
-            },
-            {
-              "@type": "ListItem",
-              position: 4,
-              name: plant.name,
-              item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/plants/${plant.slug}`,
-            },
-          ]
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: plant.category.name,
+            item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/aquarium-plants/${plant.category.slug}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            name: plant.name,
+            item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/plants/${plant.slug}`,
+          },
+        ]
         : [
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: plant.name,
-              item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/plants/${plant.slug}`,
-            },
-          ]),
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: plant.name,
+            item: `${process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"}/plants/${plant.slug}`,
+          },
+        ]),
     ],
   };
 
@@ -161,17 +161,21 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
       {/* Main Specimen Details */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
-          
+
           {/* Left Column: Plant Photography */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card flex items-center justify-center">
               <Image
                 src={plant.main_image_url}
                 alt={`${plant.name} - Ceylon Aquatic Plants Specimen`}
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className={
+                  plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture"
+                    ? "object-contain p-4"
+                    : "object-cover"
+                }
               />
               {plant.category && (
                 <div className="absolute top-4 left-4">

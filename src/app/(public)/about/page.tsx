@@ -93,7 +93,7 @@ export default async function AboutPage() {
             </div>
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white -mt-2 sm:-mt-4">
               <Image
-                src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80"
+                src="/images/tissue-culture/tissue-culture-category.jpg"
                 alt="Sterile tissue culture laboratory container"
                 fill
                 className="object-cover"
