@@ -21,6 +21,8 @@ export default function PlantCard({ plant }: PlantCardProps) {
           className={`${
             plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture"
               ? "object-contain p-2.5"
+              : plant.main_image_url?.includes("garden-pond-plants") || plant.category?.slug === "garden-pond-plants"
+              ? "object-contain p-2"
               : "object-cover"
           } group-hover:scale-105 transition-transform duration-500`}
         />

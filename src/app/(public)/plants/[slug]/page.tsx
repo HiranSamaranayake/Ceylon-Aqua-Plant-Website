@@ -172,7 +172,8 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className={
-                  plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture"
+                  plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture" ||
+                  plant.main_image_url?.includes("garden-pond-plants") || plant.category?.slug === "garden-pond-plants"
                     ? "object-contain p-4"
                     : "object-cover"
                 }

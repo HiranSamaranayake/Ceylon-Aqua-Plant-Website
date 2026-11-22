@@ -89,11 +89,11 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
   },
   {
     id: "fp-8",
-    name: "Amazon Sword",
-    scientificName: "Echinodorus bleheri",
+    name: "Water Mimosa Floating Flora",
+    scientificName: "Neptunia oleracea",
     category: "Garden-Pond Plants",
-    highlight: "Robust Solitary Specimen",
-    imageUrl: "https://images.unsplash.com/photo-1508873696983-2df5293cb395?auto=format&fit=crop&w=800&q=80",
+    highlight: "Sensitive Surface Flora",
+    imageUrl: "/images/garden-pond-plants/water-mimosa-neptunia-oleracea.jpg",
     href: "/aquarium-plants/garden-pond-plants",
     floatClass: "animate-float-2",
   },
@@ -171,7 +171,8 @@ export default function FloatingImagesBanner() {
                   fill
                   sizes="(max-width: 640px) 208px, 256px"
                   className={`${
-                    plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture"
+                    plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture" ||
+                    plant.imageUrl.includes("garden-pond-plants") || plant.category === "Garden-Pond Plants"
                       ? "object-contain p-2"
                       : "object-cover"
                   } group-hover:scale-110 transition-transform duration-500 ease-out`}

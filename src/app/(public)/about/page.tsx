@@ -85,7 +85,7 @@ export default async function AboutPage() {
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white mt-4 sm:mt-8">
               <Image
-                src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=800&q=80"
+                src="/images/garden-pond-plants/water-mimosa-neptunia-oleracea.jpg"
                 alt="Aquatic plant propagation basin"
                 fill
                 className="object-cover"
