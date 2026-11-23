@@ -123,7 +123,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                     fill
                     className={
                       category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture") ||
-                      category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants")
+                      category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants") ||
+                      category.slug === "plants-bunch" || category.image_url?.includes("plants-bunch")
                         ? "object-contain p-3"
                         : "object-cover"
                     }

@@ -31,9 +31,9 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
     id: "fp-2",
     name: "Rotala 'H'Ra'",
     scientificName: "Rotala rotundifolia",
-    category: "Bunched Plants",
+    category: "Plants Bunch",
     highlight: "Vibrant Orange/Red",
-    imageUrl: "https://images.unsplash.com/photo-1544943910-4c1dc44a03ab?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/plants-bunch/rotala-rotundifolia-red-bunch.jpg",
     href: "/aquarium-plants/plants-bunch",
     floatClass: "animate-float-2",
   },
@@ -51,9 +51,9 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
     id: "fp-4",
     name: "Ludwigia Rubin",
     scientificName: "Ludwigia repens 'Rubin'",
-    category: "Bunched Plants",
+    category: "Plants Bunch",
     highlight: "Deep Crimson Foliage",
-    imageUrl: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/images/plants-bunch/ludwigia-repens-rubin-bunch.jpg",
     href: "/aquarium-plants/plants-bunch",
     floatClass: "animate-float-1",
   },
@@ -170,12 +170,12 @@ export default function FloatingImagesBanner() {
                   alt={`${plant.name} - Ceylon Aquatic Plants`}
                   fill
                   sizes="(max-width: 640px) 208px, 256px"
-                  className={`${
-                    plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture" ||
-                    plant.imageUrl.includes("garden-pond-plants") || plant.category === "Garden-Pond Plants"
-                      ? "object-contain p-2"
-                      : "object-cover"
-                  } group-hover:scale-110 transition-transform duration-500 ease-out`}
+                  className={`${plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture" ||
+                    plant.imageUrl.includes("garden-pond-plants") || plant.category === "Garden-Pond Plants" ||
+                    plant.imageUrl.includes("plants-bunch") || plant.category === "Plants Bunch" || plant.category === "Bunched Plants"
+                    ? "object-contain p-2"
+                    : "object-cover"
+                    } group-hover:scale-110 transition-transform duration-500 ease-out`}
                 />
 
                 {/* Category Pill Tag */}

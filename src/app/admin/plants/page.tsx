@@ -280,7 +280,13 @@ export default function AdminPlantsPage() {
                           <img
                             src={plant.main_image_url}
                             alt={plant.name}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full ${
+                              plant.main_image_url?.includes("tissue-culture") ||
+                              plant.main_image_url?.includes("garden-pond-plants") ||
+                              plant.main_image_url?.includes("plants-bunch")
+                                ? "object-contain p-1"
+                                : "object-cover"
+                            }`}
                           />
                         </div>
                         <div>

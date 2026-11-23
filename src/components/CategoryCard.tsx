@@ -24,7 +24,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
           className={`${
             category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture")
               ? "object-contain p-2.5"
-              : category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants")
+              : category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants") || category.slug === "plants-bunch" || category.image_url?.includes("plants-bunch")
               ? "object-contain p-2"
               : "object-cover"
           } group-hover:scale-105 transition-transform duration-500 ease-out`}

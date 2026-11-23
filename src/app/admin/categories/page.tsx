@@ -231,7 +231,13 @@ export default function AdminCategoriesPage() {
                           <img
                             src={cat.image_url}
                             alt={cat.name}
-                            className="w-full h-full object-cover"
+                            className={`w-full h-full ${
+                              cat.image_url?.includes("tissue-culture") ||
+                              cat.image_url?.includes("garden-pond-plants") ||
+                              cat.image_url?.includes("plants-bunch")
+                                ? "object-contain p-1"
+                                : "object-cover"
+                            }`}
                           />
                         </div>
                         <div>
