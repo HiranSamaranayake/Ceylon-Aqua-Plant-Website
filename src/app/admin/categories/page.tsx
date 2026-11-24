@@ -234,7 +234,9 @@ export default function AdminCategoriesPage() {
                             className={`w-full h-full ${
                               cat.image_url?.includes("tissue-culture") ||
                               cat.image_url?.includes("garden-pond-plants") ||
-                              cat.image_url?.includes("plants-bunch")
+                              cat.image_url?.includes("plants-bunch") ||
+                              cat.image_url?.includes("potted-plants") ||
+                              cat.image_url?.includes("terrarium-plants")
                                 ? "object-contain p-1"
                                 : "object-cover"
                             }`}

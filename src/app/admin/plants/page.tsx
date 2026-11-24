@@ -283,7 +283,9 @@ export default function AdminPlantsPage() {
                             className={`w-full h-full ${
                               plant.main_image_url?.includes("tissue-culture") ||
                               plant.main_image_url?.includes("garden-pond-plants") ||
-                              plant.main_image_url?.includes("plants-bunch")
+                              plant.main_image_url?.includes("plants-bunch") ||
+                              plant.main_image_url?.includes("potted-plants") ||
+                              plant.main_image_url?.includes("terrarium-plants")
                                 ? "object-contain p-1"
                                 : "object-cover"
                             }`}

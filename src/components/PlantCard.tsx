@@ -1,36 +1,46 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Plant } from "@/types";
 import { ArrowRight, Sun, Layers, Activity } from "lucide-react";
+import SafeImage from "@/components/SafeImage";
 
 interface PlantCardProps {
   plant: Plant;
 }
 
 export default function PlantCard({ plant }: PlantCardProps) {
+  const isCupOrPotted =
+    plant.main_image_url?.includes("tissue-culture") ||
+    plant.category?.slug === "tissue-culture" ||
+    plant.main_image_url?.includes("garden-pond-plants") ||
+    plant.category?.slug === "garden-pond-plants" ||
+    plant.main_image_url?.includes("plants-bunch") ||
+    plant.category?.slug === "plants-bunch" ||
+    plant.main_image_url?.includes("potted-plants") ||
+    plant.category?.slug === "potted-plants" ||
+    plant.main_image_url?.includes("terrarium-plants") ||
+    plant.category?.slug === "terrarium-plants";
+
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-md hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
-      {/* Plant Image */}
+    <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+      {/* Plant Image Container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
-        <Image
+        <SafeImage
           src={plant.main_image_url}
           alt={`${plant.name} - Ceylon Aquatic Plants`}
+          fallbackText={plant.name}
+          fallbackSrc="/images/potted-plants/potted-plants-category.jpg"
           fill
           sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           className={`${
-            plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture"
-              ? "object-contain p-2.5"
-              : plant.main_image_url?.includes("garden-pond-plants") || plant.category?.slug === "garden-pond-plants" || plant.main_image_url?.includes("plants-bunch") || plant.category?.slug === "plants-bunch"
-              ? "object-contain p-2"
-              : "object-cover"
-          } group-hover:scale-105 transition-transform duration-500`}
+            isCupOrPotted ? "object-contain p-2.5" : "object-cover"
+          } group-hover:scale-105 transition-transform duration-300 ease-out`}
         />
 
         {/* Category Badge */}
         {plant.category && (
-          <div className="absolute top-3 left-3">
-            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#F0FDF4] text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+          <div className="absolute top-3 left-3 z-10 pointer-events-none">
+            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#F0FDF4]/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
               {plant.category.name}
             </span>
           </div>
@@ -38,7 +48,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
 
         {/* Featured Tag */}
         {plant.is_featured && (
-          <div className="absolute top-3 right-3">
+          <div className="absolute top-3 right-3 z-10 pointer-events-none">
             <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#F7C600] text-[#0A2D5B] shadow-xs">
               Featured
             </span>
@@ -91,7 +101,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
           </div>
         </div>
 
-        {/* View Details Action - Touch Friendly Yellow Action Button */}
+        {/* View Details Action */}
         <div className="mt-4 pt-2.5 border-t border-[#E5E7EB]">
           <Link
             href={`/plants/${plant.slug}`}

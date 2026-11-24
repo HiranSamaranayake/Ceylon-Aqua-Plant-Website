@@ -1,38 +1,48 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { PlantCategory } from "@/types";
 import { ArrowRight, Leaf } from "lucide-react";
+import SafeImage from "@/components/SafeImage";
 
 interface CategoryCardProps {
   category: PlantCategory;
 }
 
 export default function CategoryCard({ category }: CategoryCardProps) {
+  const isContained =
+    category.slug === "tissue-culture" ||
+    category.image_url?.includes("tissue-culture") ||
+    category.slug === "garden-pond-plants" ||
+    category.image_url?.includes("garden-pond-plants") ||
+    category.slug === "plants-bunch" ||
+    category.image_url?.includes("plants-bunch") ||
+    category.slug === "potted-plants" ||
+    category.image_url?.includes("potted-plants") ||
+    category.slug === "terrarium-plants" ||
+    category.image_url?.includes("terrarium-plants");
+
   return (
     <Link
       href={`/aquarium-plants/${category.slug}`}
-      className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] flex flex-col justify-between shadow-xs hover:shadow-md hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300"
+      className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] flex flex-col justify-between shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300"
     >
-      {/* Category Image */}
+      {/* Category Image Container */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
-        <Image
+        <SafeImage
           src={category.image_url}
           alt={`${category.name} - Ceylon Aquatic Plants`}
+          fallbackText={category.name}
+          fallbackSrc="/images/potted-plants/potted-plants-category.jpg"
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={`${
-            category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture")
-              ? "object-contain p-2.5"
-              : category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants") || category.slug === "plants-bunch" || category.image_url?.includes("plants-bunch")
-              ? "object-contain p-2"
-              : "object-cover"
-          } group-hover:scale-105 transition-transform duration-500 ease-out`}
+            isContained ? "object-contain p-2.5" : "object-cover"
+          } group-hover:scale-105 transition-transform duration-300 ease-out`}
         />
 
         {/* Top badge */}
-        <div className="absolute top-3 left-3 z-10">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-white text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+        <div className="absolute top-3 left-3 z-10 pointer-events-none">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
             <Leaf className="w-3 h-3 text-[#0B7A0B]" />
             <span>Category</span>
           </span>

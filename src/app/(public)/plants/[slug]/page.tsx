@@ -1,11 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPlantBySlug, getPlants } from "@/lib/data-service";
 import PlantCard from "@/components/PlantCard";
-import FadeIn from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
+import SafeImage from "@/components/SafeImage";
 import {
   ChevronRight,
   Home,
@@ -121,6 +119,18 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
     ],
   };
 
+  const isContained =
+    plant.main_image_url?.includes("tissue-culture") ||
+    plant.category?.slug === "tissue-culture" ||
+    plant.main_image_url?.includes("garden-pond-plants") ||
+    plant.category?.slug === "garden-pond-plants" ||
+    plant.main_image_url?.includes("plants-bunch") ||
+    plant.category?.slug === "plants-bunch" ||
+    plant.main_image_url?.includes("potted-plants") ||
+    plant.category?.slug === "potted-plants" ||
+    plant.main_image_url?.includes("terrarium-plants") ||
+    plant.category?.slug === "terrarium-plants";
+
   return (
     <div className="bg-white min-h-screen pb-20">
       <script
@@ -162,26 +172,24 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
 
-          {/* Left Column: Plant Photography */}
+          {/* Left Column: Plant Photography with Smooth Hover Zoom */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card flex items-center justify-center">
-              <Image
+            <div className="group relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card hover:shadow-card-hover flex items-center justify-center transition-shadow duration-300">
+              <SafeImage
                 src={plant.main_image_url}
                 alt={`${plant.name} - Ceylon Aquatic Plants Specimen`}
+                fallbackText={plant.name}
+                fallbackSrc="/images/potted-plants/potted-plants-category.jpg"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className={
-                  plant.main_image_url?.includes("tissue-culture") || plant.category?.slug === "tissue-culture" ||
-                  plant.main_image_url?.includes("garden-pond-plants") || plant.category?.slug === "garden-pond-plants" ||
-                  plant.main_image_url?.includes("plants-bunch") || plant.category?.slug === "plants-bunch"
-                    ? "object-contain p-4"
-                    : "object-cover"
-                }
+                className={`${
+                  isContained ? "object-contain p-4" : "object-cover"
+                } group-hover:scale-105 transition-transform duration-300 ease-out`}
               />
               {plant.category && (
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+                <div className="absolute top-4 left-4 z-10 pointer-events-none">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
                     {plant.category.name}
                   </span>
                 </div>
@@ -216,16 +224,13 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
 
             {/* Quick Specs Grid */}
             <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#0B7A0B] mb-4">
-                Horticultural & Botanical Profile
-              </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
-                {plant.origin && (
+                {plant.placement && (
                   <div className="space-y-1">
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
-                      <Globe className="w-3.5 h-3.5 text-[#0B7A0B]" /> Origin
+                      <Layers className="w-3.5 h-3.5 text-[#0B7A0B]" /> Placement
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.origin}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.placement}</p>
                   </div>
                 )}
                 {plant.growth_rate && (
@@ -233,15 +238,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
                       <Activity className="w-3.5 h-3.5 text-[#0B7A0B]" /> Growth Rate
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.growth_rate}</p>
-                  </div>
-                )}
-                {plant.plant_height && (
-                  <div className="space-y-1">
-                    <span className="text-[#6B7280] flex items-center gap-1 font-medium">
-                      <Ruler className="w-3.5 h-3.5 text-[#F7C600]" /> Height
-                    </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.plant_height}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.growth_rate}</p>
                   </div>
                 )}
                 {plant.light_demand && (
@@ -249,31 +246,39 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
                       <Sun className="w-3.5 h-3.5 text-[#F7C600]" /> Light Demand
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.light_demand}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.light_demand}</p>
                   </div>
                 )}
                 {plant.co2_requirement && (
                   <div className="space-y-1">
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
-                      <Wind className="w-3.5 h-3.5 text-[#0E7CDB]" /> CO2 Demand
+                      <Wind className="w-3.5 h-3.5 text-[#0E7CDB]" /> CO2 Requirement
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.co2_requirement}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.co2_requirement}</p>
                   </div>
                 )}
                 {plant.temperature_range && (
                   <div className="space-y-1">
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
-                      <Thermometer className="w-3.5 h-3.5 text-[#0A2D5B]" /> Temperature
+                      <Thermometer className="w-3.5 h-3.5 text-[#F7C600]" /> Temperature
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.temperature_range}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.temperature_range}</p>
                   </div>
                 )}
-                {plant.placement && (
-                  <div className="space-y-1 col-span-2 sm:col-span-3 pt-3 border-t border-[#E5E7EB]">
+                {plant.plant_height && (
+                  <div className="space-y-1">
                     <span className="text-[#6B7280] flex items-center gap-1 font-medium">
-                      <Layers className="w-3.5 h-3.5 text-[#0B7A0B]" /> Recommended Aquascape Placement
+                      <Ruler className="w-3.5 h-3.5 text-[#0B7A0B]" /> Plant Height
                     </span>
-                    <p className="font-bold text-[#0A2D5B]">{plant.placement}</p>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.plant_height}</p>
+                  </div>
+                )}
+                {plant.origin && (
+                  <div className="space-y-1 col-span-2">
+                    <span className="text-[#6B7280] flex items-center gap-1 font-medium">
+                      <Globe className="w-3.5 h-3.5 text-[#0A2D5B]" /> Botanical Origin
+                    </span>
+                    <p className="font-bold text-[#0A2D5B] text-sm">{plant.origin}</p>
                   </div>
                 )}
               </div>

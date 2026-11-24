@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { getWebsiteSettings, getDocuments } from "@/lib/data-service";
-import FadeIn from "@/components/animations/FadeIn";
-import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
+import SafeImage from "@/components/SafeImage";
 import { 
   Building2, 
   Target, 
@@ -82,21 +80,26 @@ export default async function AboutPage() {
             </div>
           </div>
 
+          {/* Right Imagery with Smooth Hover Zoom */}
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white mt-4 sm:mt-8">
-              <Image
+            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white mt-4 sm:mt-8 bg-[#F8FAFC] transition-shadow duration-300">
+              <SafeImage
                 src="/images/garden-pond-plants/water-mimosa-neptunia-oleracea.jpg"
                 alt="Aquatic plant propagation basin"
+                fallbackText="Aquatic plant propagation basin"
                 fill
-                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
               />
             </div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card border-2 border-white -mt-2 sm:-mt-4">
-              <Image
+            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white -mt-2 sm:-mt-4 bg-[#F8FAFC] transition-shadow duration-300">
+              <SafeImage
                 src="/images/tissue-culture/tissue-culture-category.jpg"
                 alt="Sterile tissue culture laboratory container"
+                fallbackText="Sterile tissue culture container"
                 fill
-                className="object-cover"
+                sizes="(max-width: 1024px) 50vw, 25vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
               />
             </div>
           </div>
@@ -154,7 +157,7 @@ export default async function AboutPage() {
           {settings.core_values.map((val, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs flex flex-col justify-between"
+              className="p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs flex flex-col justify-between hover:border-[#0B7A0B]/40 hover:shadow-sm transition-all duration-300"
             >
               <div>
                 <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white text-[#0B7A0B] border border-[#E5E7EB] flex items-center justify-center font-bold text-sm mb-3 sm:mb-4">
@@ -174,36 +177,36 @@ export default async function AboutPage() {
 
       {/* Section 4: Approved PDF Documentation & Downloads */}
       {documents.length > 0 && (
-        <section className="py-20 bg-[#F8FAFC] border-t border-[#E5E7EB]">
+        <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-t border-[#E5E7EB]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl mb-12">
+            <div className="max-w-3xl mb-8 sm:mb-12">
               <span className="text-xs font-bold text-[#0B7A0B] uppercase tracking-widest">
                 Official Literature & Guides
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A2D5B] mt-1 font-display">
                 Download Catalogues & Guides
               </h2>
-              <p className="text-sm text-[#6B7280] mt-2">
+              <p className="text-xs sm:text-sm text-[#6B7280] mt-2 leading-relaxed">
                 Access official PDF literature including our complete species catalogue, care standards, and packaging specifications.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               {documents.map((doc) => (
                 <div
                   key={doc.id}
-                  className="p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                  className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
                 >
                   <div className="flex items-start gap-4">
                     <div className="p-3 rounded-xl bg-[#F0FDF4] text-[#0B7A0B] shrink-0">
                       <FileText className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-base font-bold text-[#0A2D5B] font-display">
+                      <h4 className="text-sm sm:text-base font-bold text-[#0A2D5B] font-display">
                         {doc.title}
                       </h4>
                       {doc.description && (
-                        <p className="text-xs text-[#6B7280] mt-1 max-w-md">
+                        <p className="text-xs text-[#6B7280] mt-1 max-w-md leading-relaxed">
                           {doc.description}
                         </p>
                       )}
@@ -217,7 +220,7 @@ export default async function AboutPage() {
                     href={doc.file_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shrink-0 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shrink-0 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 border border-transparent min-h-[44px]"
                   >
                     <Download className="w-3.5 h-3.5 text-[#0A2D5B]" />
                     <span>Download PDF</span>

@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowUpRight, Leaf } from "lucide-react";
+import SafeImage from "@/components/SafeImage";
 
 interface FloatingPlantItem {
   id: string;
@@ -19,11 +19,11 @@ interface FloatingPlantItem {
 const FLOATING_PLANTS: FloatingPlantItem[] = [
   {
     id: "fp-1",
-    name: "Anubias Nana Petite",
+    name: "Anubias Barteri var. Nana",
     scientificName: "Anubias barteri var. nana",
     category: "Potted Plants",
-    highlight: "Hardy & Snail-Free",
-    imageUrl: "https://images.unsplash.com/photo-1520302630591-fd1c66edc19d?auto=format&fit=crop&w=800&q=80",
+    highlight: "Hardy & Established Roots",
+    imageUrl: "/images/potted-plants/anubias-barteri-var-nana-potted.jpg",
     href: "/aquarium-plants/potted-plants",
     floatClass: "animate-float-1",
   },
@@ -69,11 +69,11 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
   },
   {
     id: "fp-6",
-    name: "Java Fern Mother Plant",
-    scientificName: "Microsorum pteropus",
+    name: "Amazon Sword Plant",
+    scientificName: "Echinodorus bleheri",
     category: "Potted Plants",
-    highlight: "Low Light Tolerant",
-    imageUrl: "https://images.unsplash.com/photo-1516205651411-aef33a44f7c2?auto=format&fit=crop&w=800&q=80",
+    highlight: "Majestic Centerpiece",
+    imageUrl: "/images/potted-plants/echinodorus-bleheri-amazon-sword-potted.jpg",
     href: "/aquarium-plants/potted-plants",
     floatClass: "animate-float-3",
   },
@@ -82,8 +82,8 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
     name: "Cryptocoryne Wendtii",
     scientificName: "Cryptocoryne wendtii 'Green'",
     category: "Potted Plants",
-    highlight: "Bio-Filtered Water",
-    imageUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+    highlight: "Native Ceylon Potted Flora",
+    imageUrl: "/images/potted-plants/cryptocoryne-wendtii-green-potted.jpg",
     href: "/aquarium-plants/potted-plants",
     floatClass: "animate-float-1",
   },
@@ -99,11 +99,11 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
   },
   {
     id: "fp-9",
-    name: "Java Moss Aquascape",
-    scientificName: "Taxiphyllum barbieri",
+    name: "Aglaonema 'Silver Queen'",
+    scientificName: "Aglaonema commutatum",
     category: "Terrarium Plants",
-    highlight: "Lush Foreground Mat",
-    imageUrl: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+    highlight: "Moisture-Loving Terrarium Flora",
+    imageUrl: "/images/terrarium-plants/aglaonema-silver-queen-terrarium.jpg",
     href: "/aquarium-plants/terrarium-plants",
     floatClass: "animate-float-3",
   },
@@ -120,12 +120,10 @@ const FLOATING_PLANTS: FloatingPlantItem[] = [
 ];
 
 export default function FloatingImagesBanner() {
-  // Duplicate list to achieve continuous, infinite left-to-right looping
   const duplicatedPlants = [...FLOATING_PLANTS, ...FLOATING_PLANTS];
 
   return (
     <section className="relative py-12 sm:py-16 bg-[#F8FAFC] border-b border-[#E5E7EB] overflow-hidden">
-
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center sm:text-left">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
@@ -143,7 +141,7 @@ export default function FloatingImagesBanner() {
               href="/aquarium-plants"
               className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs transition-all duration-300"
             >
-              <span>View All 30+ Varieties</span>
+              <span>View All 50+ Varieties</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#0A2D5B]" />
             </Link>
           </div>
@@ -154,32 +152,29 @@ export default function FloatingImagesBanner() {
       <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent z-10" />
       <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent z-10" />
 
-      {/* Continuous Floating Marquee Moving Left-to-Right */}
+      {/* Continuous Floating Marquee Moving Left-to-Right - Pauses Smoothly on Hover */}
       <div className="relative w-full overflow-hidden py-3">
-        <div className="animate-marquee-ltr flex items-center gap-4 sm:gap-6 px-4">
+        <div className="animate-marquee-ltr hover:[animation-play-state:paused] flex items-center gap-4 sm:gap-6 px-4">
           {duplicatedPlants.map((plant, index) => (
             <Link
               key={`${plant.id}-${index}`}
               href={plant.href}
-              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-card hover:shadow-card-hover hover:border-[#0B7A0B]/50 transition-all duration-300 ${plant.floatClass}`}
+              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 ${plant.floatClass}`}
             >
               {/* Plant Image Container */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC]">
-                <Image
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
+                <SafeImage
                   src={plant.imageUrl}
                   alt={`${plant.name} - Ceylon Aquatic Plants`}
+                  fallbackText={plant.name}
+                  fallbackSrc="/images/potted-plants/potted-plants-category.jpg"
                   fill
                   sizes="(max-width: 640px) 208px, 256px"
-                  className={`${plant.imageUrl.includes("tissue-culture") || plant.category === "Tissue Culture" ||
-                    plant.imageUrl.includes("garden-pond-plants") || plant.category === "Garden-Pond Plants" ||
-                    plant.imageUrl.includes("plants-bunch") || plant.category === "Plants Bunch" || plant.category === "Bunched Plants"
-                    ? "object-contain p-2"
-                    : "object-cover"
-                    } group-hover:scale-110 transition-transform duration-500 ease-out`}
+                  className="object-contain p-2.5 group-hover:scale-105 transition-transform duration-300 ease-out"
                 />
 
                 {/* Category Pill Tag */}
-                <div className="absolute top-2.5 left-2.5 z-10">
+                <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
                   <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
                     <Leaf className="w-2.5 h-2.5 text-[#0B7A0B]" />
                     <span>{plant.category}</span>
@@ -187,7 +182,7 @@ export default function FloatingImagesBanner() {
                 </div>
 
                 {/* Highlight Pill */}
-                <div className="absolute bottom-2.5 right-2.5 z-10">
+                <div className="absolute bottom-2.5 right-2.5 z-10 pointer-events-none">
                   <span className="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0B7A0B]/90 backdrop-blur-xs text-[#F7C600] shadow-xs">
                     {plant.highlight}
                   </span>
@@ -222,11 +217,10 @@ export default function FloatingImagesBanner() {
           href="/aquarium-plants"
           className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold bg-[#F7C600] active:bg-[#E5B700] text-[#0A2D5B] shadow-xs transition-colors min-h-[44px]"
         >
-          <span>Explore All 30+ Plant Varieties</span>
+          <span>Explore All 50+ Plant Varieties</span>
           <ArrowUpRight className="w-3.5 h-3.5 text-[#0A2D5B]" />
         </Link>
       </div>
-
     </section>
   );
 }

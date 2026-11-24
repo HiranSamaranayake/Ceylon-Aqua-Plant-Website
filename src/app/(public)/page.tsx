@@ -1,24 +1,24 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { 
-  getCategories, 
-  getVideos, 
-  getWebsiteSettings 
+import {
+  getCategories,
+  getVideos,
+  getWebsiteSettings
 } from "@/lib/data-service";
 import CategoryCard from "@/components/CategoryCard";
 import FloatingImagesBanner from "@/components/FloatingImagesBanner";
 import FadeIn from "@/components/animations/FadeIn";
 import AnimatedHeroTitle from "@/components/animations/AnimatedHeroTitle";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
-import { 
-  ArrowRight, 
-  Leaf, 
-  Sun, 
-  Droplets, 
-  Microscope, 
-  ShieldCheck, 
-  Play, 
+import SafeImage from "@/components/SafeImage";
+import {
+  ArrowRight,
+  Leaf,
+  Sun,
+  Droplets,
+  Microscope,
+  ShieldCheck,
+  Play,
   Sparkles
 } from "lucide-react";
 
@@ -35,17 +35,17 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-0 bg-white">
-      
+
       {/* =========================================================================
-          SECTION 1: HERO SECTION - Clean Light / White with Plant Photography
+          SECTION 1: HERO SECTION - Clean Light Theme with Plant Photography
           ========================================================================= */}
       <section className="relative bg-[#F8FAFC] border-b border-[#E5E7EB] overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
-              
+
               {/* Main Headline - Responsive Tagline + Word Reveal Animation */}
               <AnimatedHeroTitle
                 title={settings.hero_title}
@@ -72,7 +72,7 @@ export default async function HomePage() {
 
                   <Link
                     href="/contact"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl text-sm font-semibold bg-[#0B7A0B] hover:bg-[#0B7A0B] text-white border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group min-h-[48px]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-xl text-sm font-semibold bg-[#0B7A0B] hover:bg-[#085808] text-white border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group min-h-[48px]"
                   >
                     <span>Contact Us</span>
                     <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
@@ -85,43 +85,44 @@ export default async function HomePage() {
                 <div className="pt-6 sm:pt-8 border-t border-[#E5E7EB] grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-[#0A2D5B]">
                   <div className="flex items-center gap-2">
                     <Sun className="w-4 h-4 text-[#F7C600] shrink-0" />
-                    <span>Year-Round Tropical Sun</span>
+                    <span>Tropical Sunlight</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Microscope className="w-4 h-4 text-[#0B7A0B] shrink-0" />
-                    <span>Sterile Tissue Culture</span>
+                    <span>Sterile In-Vitro Lab</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Droplets className="w-4 h-4 text-[#0E7CDB] shrink-0" />
-                    <span>Pure Bio-Filtered Water</span>
+                    <span>Bio-Filtered Water</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-[#34C759] shrink-0" />
-                    <span>Snail & Algae Inspected</span>
+                    <span>Export Biosecurity</span>
                   </div>
                 </div>
               </FadeIn>
 
             </div>
 
-            {/* Right Visual Image Composition */}
+            {/* Right Visual Image Composition with Smooth Hover Zoom */}
             <div className="lg:col-span-5 relative">
               <FadeIn direction="left" delay={0.3} duration={0.8}>
-                <div className="relative aspect-[4/3] sm:aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border-2 sm:border-4 border-white bg-white">
-                  <Image
+                <div className="group relative aspect-[4/3] sm:aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-white bg-white transition-shadow duration-300">
+                  <SafeImage
                     src="https://images.unsplash.com/photo-1520302630591-fd1c66edc19d?auto=format&fit=crop&w=1400&q=85"
-                    alt="Lush underwater aquascape with vibrant live aquarium plants"
+                    alt="Lush underwater aquascape with vibrant live aquatic plants"
+                    fallbackSrc="/images/plants-bunch/plants-bunch-category.jpg"
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 45vw"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
                   />
                 </div>
 
                 {/* Floating Top Badge */}
                 <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-[#E5E7EB] shadow-card flex items-center gap-2 text-xs font-bold text-[#0A2D5B] animate-float-1 hidden sm:flex">
                   <Sparkles className="w-4 h-4 text-[#F7C600]" />
-                  <span>100% Snail & Algae Free</span>
+                  <span>Certified Biological Purity</span>
                 </div>
 
                 {/* Floating Quality Badge */}
@@ -152,17 +153,18 @@ export default async function HomePage() {
       <section className="py-12 sm:py-16 md:py-20 bg-white border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* Visual Column */}
             <div className="lg:col-span-5 relative order-2 lg:order-1">
               <FadeIn direction="right" duration={0.7}>
-                <div className="relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card border-2 sm:border-4 border-white bg-[#F8FAFC]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1544943910-4c1dc44a03ab?auto=format&fit=crop&w=1200&q=85"
-                    alt="Ceylon Aquatic Plants greenhouse cultivation and aquascaping"
+                <div className="group relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-white bg-[#F8FAFC] transition-shadow duration-300">
+                  <SafeImage
+                    src="/images/underwater-flora-natural.jpg"
+                    alt="Cultivating vibrant underwater flora in natural tropical habitats - Ceylon Aquatic Plants"
+                    fallbackSrc="/images/underwater-aquascape-lush.jpg"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
                   />
                 </div>
               </FadeIn>
@@ -188,20 +190,20 @@ export default async function HomePage() {
                   <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
                     <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B] flex items-center gap-2">
                       <Sun className="w-4 h-4 text-[#F7C600] shrink-0" />
-                      <span>Optimal Sunlight</span>
+                      <span>Natural Photoperiod</span>
                     </h4>
                     <p className="text-xs text-[#6B7280] mt-1.5 leading-relaxed">
-                      Continuous tropical photoperiod triggers intense natural chlorophyll and carotenoid coloration.
+                      Equatorial sunshine stimulates rapid root development and rich chlorophyll pigmentation.
                     </p>
                   </div>
 
                   <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
                     <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B] flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-[#0B7A0B] shrink-0" />
-                      <span>Biosecure Selection</span>
+                      <span>Controlled Quarantine</span>
                     </h4>
                     <p className="text-xs text-[#6B7280] mt-1.5 leading-relaxed">
-                      Rigorous quarantine, root inspection, and in-vitro laboratory hygiene ensure pest-free plants.
+                      Systematic biological inspection ensures specimens meet international phytosanitary standards.
                     </p>
                   </div>
                 </div>
@@ -222,13 +224,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-
       {/* =========================================================================
-          SECTION 3: FEATURED CATEGORIES - Light Green Background (#F8FAFC)
+          SECTION 3: FEATURED CATEGORIES - Light Theme Background (#F8FAFC)
           ========================================================================= */}
       <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-b border-[#E5E7EB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <FadeIn direction="up">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
               <div>
@@ -266,14 +267,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-
-
       {/* =========================================================================
           SECTION 4: WHY CHOOSE US - Selected Dark Green Premium Section
           ========================================================================= */}
       <section className="py-12 sm:py-16 md:py-20 bg-[#0B7A0B] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <FadeIn direction="up">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
               <span className="text-xs font-bold text-[#F7C600] uppercase tracking-widest">
@@ -291,7 +290,7 @@ export default async function HomePage() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {settings.core_values.map((val, idx) => (
               <StaggerItem key={idx}>
-                <div 
+                <div
                   className="bg-[#085808] rounded-2xl p-5 sm:p-6 border border-[#34C759]/40 flex flex-col justify-between hover:border-[#F7C600]/80 hover:-translate-y-1 transition-all duration-300 h-full"
                 >
                   <div>
@@ -313,8 +312,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-
-
       {/* =========================================================================
           SECTION 5: VIDEO SHOWCASE - Clean White Background
           ========================================================================= */}
@@ -323,7 +320,7 @@ export default async function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                
+
                 <div className="lg:col-span-5 space-y-3 sm:space-y-4">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
                     <Play className="w-3.5 h-3.5 text-[#0B7A0B]" />
@@ -347,15 +344,15 @@ export default async function HomePage() {
                 </div>
 
                 <div className="lg:col-span-7">
-                  <div className="relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-white border border-[#E5E7EB] shadow-card">
-                    {featuredVideo.thumbnail_url ? (
-                      <Image
-                        src={featuredVideo.thumbnail_url}
-                        alt={featuredVideo.title}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : null}
+                  <div className="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card hover:shadow-card-hover transition-shadow duration-300">
+                    <SafeImage
+                      src={featuredVideo.thumbnail_url || "/images/plants-bunch/plants-bunch-category.jpg"}
+                      alt={featuredVideo.title}
+                      fallbackText={featuredVideo.title}
+                      fallbackSrc="/images/plants-bunch/plants-bunch-category.jpg"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+                    />
                     <div className="absolute inset-0 bg-black/25 flex items-center justify-center">
                       <Link
                         href="/video"
@@ -373,7 +370,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
 
       {/* =========================================================================
           SECTION 6: CONTACT CTA BANNER - Card on Clean White
@@ -403,7 +399,7 @@ export default async function HomePage() {
                   href="https://wa.me/94777042100"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm bg-[#0B7A0B] hover:bg-[#0B7A0B] text-white hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300 min-h-[48px]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl font-bold text-sm bg-[#0B7A0B] hover:bg-[#085808] text-white hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300 min-h-[48px]"
                 >
                   <span>WhatsApp Inquiry</span>
                 </a>

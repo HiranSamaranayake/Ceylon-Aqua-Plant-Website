@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getCategoryBySlug, getPlants, getCategories } from "@/lib/data-service";
 import PlantCard from "@/components/PlantCard";
 import FadeIn from "@/components/animations/FadeIn";
 import { StaggerContainer, StaggerItem } from "@/components/animations/Stagger";
+import SafeImage from "@/components/SafeImage";
 import { ChevronRight, Leaf, Home } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -50,6 +50,18 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) {
     notFound();
   }
+
+  const isContained =
+    category.slug === "tissue-culture" ||
+    category.image_url?.includes("tissue-culture") ||
+    category.slug === "garden-pond-plants" ||
+    category.image_url?.includes("garden-pond-plants") ||
+    category.slug === "plants-bunch" ||
+    category.image_url?.includes("plants-bunch") ||
+    category.slug === "potted-plants" ||
+    category.image_url?.includes("potted-plants") ||
+    category.slug === "terrarium-plants" ||
+    category.image_url?.includes("terrarium-plants");
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -116,18 +128,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               <div className="lg:col-span-4 hidden lg:block">
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card bg-[#F8FAFC] flex items-center justify-center">
-                  <Image
+                <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card hover:shadow-card-hover bg-[#F8FAFC] flex items-center justify-center transition-shadow duration-300">
+                  <SafeImage
                     src={category.image_url}
                     alt={category.name}
+                    fallbackText={category.name}
+                    fallbackSrc="/images/potted-plants/potted-plants-category.jpg"
                     fill
-                    className={
-                      category.slug === "tissue-culture" || category.image_url?.includes("tissue-culture") ||
-                      category.slug === "garden-pond-plants" || category.image_url?.includes("garden-pond-plants") ||
-                      category.slug === "plants-bunch" || category.image_url?.includes("plants-bunch")
-                        ? "object-contain p-3"
-                        : "object-cover"
-                    }
+                    className={`${
+                      isContained ? "object-contain p-3" : "object-cover"
+                    } group-hover:scale-105 transition-transform duration-300 ease-out`}
                   />
                 </div>
               </div>
