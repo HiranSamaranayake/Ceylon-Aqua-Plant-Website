@@ -132,7 +132,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
     plant.category?.slug === "terrarium-plants";
 
   return (
-    <div className="bg-white min-h-screen pb-20">
+    <div className="bg-[#F8FAFC] min-h-screen pb-20">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
@@ -143,7 +143,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
       />
 
       {/* Top Breadcrumb Bar */}
-      <div className="bg-[#F8FAFC] py-3.5 px-4 sm:px-6 lg:px-8 border-b border-[#E5E7EB]">
+      <div className="bg-[#EFF6FF] py-3.5 px-4 sm:px-6 lg:px-8 border-b border-[#0E7CDB]/20">
         <div className="max-w-7xl mx-auto">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-[#6B7280] overflow-x-auto whitespace-nowrap">
             <Link href="/" className="hover:text-[#0B7A0B] flex items-center gap-1 font-medium">
@@ -174,7 +174,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
 
           {/* Left Column: Plant Photography with Smooth Hover Zoom */}
           <div className="lg:col-span-6 space-y-4">
-            <div className="group relative aspect-[4/3] rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card hover:shadow-card-hover flex items-center justify-center transition-shadow duration-300">
+            <div className="group relative aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-[#34C759]/25 shadow-card hover:shadow-card-hover flex items-center justify-center transition-shadow duration-300">
               <SafeImage
                 src={plant.main_image_url}
                 alt={`${plant.name} - Ceylon Aquatic Plants Specimen`}
@@ -189,7 +189,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
               />
               {plant.category && (
                 <div className="absolute top-4 left-4 z-10 pointer-events-none">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#34C759]/25 shadow-xs">
                     {plant.category.name}
                   </span>
                 </div>
@@ -197,7 +197,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
             </div>
 
             {/* Quality Assurance Strip */}
-            <div className="p-4 rounded-2xl bg-[#F0FDF4] border border-[#E5E7EB] flex items-center justify-between text-xs text-[#0A2D5B]">
+            <div className="p-4 rounded-2xl bg-[#F0FDF4] border border-[#34C759]/30 flex items-center justify-between text-xs text-[#0A2D5B]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#0B7A0B]" />
                 <span className="font-bold">Ceylon Certified Nursery Cultivation</span>
@@ -223,7 +223,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
             </div>
 
             {/* Quick Specs Grid */}
-            <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+            <div className="p-6 rounded-2xl bg-white border border-[#34C759]/25 shadow-xs">
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
                 {plant.placement && (
                   <div className="space-y-1">
@@ -307,12 +307,12 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
         </div>
 
         {/* Detailed Botanical & Care Notes */}
-        <div className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-[#E5E7EB] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <div className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t border-[#34C759]/25 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           <div className="lg:col-span-7 space-y-3 sm:space-y-4">
             <h2 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
               Comprehensive Botanical Description
             </h2>
-            <div className="prose prose-emerald text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed whitespace-pre-line bg-[#F8FAFC] p-4 sm:p-6 md:p-8 rounded-2xl border border-[#E5E7EB]">
+            <div className="prose prose-emerald text-xs sm:text-sm md:text-base text-[#6B7280] leading-relaxed whitespace-pre-line bg-white p-4 sm:p-6 md:p-8 rounded-2xl border border-[#34C759]/20 shadow-xs">
               {plant.full_description}
             </div>
           </div>
@@ -321,7 +321,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
             <h2 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
               Aquarium Care & Maintenance
             </h2>
-            <div className="bg-[#F8FAFC] p-4 sm:p-6 md:p-8 rounded-2xl border border-[#E5E7EB] space-y-4">
+            <div className="bg-white p-4 sm:p-6 md:p-8 rounded-2xl border border-[#34C759]/20 shadow-xs space-y-4">
               <p className="text-xs sm:text-sm text-[#6B7280] leading-relaxed">
                 {plant.care_instructions || "Acclimatize gradually to your aquarium's temperature and lighting. Ensure adequate water circulation and maintain stable macro/micronutrient levels."}
               </p>
@@ -335,7 +335,7 @@ export default async function PlantDetailPage({ params }: PlantDetailProps) {
 
         {/* Related Varieties in Category */}
         {relatedPlants.length > 0 && (
-          <div className="mt-14 sm:mt-20 pt-8 sm:pt-12 border-t border-[#E5E7EB]">
+          <div className="mt-14 sm:mt-20 pt-8 sm:pt-12 border-t border-[#34C759]/25">
             <div className="flex items-center justify-between mb-6 sm:mb-8">
               <div>
                 <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">

@@ -75,9 +75,9 @@ export default function PrivacyPolicyPage() {
               </p>
               <p className="mt-2 font-bold text-[#0A2D5B]">
                 Ceylon Aquatic Plants (Pvt) Ltd<br />
-                Phone: <a href="tel:+94777042100" className="text-[#0B7A0B] underline">077 704 2100</a><br />
+                Phone: <a href="tel:+94777042100" className="text-[#0B7A0B] underline">+94 77 704 2100</a><br />
                 Email: <a href="mailto:Ceylonaquaplants@yahoo.com" className="text-[#0B7A0B] underline">Ceylonaquaplants@yahoo.com</a><br />
-                Address: No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo
+                Address: No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka
               </p>
             </section>
           </div>

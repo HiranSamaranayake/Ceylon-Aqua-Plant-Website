@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Video } from "@/types";
 import { extractYouTubeId } from "@/lib/utils";
 import { StaggerContainer, StaggerItem } from "./animations/Stagger";
@@ -32,7 +33,7 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
     <div className="space-y-12">
       {/* Active Featured Player */}
       {activeVideo && (
-        <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-xs p-3.5 xs:p-4 sm:p-6 lg:p-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#0E7CDB]/20 shadow-xs p-3.5 xs:p-4 sm:p-6 lg:p-8">
           <div className="relative aspect-video w-full rounded-xl sm:rounded-2xl overflow-hidden bg-black shadow-inner">
             {activeYouTubeId ? (
               <iframe
@@ -81,11 +82,10 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
                     setActiveVideo(vid);
                     window.scrollTo({ top: 300, behavior: "smooth" });
                   }}
-                  className={`group rounded-2xl overflow-hidden bg-white border cursor-pointer transition-all duration-300 flex flex-col hover:-translate-y-1 ${
-                    isSelected
-                      ? "border-[#0B7A0B] ring-2 ring-[#0B7A0B]/20 shadow-md"
-                      : "border-[#E5E7EB] hover:border-[#0B7A0B]/40 shadow-xs hover:shadow-lg"
-                  }`}
+                  className={`group rounded-2xl overflow-hidden bg-white border cursor-pointer transition-all duration-300 flex flex-col hover:-translate-y-1 ${isSelected
+                    ? "border-[#0E7CDB] ring-2 ring-[#0E7CDB]/30 shadow-md"
+                    : "border-[#0E7CDB]/20 hover:border-[#0E7CDB] shadow-xs hover:shadow-lg"
+                    }`}
                 >
                   <div className="relative aspect-video w-full overflow-hidden bg-[#F8FAFC]">
                     <SafeImage
@@ -103,17 +103,23 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
                     </div>
                   </div>
 
-                  <div className="p-3.5 xs:p-4 sm:p-5 flex-grow flex flex-col justify-between">
-                    <div>
-                      <h4 className="font-bold text-[#0A2D5B] group-hover:text-[#0B7A0B] transition-colors line-clamp-2 text-sm sm:text-base font-display">
-                        {vid.title}
-                      </h4>
-                      {vid.description && (
+                  <div className="p-5 flex flex-col flex-grow justify-between">
+                    <div className="p-3.5 xs:p-4 sm:p-5 flex-grow flex flex-col justify-between">
+                      <div>
+                        <h4 className="text-sm sm:text-base font-bold text-[#0A2D5B] leading-snug group-hover:text-[#0B7A0B] transition-colors font-display">
+                          <h4 className="font-bold text-[#0A2D5B] group-hover:text-[#0B7A0B] transition-colors line-clamp-2 text-sm sm:text-base font-display">
+                            {vid.title}
+                          </h4>
+                          {vid.description && (
+                        <p className="text-xs text-[#6B7280] mt-2 line-clamp-2">
                         <p className="text-xs text-[#6B7280] line-clamp-2 mt-1.5 leading-relaxed">
                           {vid.description}
                         </p>
                       )}
                     </div>
+                    <div className="mt-4 pt-3 border-t border-[#E5E7EB] flex items-center justify-between text-xs font-bold text-[#0B7A0B]">
+                      <span>{isSelected ? "Currently Playing" : "Watch Video"}</span>
+                      <Play className="w-3.5 h-3.5 fill-current" />
                     <div className="mt-4 pt-2.5 border-t border-[#E5E7EB] flex items-center justify-between text-xs text-[#0B7A0B] font-bold">
                       <span className="flex items-center gap-1">
                         <Play className="w-3.5 h-3.5" /> Watch Video
@@ -121,11 +127,11 @@ export default function VideoPlayerView({ videos }: VideoPlayerViewProps) {
                     </div>
                   </div>
                 </div>
-              </StaggerItem>
-            );
+                    </StaggerItem>
+                    );
           })}
-        </StaggerContainer>
-      </div>
-    </div>
-  );
-}
+                  </StaggerContainer>
+                </div>
+              </div>
+            );
+          }

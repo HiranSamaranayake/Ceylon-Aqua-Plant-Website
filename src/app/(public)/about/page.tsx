@@ -29,11 +29,11 @@ export default async function AboutPage() {
   ]);
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header Banner - Clean Light Theme */}
-      <section className="bg-[#F8FAFC] py-10 sm:py-16 md:py-20 border-b border-[#E5E7EB]">
+    <div className="bg-[#F8FAFC] min-h-screen">
+      {/* Header Banner - Fresh Light Blue & Green Theme */}
+      <section className="bg-gradient-to-r from-[#EFF6FF] via-[#F0FDF4]/70 to-[#EFF6FF] py-10 sm:py-16 md:py-20 border-b border-[#34C759]/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#34C759]/30 text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
             <Building2 className="w-3.5 h-3.5" />
             <span>Company Profile</span>
           </div>
@@ -46,8 +46,9 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Section 1: Detailed Story & Nursery Background */}
-      <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section 1: Detailed Story & Nursery Background - Light Green (#F0FDF4) */}
+      <section className="py-12 sm:py-16 md:py-20 bg-[#F0FDF4] border-b border-[#34C759]/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <div className="lg:col-span-6 space-y-4 sm:space-y-6">
@@ -67,12 +68,12 @@ export default async function AboutPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-3 sm:pt-4">
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#34C759]/25 shadow-xs">
                 <Sun className="w-5 h-5 text-[#F7C600] mb-2" />
                 <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B]">Natural Photoperiod</h4>
                 <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">Year-round equatorial sunlight powering robust photosynthesis.</p>
               </div>
-              <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+              <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#34C759]/25 shadow-xs">
                 <Droplets className="w-5 h-5 text-[#0B7A0B] mb-2" />
                 <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B]">Spring Water Flow</h4>
                 <p className="text-xs text-[#6B7280] mt-1 leading-relaxed">Pure low-TDS water supporting sensitive botanical varieties.</p>
@@ -82,7 +83,7 @@ export default async function AboutPage() {
 
           {/* Right Imagery with Smooth Hover Zoom */}
           <div className="lg:col-span-6 grid grid-cols-2 gap-3 sm:gap-4">
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white mt-4 sm:mt-8 bg-[#F8FAFC] transition-shadow duration-300">
+            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white mt-4 sm:mt-8 bg-white transition-shadow duration-300">
               <SafeImage
                 src="/images/garden-pond-plants/water-mimosa-neptunia-oleracea.jpg"
                 alt="Aquatic plant propagation basin"
@@ -92,7 +93,7 @@ export default async function AboutPage() {
                 className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
               />
             </div>
-            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white -mt-2 sm:-mt-4 bg-[#F8FAFC] transition-shadow duration-300">
+            <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover border-2 border-white -mt-2 sm:-mt-4 bg-white transition-shadow duration-300">
               <SafeImage
                 src="/images/tissue-culture/tissue-culture-category.jpg"
                 alt="Sterile tissue culture laboratory container"
@@ -105,16 +106,17 @@ export default async function AboutPage() {
           </div>
 
         </div>
+        </div>
       </section>
 
-      {/* Section 2: Vision & Mission - Clean Light Green Background */}
-      <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-y border-[#E5E7EB]">
+      {/* Section 2: Vision & Mission - Light Blue Background (#EFF6FF) */}
+      <section className="py-12 sm:py-16 md:py-20 bg-[#EFF6FF] border-b border-[#0E7CDB]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
             
             {/* Vision Card */}
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-3 sm:space-y-4">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#0E7CDB]/20 shadow-xs space-y-3 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] border border-[#34C759]/25 flex items-center justify-center">
                 <Compass className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
@@ -126,8 +128,8 @@ export default async function AboutPage() {
             </div>
 
             {/* Mission Card */}
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#E5E7EB] shadow-xs space-y-3 sm:space-y-4">
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center">
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl bg-white border border-[#0E7CDB]/20 shadow-xs space-y-3 sm:space-y-4">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#F0FDF4] text-[#0B7A0B] border border-[#34C759]/25 flex items-center justify-center">
                 <Target className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <h3 className="text-lg sm:text-2xl font-bold text-[#0A2D5B] font-display">
@@ -142,8 +144,9 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Section 3: Core Values - Clean White Background */}
-      <section className="py-12 sm:py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Section 3: Core Values - Light Green Background (#F0FDF4) */}
+      <section className="py-12 sm:py-16 md:py-20 bg-[#F0FDF4] border-b border-[#34C759]/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
           <span className="text-xs font-bold text-[#0B7A0B] uppercase tracking-widest">
             Foundational Principles
@@ -157,10 +160,10 @@ export default async function AboutPage() {
           {settings.core_values.map((val, idx) => (
             <div
               key={idx}
-              className="p-5 sm:p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs flex flex-col justify-between hover:border-[#0B7A0B]/40 hover:shadow-sm transition-all duration-300"
+              className="p-5 sm:p-6 rounded-2xl bg-white border border-[#34C759]/25 shadow-xs flex flex-col justify-between hover:border-[#0B7A0B] hover:shadow-md transition-all duration-300"
             >
               <div>
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white text-[#0B7A0B] border border-[#E5E7EB] flex items-center justify-center font-bold text-sm mb-3 sm:mb-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#EFF6FF] text-[#0B7A0B] border border-[#34C759]/25 flex items-center justify-center font-bold text-sm mb-3 sm:mb-4">
                   0{idx + 1}
                 </div>
                 <h3 className="text-sm sm:text-base font-bold text-[#0A2D5B] mb-1.5 sm:mb-2 font-display">
@@ -173,11 +176,12 @@ export default async function AboutPage() {
             </div>
           ))}
         </div>
+        </div>
       </section>
 
-      {/* Section 4: Approved PDF Documentation & Downloads */}
+      {/* Section 4: Approved PDF Documentation & Downloads - Light Blue (#EFF6FF) */}
       {documents.length > 0 && (
-        <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-t border-[#E5E7EB]">
+        <section className="py-12 sm:py-16 md:py-20 bg-[#EFF6FF]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mb-8 sm:mb-12">
               <span className="text-xs font-bold text-[#0B7A0B] uppercase tracking-widest">
@@ -195,10 +199,10 @@ export default async function AboutPage() {
               {documents.map((doc) => (
                 <div
                   key={doc.id}
-                  className="p-5 sm:p-6 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                  className="p-5 sm:p-6 rounded-2xl bg-white border border-[#0E7CDB]/20 shadow-xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-[#F0FDF4] text-[#0B7A0B] shrink-0">
+                    <div className="p-3 rounded-xl bg-[#F0FDF4] text-[#0B7A0B] border border-[#34C759]/25 shrink-0">
                       <FileText className="w-6 h-6" />
                     </div>
                     <div>

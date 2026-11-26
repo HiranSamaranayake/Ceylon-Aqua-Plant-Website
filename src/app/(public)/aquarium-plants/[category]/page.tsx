@@ -89,14 +89,14 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[#F8FAFC] min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero Category Banner - Clean Light Theme */}
-      <section className="relative bg-[#F8FAFC] py-10 sm:py-16 md:py-20 border-b border-[#E5E7EB] overflow-hidden">
+      {/* Hero Category Banner - Fresh Light Blue & Green Theme */}
+      <section className="relative bg-gradient-to-r from-[#EFF6FF] via-[#F0FDF4]/70 to-[#EFF6FF] py-10 sm:py-16 md:py-20 border-b border-[#34C759]/25 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <FadeIn direction="up">
             {/* Breadcrumbs */}
@@ -115,7 +115,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
               <div className="lg:col-span-8 space-y-2.5 sm:space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#34C759]/30 text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
                   <Leaf className="w-3.5 h-3.5" />
                   <span>Plant Category Showcase</span>
                 </div>
@@ -128,7 +128,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
               </div>
 
               <div className="lg:col-span-4 hidden lg:block">
-                <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card hover:shadow-card-hover bg-[#F8FAFC] flex items-center justify-center transition-shadow duration-300">
+                <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-white shadow-card hover:shadow-card-hover bg-white flex items-center justify-center transition-shadow duration-300">
                   <SafeImage
                     src={category.image_url}
                     alt={category.name}
@@ -144,7 +144,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             </div>
 
             {/* Sibling Category Quick Links */}
-            <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#E5E7EB] flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#34C759]/25 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
               {allCategories.map((cat) => (
                 <Link
                   key={cat.id}
@@ -152,7 +152,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
                   className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-medium whitespace-nowrap transition-all shrink-0 min-h-[38px] flex items-center ${
                     cat.slug === category.slug
                       ? "bg-[#0B7A0B] text-white font-bold shadow-xs"
-                      : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#E5E7EB]"
+                      : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#34C759]/25 shadow-2xs"
                   }`}
                 >
                   {cat.name}
@@ -164,7 +164,8 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
       </section>
 
       {/* Category Plants Showcase Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-14">
+      <section className="bg-[#F0FDF4]/50 border-t border-[#34C759]/15 py-8 sm:py-14">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn direction="up">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div>
@@ -208,6 +209,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             ))}
           </StaggerContainer>
         )}
+        </div>
       </section>
     </div>
   );

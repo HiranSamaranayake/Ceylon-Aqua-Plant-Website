@@ -13,8 +13,8 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
     email: "",
     phone: "",
     subject: initialPlantReference ? `Inquiry regarding: ${initialPlantReference}` : "",
-    message: initialPlantReference 
-      ? `Hello Ceylon Aquatic Plants,\n\nI am interested in learning more about your ${initialPlantReference} specimens (availability, specifications, and shipping details).` 
+    message: initialPlantReference
+      ? `Hello Ceylon Aquatic Plants,\n\nI am interested in learning more about your ${initialPlantReference} specimens (availability, specifications, and shipping details).`
       : "",
     plant_reference: initialPlantReference,
     website_trap: "", // Honeypot field (hidden)
@@ -150,7 +150,7 @@ export default function ContactForm({ initialPlantReference = "" }: ContactFormP
             <input
               type="tel"
               id="phone"
-              placeholder="e.g. 077 704 2100 / +94 77 704 2100"
+              placeholder="e.g. +94 77 704 2100"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="w-full px-4 py-3 rounded-xl border border-[#E5E7EB] text-base sm:text-sm text-[#0A2D5B] focus:outline-none focus:ring-2 focus:ring-[#0B7A0B] focus:border-transparent transition-all"

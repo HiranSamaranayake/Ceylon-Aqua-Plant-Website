@@ -22,9 +22,9 @@ export default function PlantCard({ plant }: PlantCardProps) {
     plant.category?.slug === "terrarium-plants";
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
       {/* Plant Image Container */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">
         <SafeImage
           src={plant.main_image_url}
           alt={`${plant.name} - Ceylon Aquatic Plants`}
@@ -40,7 +40,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
         {/* Category Badge */}
         {plant.category && (
           <div className="absolute top-3 left-3 z-10 pointer-events-none">
-            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#F0FDF4]/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+            <span className="inline-block px-2.5 py-1 rounded-full text-[11px] font-bold bg-[#F0FDF4]/95 backdrop-blur-xs text-[#0B7A0B] border border-[#34C759]/30 shadow-xs">
               {plant.category.name}
             </span>
           </div>

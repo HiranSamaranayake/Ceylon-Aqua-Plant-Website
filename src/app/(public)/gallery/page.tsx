@@ -17,7 +17,7 @@ export default async function GalleryPage() {
   const images = await getGalleryImages({ publishedOnly: true });
 
   return (
-    <div className="bg-white min-h-screen py-6 sm:py-10 md:py-14">
+    <div className="bg-gradient-to-b from-[#EFF6FF] via-[#F8FAFC] to-[#F0FDF4] min-h-screen py-8 sm:py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <GalleryView initialImages={images} />
       </div>

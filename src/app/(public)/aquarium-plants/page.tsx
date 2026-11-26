@@ -44,13 +44,13 @@ export default async function AquariumPlantsPage({
   });
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header Banner - Clean Light Green */}
-      <section className="bg-[#F8FAFC] py-10 sm:py-16 md:py-18 border-b border-[#E5E7EB]">
+    <div className="bg-[#F8FAFC] min-h-screen">
+      {/* Header Banner - Fresh Light Blue & Green Theme */}
+      <section className="bg-gradient-to-r from-[#EFF6FF] via-[#F0FDF4]/70 to-[#EFF6FF] py-10 sm:py-16 md:py-18 border-b border-[#34C759]/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn direction="up">
             <div className="max-w-3xl space-y-2.5 sm:space-y-3">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#34C759]/30 text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
                 <Leaf className="w-3.5 h-3.5" />
                 <span>Cultivated Plant Showcase</span>
               </div>
@@ -64,13 +64,13 @@ export default async function AquariumPlantsPage({
           </FadeIn>
 
           {/* Quick Category Tabs Bar */}
-          <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#E5E7EB] flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-[#34C759]/25 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
             <Link
               href="/aquarium-plants"
               className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all shrink-0 min-h-[38px] flex items-center ${
                 !selectedCat
                   ? "bg-[#0B7A0B] text-white shadow-xs"
-                  : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] border border-[#E5E7EB]"
+                  : "bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#34C759]/25 shadow-2xs"
               }`}
             >
               All Plants ({allPlants.length})
@@ -79,7 +79,7 @@ export default async function AquariumPlantsPage({
               <Link
                 key={cat.id}
                 href={`/aquarium-plants/${cat.slug}`}
-                className="px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#E5E7EB] transition-all shrink-0 min-h-[38px] flex items-center"
+                className="px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-white text-[#0A2D5B] hover:bg-[#F0FDF4] hover:text-[#0B7A0B] border border-[#34C759]/25 shadow-2xs transition-all shrink-0 min-h-[38px] flex items-center"
               >
                 {cat.name}
               </Link>
@@ -89,7 +89,8 @@ export default async function AquariumPlantsPage({
       </section>
 
       {/* Main Grid Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <section className="bg-[#F0FDF4]/50 border-t border-[#34C759]/15 py-8 sm:py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
           <p className="text-xs sm:text-sm text-[#6B7280] font-medium">
             Showing <span className="font-bold text-[#0A2D5B]">{filteredPlants.length}</span> botanical specimens
@@ -124,6 +125,7 @@ export default async function AquariumPlantsPage({
             ))}
           </StaggerContainer>
         )}
+        </div>
       </section>
     </div>
   );

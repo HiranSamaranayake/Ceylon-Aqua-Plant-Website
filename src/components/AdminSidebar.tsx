@@ -55,7 +55,7 @@ export default function AdminSidebar() {
   return (
     <>
       {/* Mobile Top Header */}
-      <div className="lg:hidden bg-[#0B7A0B] text-white px-4 py-3 flex items-center justify-between border-b border-[#0B7A0B] sticky top-0 z-40">
+      <div className="lg:hidden bg-[#0A2D5B] text-white px-4 py-3 flex items-center justify-between border-b border-[#0E7CDB]/30 sticky top-0 z-40">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden">
             <Image src="/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
@@ -64,22 +64,22 @@ export default function AdminSidebar() {
         </div>
         <button
           onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-[#0B7A0B]"
+          className="p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10"
           aria-label="Toggle admin sidebar"
         >
           {mobileSidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Sidebar Navigation - Deep Green with Yellow and White Accents */}
+      {/* Sidebar Navigation - Navy Blue (#0A2D5B) with Green and Yellow Accents */}
       <aside
-        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#0B7A0B] border-r border-[#0B7A0B] flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-72 bg-[#0A2D5B] border-r border-[#0E7CDB]/30 flex flex-col justify-between transition-transform duration-300 lg:translate-x-0 ${
           mobileSidebarOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"
         }`}
       >
         <div>
           {/* Brand Header */}
-          <div className="p-6 border-b border-[#0B7A0B]">
+          <div className="p-6 border-b border-[#0E7CDB]/30">
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-full border border-white/20 bg-white flex items-center justify-center overflow-hidden shadow-xs">
                 <Image
@@ -114,7 +114,7 @@ export default function AdminSidebar() {
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all group ${
                     isActive
                       ? "bg-[#0B7A0B] text-white shadow-xs"
-                      : "text-[#F0FDF4] hover:text-white hover:bg-[#0B7A0B]/60"
+                      : "text-[#EFF6FF]/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   <div className="flex items-center gap-3">
@@ -129,11 +129,11 @@ export default function AdminSidebar() {
         </div>
 
         {/* Bottom Actions */}
-        <div className="p-4 border-t border-[#0B7A0B] space-y-2">
+        <div className="p-4 border-t border-[#0E7CDB]/30 space-y-2">
           <Link
             href="/"
             target="_blank"
-            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-[#F0FDF4] hover:text-white hover:bg-[#0B7A0B]/60 transition-colors"
+            className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-[#EFF6FF] hover:text-white hover:bg-white/10 transition-colors"
           >
             <span className="flex items-center gap-2">
               <ExternalLink className="w-3.5 h-3.5 text-[#F7C600]" />

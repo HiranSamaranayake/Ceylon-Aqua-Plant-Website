@@ -16,14 +16,14 @@ export default function PublicLayout({
     description: "Export grower and showcase provider of premium tropical aquatic plants, tissue-culture varieties, and pond flora in Sri Lanka.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama",
+      streetAddress: "No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka",
       addressLocality: "Colombo",
       addressRegion: "Western Province",
       addressCountry: "LK",
     },
     contactPoint: {
       "@type": "ContactPoint",
-      telephone: "+94-77-704-2100",
+      telephone: "+94 77 704 2100",
       email: "Ceylonaquaplants@yahoo.com",
       contactType: "Customer Support & Export Inquiries",
       availableLanguage: ["English", "Sinhala"],

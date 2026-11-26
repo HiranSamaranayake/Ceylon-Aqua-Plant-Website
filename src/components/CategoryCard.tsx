@@ -24,10 +24,10 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/aquarium-plants/${category.slug}`}
-      className="group bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] flex flex-col justify-between shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300"
+      className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 flex flex-col justify-between shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300"
     >
       {/* Category Image Container */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
+      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">
         <SafeImage
           src={category.image_url}
           alt={`${category.name} - Ceylon Aquatic Plants`}
@@ -42,7 +42,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
 
         {/* Top badge */}
         <div className="absolute top-3 left-3 z-10 pointer-events-none">
-          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#34C759]/30 shadow-xs">
             <Leaf className="w-3 h-3 text-[#0B7A0B]" />
             <span>Category</span>
           </span>

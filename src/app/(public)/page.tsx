@@ -34,12 +34,12 @@ export default async function HomePage() {
   const featuredVideo = videos[0] || null;
 
   return (
-    <div className="space-y-0 bg-white">
+    <div className="space-y-0 bg-[#F8FAFC]">
 
       {/* =========================================================================
-          SECTION 1: HERO SECTION - Clean Light Theme with Plant Photography
+          SECTION 1: HERO SECTION - Fresh Light Blue & Green Ambient Theme
           ========================================================================= */}
-      <section className="relative bg-[#F8FAFC] border-b border-[#E5E7EB] overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24">
+      <section className="relative bg-gradient-to-b from-[#EFF6FF] via-[#F0FDF4]/70 to-[#EFF6FF] border-b border-[#34C759]/25 overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
@@ -82,7 +82,7 @@ export default async function HomePage() {
 
               {/* Key Features Strip */}
               <FadeIn direction="up" delay={0.65}>
-                <div className="pt-6 sm:pt-8 border-t border-[#E5E7EB] grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-[#0A2D5B]">
+                <div className="pt-6 sm:pt-8 border-t border-[#34C759]/25 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-[#0A2D5B]">
                   <div className="flex items-center gap-2">
                     <Sun className="w-4 h-4 text-[#F7C600] shrink-0" />
                     <span>Tropical Sunlight</span>
@@ -120,13 +120,13 @@ export default async function HomePage() {
                 </div>
 
                 {/* Floating Top Badge */}
-                <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-[#E5E7EB] shadow-card flex items-center gap-2 text-xs font-bold text-[#0A2D5B] animate-float-1 hidden sm:flex">
+                <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-[#34C759]/25 shadow-card flex items-center gap-2 text-xs font-bold text-[#0A2D5B] animate-float-1 hidden sm:flex">
                   <Sparkles className="w-4 h-4 text-[#F7C600]" />
                   <span>Certified Biological Purity</span>
                 </div>
 
                 {/* Floating Quality Badge */}
-                <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white p-4 sm:p-5 rounded-2xl border border-[#E5E7EB] shadow-card max-w-xs hidden sm:block animate-float-2">
+                <div className="absolute -bottom-5 -left-4 sm:-left-6 bg-white p-4 sm:p-5 rounded-2xl border border-[#34C759]/25 shadow-card max-w-xs hidden sm:block animate-float-2">
                   <div className="flex items-center gap-2 text-xs font-bold text-[#0B7A0B] uppercase">
                     <span className="w-2 h-2 rounded-full bg-[#F7C600]"></span>
                     <span>Sri Lankan Nursery</span>
@@ -148,16 +148,16 @@ export default async function HomePage() {
       <FloatingImagesBanner />
 
       {/* =========================================================================
-          SECTION 2: COMPANY INTRODUCTION - Clean White Background
+          SECTION 2: COMPANY INTRODUCTION - Light Blue Theme (#EFF6FF)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 md:py-20 bg-[#EFF6FF] border-b border-[#0E7CDB]/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Visual Column */}
             <div className="lg:col-span-5 relative order-2 lg:order-1">
               <FadeIn direction="right" duration={0.7}>
-                <div className="group relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-white bg-[#F8FAFC] transition-shadow duration-300">
+                <div className="group relative aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-white bg-white transition-shadow duration-300">
                   <SafeImage
                     src="/images/underwater-flora-natural.jpg"
                     alt="Cultivating vibrant underwater flora in natural tropical habitats - Ceylon Aquatic Plants"
@@ -173,7 +173,7 @@ export default async function HomePage() {
             {/* Content Column */}
             <div className="lg:col-span-7 space-y-5 sm:space-y-6 order-1 lg:order-2">
               <FadeIn direction="up">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F0FDF4] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F0FDF4] text-[#0B7A0B] border border-[#34C759]/30 text-xs font-bold uppercase tracking-wider">
                   <Leaf className="w-3.5 h-3.5" />
                   <span>About Our Nursery</span>
                 </div>
@@ -187,7 +187,7 @@ export default async function HomePage() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-3 sm:pt-4">
-                  <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#0E7CDB]/20 shadow-xs">
                     <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B] flex items-center gap-2">
                       <Sun className="w-4 h-4 text-[#F7C600] shrink-0" />
                       <span>Natural Photoperiod</span>
@@ -197,7 +197,7 @@ export default async function HomePage() {
                     </p>
                   </div>
 
-                  <div className="p-4 sm:p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+                  <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#0E7CDB]/20 shadow-xs">
                     <h4 className="text-xs sm:text-sm font-bold text-[#0A2D5B] flex items-center gap-2">
                       <ShieldCheck className="w-4 h-4 text-[#0B7A0B] shrink-0" />
                       <span>Controlled Quarantine</span>
@@ -211,10 +211,10 @@ export default async function HomePage() {
                 <div className="pt-4 sm:pt-6">
                   <Link
                     href="/about"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 min-h-[48px]"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs sm:text-sm font-bold bg-[#0B7A0B] hover:bg-[#085808] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 min-h-[48px]"
                   >
                     <span>Learn More About Our Facility</span>
-                    <ArrowRight className="w-4 h-4 text-[#0A2D5B]" />
+                    <ArrowRight className="w-4 h-4 text-white" />
                   </Link>
                 </div>
               </FadeIn>
@@ -225,15 +225,15 @@ export default async function HomePage() {
       </section>
 
       {/* =========================================================================
-          SECTION 3: FEATURED CATEGORIES - Light Theme Background (#F8FAFC)
+          SECTION 3: FEATURED CATEGORIES - Light Green Background (#F0FDF4)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-20 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+      <section className="py-12 sm:py-16 md:py-20 bg-[#F0FDF4] border-b border-[#34C759]/25">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <FadeIn direction="up">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#E5E7EB] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#34C759]/30 text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2">
                   <Leaf className="w-3.5 h-3.5" />
                   <span>Complete Plant Spectrum</span>
                 </div>
@@ -270,7 +270,7 @@ export default async function HomePage() {
       {/* =========================================================================
           SECTION 4: WHY CHOOSE US - Selected Dark Green Premium Section
           ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-20 bg-[#0B7A0B] text-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-[#0B7A0B] text-white border-b border-[#34C759]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <FadeIn direction="up">
@@ -313,17 +313,17 @@ export default async function HomePage() {
       </section>
 
       {/* =========================================================================
-          SECTION 5: VIDEO SHOWCASE - Clean White Background
+          SECTION 5: VIDEO SHOWCASE - Light Blue Theme (#EFF6FF)
           ========================================================================= */}
       {featuredVideo && (
-        <section className="py-12 sm:py-16 md:py-20 bg-white border-b border-[#E5E7EB]">
+        <section className="py-12 sm:py-16 md:py-20 bg-[#EFF6FF] border-b border-[#0E7CDB]/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn direction="up">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
                 <div className="lg:col-span-5 space-y-3 sm:space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F0FDF4] text-[#0B7A0B] text-xs font-bold uppercase tracking-wider">
-                    <Play className="w-3.5 h-3.5 text-[#0B7A0B]" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#0E7CDB]/30 text-[#0E7CDB] text-xs font-bold uppercase tracking-wider">
+                    <Play className="w-3.5 h-3.5 text-[#0E7CDB]" />
                     <span>Featured Video</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A2D5B] font-display">
@@ -335,16 +335,16 @@ export default async function HomePage() {
                   <div className="pt-2">
                     <Link
                       href="/video"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 min-h-[44px]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold bg-[#0E7CDB] hover:bg-[#0c6ec3] text-white shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 min-h-[44px]"
                     >
                       <span>Visit Video Library</span>
-                      <ArrowRight className="w-4 h-4 text-[#0A2D5B]" />
+                      <ArrowRight className="w-4 h-4 text-white" />
                     </Link>
                   </div>
                 </div>
 
                 <div className="lg:col-span-7">
-                  <div className="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-card hover:shadow-card-hover transition-shadow duration-300">
+                  <div className="group relative aspect-video rounded-2xl sm:rounded-3xl overflow-hidden bg-white border-2 border-[#0E7CDB]/25 shadow-card hover:shadow-card-hover transition-shadow duration-300">
                     <SafeImage
                       src={featuredVideo.thumbnail_url || "/images/plants-bunch/plants-bunch-category.jpg"}
                       alt={featuredVideo.title}
@@ -372,13 +372,13 @@ export default async function HomePage() {
       )}
 
       {/* =========================================================================
-          SECTION 6: CONTACT CTA BANNER - Card on Clean White
+          SECTION 6: CONTACT CTA BANNER - Crisp White Card on Light Green (#F0FDF4)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <section className="py-12 sm:py-16 md:py-20 bg-[#F0FDF4] border-t border-[#34C759]/20">
         <div className="max-w-5xl mx-auto px-4">
           <FadeIn direction="up">
-            <div className="bg-[#F8FAFC] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 border border-[#E5E7EB] text-center shadow-xs space-y-4 sm:space-y-6">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#F0FDF4] text-[#0B7A0B] flex items-center justify-center mx-auto shadow-xs">
+            <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-14 border border-[#34C759]/30 text-center shadow-card space-y-4 sm:space-y-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#EFF6FF] text-[#0B7A0B] border border-[#34C759]/25 flex items-center justify-center mx-auto shadow-xs">
                 <Leaf className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
               <h2 className="text-xl sm:text-3xl md:text-4xl font-extrabold text-[#0A2D5B] font-display">

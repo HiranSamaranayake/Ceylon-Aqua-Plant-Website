@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  MessageCircle, 
-  Facebook, 
-  Instagram, 
-  Youtube, 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Facebook,
+  Instagram,
+  Youtube,
   Linkedin,
   ArrowUpRight,
   ShieldCheck
@@ -35,7 +35,7 @@ export default function Footer() {
             <span className="w-2.5 h-2.5 rounded-full bg-[#F7C600] shrink-0"></span>
             <div>
               <p className="text-white font-bold text-xs sm:text-sm">International Plant Inquiries & Export Showcase</p>
-              <p className="text-[11px] sm:text-xs text-[#E5E7EB]">Direct from our nursery basins in Godagama, Homagama, Colombo to global partners.</p>
+              <p className="text-[11px] sm:text-xs text-[#E5E7EB]">Direct from our nursery basins in Godagama, Homagama, Colombo, Sri Lanka to global partners.</p>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3 w-full sm:w-auto">
@@ -62,7 +62,7 @@ export default function Footer() {
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
-          
+
           {/* Col 1 & 2: Brand Information */}
           <div className="sm:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-3 group inline-block">
@@ -190,23 +190,23 @@ export default function Footer() {
             <ul className="space-y-3 text-xs text-[#E5E7EB]">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#F7C600] shrink-0 mt-0.5" />
-                <span className="leading-relaxed">No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo</span>
+                <span className="leading-relaxed">No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#F7C600] shrink-0" />
                 <a href="tel:+94777042100" className="hover:text-white transition-colors py-1">
-                  077 704 2100
+                  +94 77 704 2100
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
-                <a 
-                  href="https://wa.me/94777042100" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/94777042100"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors py-1"
                 >
-                  077 704 2100
+                  +94 77 704 2100
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
@@ -232,8 +232,8 @@ export default function Footer() {
             <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
               Terms & Conditions
             </Link>
-            <Link 
-              href="/admin/login" 
+            <Link
+              href="/admin/login"
               className="text-[#E5E7EB]/70 hover:text-[#F7C600] transition-colors flex items-center gap-1"
             >
               <ShieldCheck className="w-3.5 h-3.5" />

@@ -123,11 +123,15 @@ export default function FloatingImagesBanner() {
   const duplicatedPlants = [...FLOATING_PLANTS, ...FLOATING_PLANTS];
 
   return (
-    <section className="relative py-12 sm:py-16 bg-[#F8FAFC] border-b border-[#E5E7EB] overflow-hidden">
+    <section className="relative py-12 sm:py-16 bg-[#F0FDF4] border-b border-[#34C759]/25 overflow-hidden">
       {/* Section Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 text-center sm:text-left">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
           <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#34C759]/30 text-[#0B7A0B] text-xs font-bold uppercase tracking-wider mb-2">
+              <Leaf className="w-3.5 h-3.5" />
+              <span>Living Botanical Collection</span>
+            </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A2D5B] font-display tracking-tight">
               Floating Aquatic Flora Showcase
             </h2>
@@ -139,7 +143,7 @@ export default function FloatingImagesBanner() {
           <div className="hidden sm:block">
             <Link
               href="/aquarium-plants"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs transition-all duration-300"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] hover:-translate-y-0.5 active:translate-y-0 shadow-xs hover:shadow-md transition-all duration-300"
             >
               <span>View All 50+ Varieties</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#0A2D5B]" />
@@ -149,8 +153,8 @@ export default function FloatingImagesBanner() {
       </div>
 
       {/* Edge Gradient Masks for Seamless Edge Fade */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#F8FAFC] via-[#F8FAFC]/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#F0FDF4] via-[#F0FDF4]/80 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#F0FDF4] via-[#F0FDF4]/80 to-transparent z-10" />
 
       {/* Continuous Floating Marquee Moving Left-to-Right - Pauses Smoothly on Hover */}
       <div className="relative w-full overflow-hidden py-3">
@@ -159,10 +163,10 @@ export default function FloatingImagesBanner() {
             <Link
               key={`${plant.id}-${index}`}
               href={plant.href}
-              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 hover:-translate-y-1 transition-all duration-300 ${plant.floatClass}`}
+              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300 ${plant.floatClass}`}
             >
               {/* Plant Image Container */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F8FAFC] flex items-center justify-center">
+              <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">
                 <SafeImage
                   src={plant.imageUrl}
                   alt={`${plant.name} - Ceylon Aquatic Plants`}
@@ -175,7 +179,7 @@ export default function FloatingImagesBanner() {
 
                 {/* Category Pill Tag */}
                 <div className="absolute top-2.5 left-2.5 z-10 pointer-events-none">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#E5E7EB] shadow-xs">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/95 backdrop-blur-xs text-[#0B7A0B] border border-[#34C759]/25 shadow-xs">
                     <Leaf className="w-2.5 h-2.5 text-[#0B7A0B]" />
                     <span>{plant.category}</span>
                   </span>
@@ -183,7 +187,7 @@ export default function FloatingImagesBanner() {
 
                 {/* Highlight Pill */}
                 <div className="absolute bottom-2.5 right-2.5 z-10 pointer-events-none">
-                  <span className="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0B7A0B]/90 backdrop-blur-xs text-[#F7C600] shadow-xs">
+                  <span className="inline-block px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#0B7A0B] text-[#F7C600] shadow-xs">
                     {plant.highlight}
                   </span>
                 </div>

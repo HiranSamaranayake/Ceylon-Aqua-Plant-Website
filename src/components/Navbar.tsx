@@ -57,7 +57,7 @@ export default function Navbar() {
           </div>
           <div className="flex items-center gap-1.5 text-[#6B7280] font-medium">
             <MapPin className="w-3.5 h-3.5 text-[#0B7A0B]" />
-            <span>Godagama, Homagama, Colombo</span>
+            <span>No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka</span>
           </div>
         </div>
       </div>
