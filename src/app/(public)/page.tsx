@@ -18,8 +18,7 @@ import {
   Droplets,
   Microscope,
   ShieldCheck,
-  Play,
-  Sparkles
+  Play
 } from "lucide-react";
 
 export const revalidate = 60;
@@ -117,12 +116,6 @@ export default async function HomePage() {
                     sizes="(max-width: 1024px) 100vw, 45vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
                   />
-                </div>
-
-                {/* Floating Top Badge */}
-                <div className="absolute -top-4 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-[#34C759]/25 shadow-card flex items-center gap-2 text-xs font-bold text-[#0A2D5B] animate-float-1 hidden sm:flex">
-                  <Sparkles className="w-4 h-4 text-[#F7C600]" />
-                  <span>Certified Biological Purity</span>
                 </div>
 
                 {/* Floating Quality Badge */}

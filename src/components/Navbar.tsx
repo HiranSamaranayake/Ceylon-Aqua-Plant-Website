@@ -47,7 +47,7 @@ export default function Navbar() {
   const isAquariumPlantsActive = pathname.startsWith("/aquarium-plants") || pathname.startsWith("/plants");
 
   return (
-    <div className="sticky top-0 z-50 w-full shadow-xs">
+    <div className="sticky top-0 z-50 w-full">
       {/* Top Announcement Bar - Clean Light Green */}
       <div className="bg-[#F0FDF4] text-[#0A2D5B] text-xs py-2 px-4 border-b border-[#E5E7EB] hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
@@ -70,7 +70,7 @@ export default function Navbar() {
       {/* Main Navigation Header - Light Blue Background (#EFF6FF) with Subtle Shadow */}
       <header
         className={`w-full transition-all duration-300 bg-[#EFF6FF] border-b border-[#E5E7EB] ${
-          isScrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-3.5"
+          isScrolled ? "shadow-sm py-2 sm:py-2.5" : "py-2.5 sm:py-3.5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,15 +100,15 @@ export default function Navbar() {
               </div>
             </Link>
 
-            {/* Desktop Navigation Links - Poppins Font, Navy Blue Text with Dark Green Hover & Yellow Underline Active */}
+            {/* Desktop Navigation Links - Poppins SemiBold (600) Font, Navy Blue Text with Dark Green Hover & Yellow Underline Active */}
             <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
               {/* 1. Home */}
               <Link
                 href="/"
-                className={`relative px-2.5 xl:px-3.5 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${
+                className={`relative px-2.5 xl:px-3.5 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
                   pathname === "/"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                    : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
+                    ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
                 }`}
               >
                 Home
@@ -122,10 +122,11 @@ export default function Navbar() {
               >
                 <Link
                   href="/aquarium-plants"
-                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${isAquariumPlantsActive
-                      ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                      : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                    }`}
+                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
+                    isAquariumPlantsActive
+                      ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                      : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
+                  }`}
                   aria-expanded={plantsDropdownOpen}
                 >
                   <span>Aquarium Plants</span>
@@ -147,10 +148,11 @@ export default function Navbar() {
                           <Link
                             key={cat.href}
                             href={cat.href}
-                            className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${pathname === cat.href
+                            className={`flex flex-col px-3 py-2 rounded-xl transition-all duration-200 group border-l-4 border-transparent ${
+                              pathname === cat.href
                                 ? "bg-[#EFF6FF] border-l-[#0B7A0B] text-[#0B7A0B] font-semibold"
                                 : "hover:bg-[#EFF6FF] hover:border-l-[#0B7A0B] text-[#0A2D5B]"
-                              }`}
+                            }`}
                           >
                             <span className="text-[15px] font-poppins font-semibold flex items-center justify-between group-hover:text-[#0B7A0B]">
                               {cat.name}
@@ -179,10 +181,11 @@ export default function Navbar() {
               {/* 3. Gallery */}
               <Link
                 href="/gallery"
-                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/gallery"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                    : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
+                  pathname === "/gallery"
+                    ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
+                }`}
               >
                 Gallery
               </Link>
@@ -190,10 +193,11 @@ export default function Navbar() {
               {/* 4. Video */}
               <Link
                 href="/video"
-                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/video"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                    : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
+                  pathname === "/video"
+                    ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
+                }`}
               >
                 Video
               </Link>
@@ -201,10 +205,11 @@ export default function Navbar() {
               {/* 5. About */}
               <Link
                 href="/about"
-                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/about"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                    : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
+                  pathname === "/about"
+                    ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
+                }`}
               >
                 About
               </Link>
@@ -212,10 +217,11 @@ export default function Navbar() {
               {/* 6. Contact */}
               <Link
                 href="/contact"
-                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/contact"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
-                    : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[15px] xl:text-[16px] font-poppins font-semibold transition-all duration-200 ${
+                  pathname === "/contact"
+                    ? "text-[#0B7A0B] after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
+                    : "text-[#0A2D5B] hover:text-[#0B7A0B] hover:bg-white/50"
+                }`}
               >
                 Contact
               </Link>
@@ -357,9 +363,6 @@ export default function Navbar() {
           </>
         )}
       </header>
-
-      {/* Clean White Background Area Directly Below the Navigation Bar */}
-      <div className="w-full bg-white h-2.5 sm:h-3.5 border-b border-[#E5E7EB] shadow-2xs" />
     </div>
   );
 }
