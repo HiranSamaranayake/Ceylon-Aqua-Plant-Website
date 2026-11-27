@@ -47,30 +47,34 @@ export default function Navbar() {
   const isAquariumPlantsActive = pathname.startsWith("/aquarium-plants") || pathname.startsWith("/plants");
 
   return (
-    <>
+    <div className="sticky top-0 z-50 w-full shadow-xs">
       {/* Top Announcement Bar - Clean Light Green */}
       <div className="bg-[#F0FDF4] text-[#0A2D5B] text-xs py-2 px-4 border-b border-[#E5E7EB] hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-2 text-[#0A2D5B] font-medium">
-            <span className="w-2 h-2 rounded-full bg-[#F7C600] inline-block"></span>
+        <div className="max-w-7xl mx-auto flex justify-between items-center gap-4">
+          <div className="flex items-center gap-2 text-[#0A2D5B] font-medium shrink-0">
+            <span className="w-2 h-2 rounded-full bg-[#F7C600] inline-block shrink-0"></span>
             <span>Direct Exporter of Premium Tropical Aquatic Flora &bull; Sri Lanka</span>
           </div>
-          <div className="flex items-center gap-1.5 text-[#6B7280] font-medium">
-            <MapPin className="w-3.5 h-3.5 text-[#0B7A0B]" />
-            <span>No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka</span>
+          <div className="flex items-center gap-1.5 text-[#6B7280] font-medium min-w-0">
+            <MapPin className="w-3.5 h-3.5 text-[#0B7A0B] shrink-0" />
+            <span
+              className="truncate max-w-xs md:max-w-md lg:max-w-xl xl:max-w-2xl"
+              title="No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka"
+            >
+              No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka
+            </span>
           </div>
         </div>
       </div>
 
-      {/* Main Sticky Header - Light Blue Background (#EFF6FF) with Subtle Shadow */}
+      {/* Main Navigation Header - Light Blue Background (#EFF6FF) with Subtle Shadow */}
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 bg-[#EFF6FF] border-b border-[#E5E7EB] ${isScrolled
-            ? "shadow-sm py-2"
-            : "shadow-xs py-3 sm:py-3.5"
-          }`}
+        className={`w-full transition-all duration-300 bg-[#EFF6FF] border-b border-[#E5E7EB] ${
+          isScrolled ? "py-2 sm:py-2.5" : "py-2.5 sm:py-3.5"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
 
             {/* Logo - Horizontal Brand Logo (Emblem + Typography) */}
             <Link
@@ -79,31 +83,33 @@ export default function Navbar() {
               aria-label="Ceylon Aquatic Plants (Pvt) Ltd"
             >
               <div
-                className={`relative transition-all duration-300 ${isScrolled
-                    ? "h-10 w-28 xs:h-11 xs:w-32 sm:h-13 sm:w-38 md:h-14 md:w-42 lg:h-16 lg:w-48"
-                    : "h-11 w-32 xs:h-13 xs:w-38 sm:h-15 sm:w-44 md:h-18 md:w-48 lg:h-20 lg:w-56"
-                  }`}
+                className={`relative transition-all duration-300 ${
+                  isScrolled
+                    ? "h-10 w-36 sm:h-12 sm:w-44 lg:h-12 lg:w-48 xl:h-14 xl:w-52"
+                    : "h-12 w-40 sm:h-14 sm:w-48 lg:h-14 lg:w-52 xl:h-16 xl:w-56"
+                }`}
               >
                 <Image
                   src="/navbar-logo.png"
                   alt="Ceylon Aquatic Plants (Pvt) Ltd Official Logo"
                   fill
-                  sizes="(max-width: 640px) 144px, (max-width: 768px) 180px, 224px"
+                  sizes="(max-width: 640px) 160px, (max-width: 1024px) 208px, 224px"
                   priority
                   className="object-contain group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </Link>
 
-            {/* Desktop Navigation Links - Poppins Font, 18px-20px Size, Navy Blue Text with Dark Green Hover & Yellow Underline Active */}
-            <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
+            {/* Desktop Navigation Links - Poppins Font, Navy Blue Text with Dark Green Hover & Yellow Underline Active */}
+            <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
               {/* 1. Home */}
               <Link
                 href="/"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                className={`relative px-2.5 xl:px-3.5 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${
+                  pathname === "/"
+                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
-                  }`}
+                }`}
               >
                 Home
               </Link>
@@ -116,8 +122,8 @@ export default function Navbar() {
               >
                 <Link
                   href="/aquarium-plants"
-                  className={`relative flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${isAquariumPlantsActive
-                      ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                  className={`relative flex items-center gap-1.5 px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${isAquariumPlantsActive
+                      ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                       : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
                     }`}
                   aria-expanded={plantsDropdownOpen}
@@ -173,8 +179,8 @@ export default function Navbar() {
               {/* 3. Gallery */}
               <Link
                 href="/gallery"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/gallery"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/gallery"
+                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
                   }`}
               >
@@ -184,8 +190,8 @@ export default function Navbar() {
               {/* 4. Video */}
               <Link
                 href="/video"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/video"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/video"
+                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
                   }`}
               >
@@ -195,8 +201,8 @@ export default function Navbar() {
               {/* 5. About */}
               <Link
                 href="/about"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/about"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/about"
+                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
                   }`}
               >
@@ -206,8 +212,8 @@ export default function Navbar() {
               {/* 6. Contact */}
               <Link
                 href="/contact"
-                className={`relative px-3.5 py-2 rounded-xl text-[18px] font-poppins transition-all duration-200 ${pathname === "/contact"
-                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-[-2px] after:left-3.5 after:right-3.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/40"
+                className={`relative px-2.5 xl:px-3 py-1.5 rounded-xl text-[14px] xl:text-[15px] 2xl:text-[16px] font-poppins transition-all duration-200 ${pathname === "/contact"
+                    ? "text-[#0B7A0B] font-semibold after:absolute after:bottom-0 after:left-2.5 after:right-2.5 after:h-[2.5px] after:bg-[#F7C600] after:rounded-full bg-white/60 shadow-2xs"
                     : "text-[#0A2D5B] font-medium hover:text-[#0B7A0B] hover:bg-white/50"
                   }`}
               >
@@ -216,10 +222,10 @@ export default function Navbar() {
             </nav>
 
             {/* Right Action CTA Button - Yellow Primary Action Button */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-3 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl text-[16px] font-poppins font-semibold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 px-4 xl:px-5 py-2 xl:py-2.5 rounded-xl text-[14px] xl:text-[15px] font-poppins font-semibold bg-[#F7C600] hover:bg-[#E5B700] text-[#0A2D5B] border border-transparent shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 group shrink-0"
               >
                 <span>Contact Us</span>
                 <ArrowRight className="w-4 h-4 text-[#0A2D5B] group-hover:translate-x-0.5 transition-transform" />
@@ -351,6 +357,9 @@ export default function Navbar() {
           </>
         )}
       </header>
-    </>
+
+      {/* Clean White Background Area Directly Below the Navigation Bar */}
+      <div className="w-full bg-white h-2.5 sm:h-3.5 border-b border-[#E5E7EB] shadow-2xs" />
+    </div>
   );
 }

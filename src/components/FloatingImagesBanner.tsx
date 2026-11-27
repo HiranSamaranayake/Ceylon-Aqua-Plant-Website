@@ -163,7 +163,7 @@ export default function FloatingImagesBanner() {
             <Link
               key={`${plant.id}-${index}`}
               href={plant.href}
-              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300 ${plant.floatClass}`}
+              className={`group shrink-0 block w-48 xs:w-52 sm:w-64 bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-card-hover hover:border-[#0B7A0B] hover:-translate-y-1.5 transition-all duration-300 ease-out motion-reduce:transform-none ${plant.floatClass}`}
             >
               {/* Plant Image Container */}
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">

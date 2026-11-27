@@ -24,7 +24,7 @@ export default function GalleryView({ initialImages }: GalleryViewProps) {
           <div
             key={image.id}
             onClick={() => setLightboxIndex(index)}
-            className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs hover:shadow-lg hover:border-[#0B7A0B]/40 cursor-pointer transition-all duration-300"
+            className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#F8FAFC] border border-[#E5E7EB] shadow-xs hover:shadow-card-hover hover:border-[#0B7A0B] hover:-translate-y-1.5 cursor-pointer transition-all duration-300 ease-out motion-reduce:transform-none"
             role="button"
             tabIndex={0}
             aria-label={`View photo ${index + 1}`}
@@ -42,7 +42,7 @@ export default function GalleryView({ initialImages }: GalleryViewProps) {
               fallbackSrc="/images/plants-bunch/plants-bunch-category.jpg"
               fill
               sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out"
+              className="object-cover group-hover:scale-105 transition-transform duration-300 ease-out motion-reduce:transform-none"
             />
           </div>
         ))}

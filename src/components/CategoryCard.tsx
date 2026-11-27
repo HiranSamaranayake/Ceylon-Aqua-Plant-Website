@@ -24,7 +24,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Link
       href={`/aquarium-plants/${category.slug}`}
-      className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 flex flex-col justify-between shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300"
+      className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 flex flex-col justify-between shadow-xs hover:shadow-card-hover hover:border-[#0B7A0B] hover:-translate-y-1.5 transition-all duration-300 ease-out motion-reduce:transform-none"
     >
       {/* Category Image Container */}
       <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">
@@ -37,7 +37,7 @@ export default function CategoryCard({ category }: CategoryCardProps) {
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={`${
             isContained ? "object-contain p-2.5" : "object-cover"
-          } group-hover:scale-105 transition-transform duration-300 ease-out`}
+          } group-hover:scale-105 transition-transform duration-300 ease-out motion-reduce:transform-none`}
         />
 
         {/* Top badge */}

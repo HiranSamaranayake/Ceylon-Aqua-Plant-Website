@@ -22,7 +22,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
     plant.category?.slug === "terrarium-plants";
 
   return (
-    <div className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-lg hover:border-[#0B7A0B] hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+    <div className="group bg-white rounded-2xl overflow-hidden border border-[#34C759]/25 shadow-xs hover:shadow-card-hover hover:border-[#0B7A0B] hover:-translate-y-1.5 transition-all duration-300 ease-out flex flex-col h-full motion-reduce:transform-none">
       {/* Plant Image Container */}
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#EFF6FF]/40 flex items-center justify-center">
         <SafeImage
@@ -34,7 +34,7 @@ export default function PlantCard({ plant }: PlantCardProps) {
           sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
           className={`${
             isCupOrPotted ? "object-contain p-2.5" : "object-cover"
-          } group-hover:scale-105 transition-transform duration-300 ease-out`}
+          } group-hover:scale-105 transition-transform duration-300 ease-out motion-reduce:transform-none`}
         />
 
         {/* Category Badge */}

@@ -212,25 +212,24 @@ export default async function ContactPage({
             </div>
 
             {/* Right Column: Contact Inquiry Form */}
+            {/* Right Column: Contact Inquiry Form */}
             <div className="lg:col-span-7">
               <ContactForm initialPlantReference={plantReference} />
             </div>
-
           </div>
 
-        </div>
-
-        {/* Embedded Map Section */}
-        {settings.map_embed_url && (
-          <div className="mt-16 bg-white rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-xs">
-            <div className="p-5 border-b border-[#E5E7EB] flex items-center justify-between">
-              <div>
-                <h3 className="text-base font-bold text-[#0A2D5B] font-display">
-                  Nursery Facility Location
-                </h3>
-                <p className="text-xs text-[#6B7280]">
-                  No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka
-                </p>
+          {/* Embedded Map Section */}
+          {settings.map_embed_url && (
+            <div className="mt-16 bg-white rounded-3xl overflow-hidden border border-[#E5E7EB] shadow-xs">
+              <div className="p-5 border-b border-[#E5E7EB] flex items-center justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-[#0A2D5B] font-display">
+                    Nursery Facility Location
+                  </h3>
+                  <p className="text-xs text-[#6B7280]">
+                    No: 36/24, Sampath Pedesa, Lionel Jayasinghe Mawatha, Godagama, Homagama, Colombo , Srilanka
+                  </p>
+                </div>
               </div>
               <div className="relative aspect-[21/9] sm:aspect-[21/7] w-full bg-gray-100">
                 <iframe
@@ -246,7 +245,7 @@ export default async function ContactPage({
               </div>
             </div>
           )}
-        </div>
+          </div>
       </section>
     </div>
   );

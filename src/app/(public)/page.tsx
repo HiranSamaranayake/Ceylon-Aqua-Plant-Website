@@ -37,9 +37,9 @@ export default async function HomePage() {
     <div className="space-y-0 bg-[#F8FAFC]">
 
       {/* =========================================================================
-          SECTION 1: HERO SECTION - Fresh Light Blue & Green Ambient Theme
+          SECTION 1: HERO SECTION - Pure White Background (#FFFFFF)
           ========================================================================= */}
-      <section className="relative bg-gradient-to-b from-[#EFF6FF] via-[#F0FDF4]/70 to-[#EFF6FF] border-b border-[#34C759]/25 overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24">
+      <section className="relative bg-white border-b border-[#E5E7EB] overflow-hidden py-10 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
@@ -82,7 +82,7 @@ export default async function HomePage() {
 
               {/* Key Features Strip */}
               <FadeIn direction="up" delay={0.65}>
-                <div className="pt-6 sm:pt-8 border-t border-[#34C759]/25 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-[#0A2D5B]">
+                <div className="pt-6 sm:pt-8 border-t border-[#E5E7EB] grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-xs font-semibold text-[#0A2D5B]">
                   <div className="flex items-center gap-2">
                     <Sun className="w-4 h-4 text-[#F7C600] shrink-0" />
                     <span>Tropical Sunlight</span>
@@ -107,7 +107,7 @@ export default async function HomePage() {
             {/* Right Visual Image Composition with Smooth Hover Zoom */}
             <div className="lg:col-span-5 relative">
               <FadeIn direction="left" delay={0.3} duration={0.8}>
-                <div className="group relative aspect-[4/3] sm:aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-white bg-white transition-shadow duration-300">
+                <div className="group relative aspect-[4/3] sm:aspect-[5/4] rounded-2xl sm:rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover border-2 sm:border-4 border-[#EFF6FF] bg-white transition-shadow duration-300">
                   <SafeImage
                     src="https://images.unsplash.com/photo-1520302630591-fd1c66edc19d?auto=format&fit=crop&w=1400&q=85"
                     alt="Lush underwater aquascape with vibrant live aquatic plants"
